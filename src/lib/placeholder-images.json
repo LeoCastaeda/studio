@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A modern car on an open road, focused on the windshield.",
+      "imageUrl": "https://images.unsplash.com/photo-1526459915562-c5ca724b1d02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjB3aW5kc2hpZWxkfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car windshield"
+    },
+    {
+      "id": "product-1",
+      "description": "Front windshield for a sedan.",
+      "imageUrl": "https://images.unsplash.com/photo-1628025164553-94443e50f9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjYXIlMjB3aW5kc2hpZWxkfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car windshield"
+    },
+    {
+      "id": "product-2",
+      "description": "Rear window for an SUV.",
+      "imageUrl": "https://images.unsplash.com/photo-1690022676526-2762ac826843?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FyJTIwd2luZG93fGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car window"
+    },
+    {
+      "id": "product-3",
+      "description": "Side window for a truck.",
+      "imageUrl": "https://images.unsplash.com/photo-1591754889489-5a59f1cea55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjB3aW5kb3d8ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car window"
+    },
+    {
+      "id": "product-4",
+      "description": "Sunroof glass panel.",
+      "imageUrl": "https://images.unsplash.com/photo-1602612056251-07ff861e3743?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXIlMjBzdW5yb29mfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car sunroof"
+    },
+    {
+      "id": "product-5",
+      "description": "Front windshield for a sports car.",
+      "imageUrl": "https://images.unsplash.com/photo-1746329545418-d4173fc0e9a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYXIlMjB3aW5kc2hpZWxkfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car windshield"
+    },
+    {
+      "id": "product-6",
+      "description": "Side mirror glass.",
+      "imageUrl": "https://images.unsplash.com/photo-1638486071992-536e48c8fa3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjYXIlMjBtaXJyb3J8ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car mirror"
+    },
+    {
+      "id": "finder-tool-bg",
+      "description": "A person using a tablet to check car details.",
+      "imageUrl": "https://images.unsplash.com/photo-1727893304219-063d142ce6f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXIlMjBzZXJ2aWNlfGVufDB8fHx8MTc1OTE5Njc3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car service"
+    },
+    {
+      "id": "quote-bg",
+      "description": "Close up of a car's VIN number plate.",
+      "imageUrl": "https://images.unsplash.com/photo-1748444705873-b988d7963bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjBWSU58ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car VIN"
+    }
+  ]
 }

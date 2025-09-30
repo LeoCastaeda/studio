@@ -1,0 +1,39 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { faqItems } from "@/lib/data";
+import { HelpCircle } from "lucide-react";
+
+export default function FaqPage() {
+  return (
+    <div className="container mx-auto py-12 px-4">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+            <div className="inline-block bg-primary text-primary-foreground p-4 rounded-full mb-4">
+                <HelpCircle className="h-12 w-12" />
+            </div>
+          <h1 className="text-4xl font-headline font-bold">Frequently Asked Questions</h1>
+          <p className="mt-2 text-muted-foreground">
+            Find answers to common questions about our products and services.
+          </p>
+        </div>
+
+        <Accordion type="single" collapsible className="w-full">
+          {faqItems.map((item, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-left font-semibold text-lg hover:no-underline">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </div>
+  );
+}

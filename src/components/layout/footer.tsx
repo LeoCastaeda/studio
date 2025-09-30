@@ -1,0 +1,92 @@
+import Link from "next/link";
+import { Logo } from "@/components/logo";
+import { Github, Twitter, Linkedin } from "lucide-react";
+
+export function Footer() {
+  return (
+    <footer className="border-t bg-card">
+      <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="flex items-center space-x-2">
+              <Logo className="h-8 w-8 text-primary" />
+              <p className="text-xl font-bold">GlassNou Online</p>
+            </div>
+            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
+              Your trusted partner for high-quality automotive glass.
+            </p>
+            <div className="mt-8 flex space-x-4">
+              <Link href="#" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">GitHub</span>
+                <Github className="h-6 w-6" />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">Twitter</span>
+                <Twitter className="h-6 w-6" />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="h-6 w-6" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-2">
+            <div className="text-center sm:text-left">
+              <p className="text-lg font-medium">Services</p>
+              <nav className="mt-4 flex flex-col space-y-2 text-sm">
+                <Link href="/finder" className="text-muted-foreground hover:text-primary">
+                  Glass Finder
+                </Link>
+                <Link href="/quote" className="text-muted-foreground hover:text-primary">
+                  Request a Quote
+                </Link>
+                <Link href="/products" className="text-muted-foreground hover:text-primary">
+                  Product Catalog
+                </Link>
+              </nav>
+            </div>
+
+            <div className="text-center sm:text-left">
+              <p className="text-lg font-medium">About Us</p>
+              <nav className="mt-4 flex flex-col space-y-2 text-sm">
+                <Link href="/contact" className="text-muted-foreground hover:text-primary">
+                  Contact
+                </Link>
+                <Link href="/faq" className="text-muted-foreground hover:text-primary">
+                  FAQ
+                </Link>
+                <Link href="/warranty" className="text-muted-foreground hover:text-primary">
+                  Warranty
+                </Link>
+              </nav>
+            </div>
+            
+            <div className="text-center sm:text-left">
+              <p className="text-lg font-medium">Contact Us</p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li className="text-muted-foreground">
+                  <a href="mailto:contact@glassnou.com" className="hover:text-primary">
+                    contact@glassnou.com
+                  </a>
+                </li>
+                <li className="text-muted-foreground">
+                  <a href="tel:+1234567890" className="hover:text-primary">
+                    +1 (234) 567-890
+                  </a>
+                </li>
+                <li className="text-muted-foreground">
+                  123 Glass St, Car City, USA
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} GlassNou Online. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
