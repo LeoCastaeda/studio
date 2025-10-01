@@ -114,19 +114,17 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="reviews" className="bg-secondary py-16 sm:py-24">
-        <div className="container mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl font-headline font-bold">Lo que dicen nuestros clientes</h2>
-            <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-              Nos enorgullece ofrecer un servicio excepcional. Esto es lo que algunos de nuestros clientes satisfechos han compartido.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+      <section id="reviews" className="container mx-auto py-16 sm:py-24">
+        <div className="text-center">
+          <h2 className="text-3xl font-headline font-bold">Lo que dicen nuestros clientes</h2>
+          <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
+            Nos enorgullece ofrecer un servicio excepcional. Esto es lo que algunos de nuestros clientes satisfechos han compartido.
+          </p>
+        </div>
+        <div className="mt-12 grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
             {reviews.map((review) => (
               <ReviewCard key={review.id} review={review} />
             ))}
-          </div>
         </div>
       </section>
 
