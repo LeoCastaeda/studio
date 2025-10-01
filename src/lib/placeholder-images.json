@@ -59,12 +59,6 @@
       "description": "Un coche sedán moderno de color rojo sobre un fondo transparente para un selector interactivo.",
       "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4R0FZXG0CCWJ5S30MWF7R7W.png",
       "imageHint": "coche sedán"
-    },
-    {
-      "id": "hero-background-2",
-      "description": "Un coche deportivo rojo sobre un fondo oscuro y dramático.",
-      "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4QZJ7W5QYABM4B3V329R6XJ.png",
-      "imageHint": "coche rojo"
     }
   ]
 }
