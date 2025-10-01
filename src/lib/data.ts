@@ -1,11 +1,11 @@
-import type { Product, FaqItem } from '@/lib/types';
+import type { Product, FaqItem, Review } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const getImage = (id: string) => {
   const image = PlaceHolderImages.find((img) => img.id === id);
   if (!image) {
     // Use a placeholder from a configured host
-    return { id: 'fallback', url: 'https://picsum.photos/seed/fallback/600/400', hint: 'placeholder' };
+    return { id: 'fallback', url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', hint: 'placeholder' };
   }
   return { id: image.id, url: image.imageUrl, hint: image.imageHint };
 };
@@ -105,4 +105,28 @@ export const faqItems: FaqItem[] = [
         question: "¿Qué tipo de cristal utilizan?",
         answer: "Utilizamos cristal de alta calidad que cumple o excede los estándares del Fabricante de Equipo Original (OEM). Esto asegura un ajuste perfecto, una visibilidad clara y la seguridad e integridad estructural de tu vehículo."
     }
+];
+
+export const reviews: Review[] = [
+  {
+    id: "review-1",
+    author: "Victor L.",
+    rating: 5,
+    content: "Muy contento con el servicio prestado, la atención es inmejorable, te avisan de cuando reciben el cristal, te dan cita y en 1 hora lo tienes listo. Muy profesionales. Calidad-precio de lo mejor que he encontrado en Barcelona. Muy recomendable.",
+    source: "Google",
+  },
+  {
+    id: "review-2",
+    author: "Jose K.",
+    rating: 5,
+    content: "Muy profesionales, el mejor precio de toda Barcelona, el trabajo impecable, el trato excelente, muy puntuales. 100% recomendados.",
+    source: "Google",
+  },
+  {
+    id: "review-3",
+    author: "Juan A.",
+    rating: 5,
+    content: "Servicio súper profesional y rápido. Tuve que cambiar la luna delantera de mi coche y me lo gestionaron todo súper rápido. El trato con el cliente es exquisito y el precio muy competitivo. Recomendable al 100%.",
+    source: "Google",
+  }
 ];

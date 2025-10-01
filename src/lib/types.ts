@@ -16,3 +16,11 @@ export type FaqItem = {
   question: string;
   answer: string;
 };
+
+export type Review = {
+  id: string;
+  author: string;
+  rating: number;
+  content: string;
+  source: string;
+};

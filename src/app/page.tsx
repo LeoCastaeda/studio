@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ProductCard } from "@/components/product-card";
-import { products } from "@/lib/data";
+import { ReviewCard } from "@/components/review-card";
+import { products, reviews } from "@/lib/data";
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
@@ -92,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="featured-products" className="bg-secondary py-16 sm:py-24">
+      <section id="featured-products" className="bg-card py-16 sm:py-24">
         <div className="container mx-auto">
           <div className="text-center">
             <h2 className="text-3xl font-headline font-bold">Nuestros Servicios Principales</h2>
@@ -112,6 +113,23 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <section id="reviews" className="bg-secondary py-16 sm:py-24">
+        <div className="container mx-auto">
+          <div className="text-center">
+            <h2 className="text-3xl font-headline font-bold">Lo que dicen nuestros clientes</h2>
+            <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
+              Nos enorgullece ofrecer un servicio excepcional. Esto es lo que algunos de nuestros clientes satisfechos han compartido.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+            {reviews.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
