@@ -11,7 +11,7 @@ import { ProductCard } from "@/components/product-card";
 import { products } from "@/lib/data";
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background-2');
+  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
   const featuredProducts = products.slice(0, 3);
 
   return (
