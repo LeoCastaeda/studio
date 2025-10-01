@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function FinderPage() {
-  const carImage = PlaceHolderImages.find(p => p.id === 'interactive-car-2');
+  const carImage = PlaceHolderImages.find(p => p.id === 'interactive-car');
 
   return (
     <div className="container mx-auto py-12 px-4">
@@ -47,5 +47,3 @@ export default function FinderPage() {
     </div>
   );
 }
-
-    
