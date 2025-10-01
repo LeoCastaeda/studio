@@ -72,11 +72,16 @@ export default function QuotePage() {
       `---`,
       `*Vehículo:* ${values.vehicleMake} ${values.vehicleModel} (${values.vehicleYear})`,
       values.vin ? `*VIN:* ${values.vin}` : '',
-      `*Cristal Solicitado:* ${values.glassType}`,
-      values.message ? `---`, `*Mensaje Adicional:*`, `${values.message}` : ''
-    ].filter(Boolean); // Filtra las partes vacías
+      `*Cristal Solicitado:* ${values.glassType}`
+    ];
+      
+    if (values.message) {
+        messageParts.push('---');
+        messageParts.push('*Mensaje Adicional:*');
+        messageParts.push(values.message);
+    }
 
-    const whatsappMessage = encodeURIComponent(messageParts.join('\n'));
+    const whatsappMessage = encodeURIComponent(messageParts.filter(Boolean).join('\n'));
     const whatsappUrl = `https://wa.me/${glassNouPhoneNumber}?text=${whatsappMessage}`;
     
     window.open(whatsappUrl, '_blank');
