@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { products } from "@/lib/data";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -219,14 +220,9 @@ export default function QuotePage() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="Parabrisas Delantero">Parabrisas Delantero</SelectItem>
-                        <SelectItem value="Luneta Trasera">Luneta Trasera</SelectItem>
-                        <SelectItem value="Ventana del Conductor">Ventana del Conductor</SelectItem>
-                        <SelectItem value="Ventana del Pasajero">Ventana del Pasajero</SelectItem>
-                        <SelectItem value="Ventana Trasera Izquierda">Ventana Trasera Izquierda</SelectItem>
-                        <SelectItem value="Ventana Trasera Derecha">Ventana Trasera Derecha</SelectItem>
-                        <SelectItem value="Espejo Lateral">Espejo Lateral</SelectItem>
-                        <SelectItem value="Techo Solar">Techo Solar</SelectItem>
+                        {products.map((product) => (
+                           <SelectItem key={product.id} value={product.name}>{product.name}</SelectItem>
+                        ))}
                         <SelectItem value="Otro">Otro</SelectItem>
                       </SelectContent>
                     </Select>
