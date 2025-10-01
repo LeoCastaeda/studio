@@ -76,7 +76,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             <div className="grid gap-8 md:grid-cols-2">
                 <div>
                     <h3 className="text-lg font-semibold font-headline mb-4">Especificaciones</h3>
-                    <ul className="space-y-2 text-sm">
+                    <ul className="space-y-2 text-sm text-card-foreground">
                         {Object.entries(product.specifications).map(([key, value]) => (
                             <li key={key} className="flex justify-between">
                                 <span className="text-muted-foreground">{key}</span>
