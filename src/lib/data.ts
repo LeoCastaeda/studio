@@ -12,89 +12,76 @@ const getImage = (id: string) => {
 export const products: Product[] = [
   {
     id: 'prod-001',
-    name: 'Parabrisas Delantero para Sedán',
-    description: 'Parabrisas delantero laminado de alta calidad para la mayoría de los sedanes modernos. Proporciona excelente visibilidad y durabilidad.',
+    name: 'Parabrisas',
+    description: 'Reemplazo e instalación de parabrisas para todo tipo de vehículos. Utilizamos cristal de la más alta calidad que cumple con los estándares OEM.',
     price: 249.99,
     image: getImage('product-1'),
     specifications: {
       'Material': 'Vidrio Laminado',
-      'Espesor': '5mm',
-      'Tinte': 'Verde Claro',
-      'Características': 'Capa intermedia acústica, Soporte para sensor de lluvia'
+      'Servicio': 'Reemplazo e Instalación',
+      'Tinte': 'Original de Fábrica',
+      'Características': 'Soporte para sensores de lluvia y ADAS'
     },
-    compatibility: ['Toyota Camry 2018-2023', 'Honda Accord 2019-2024', 'Ford Fusion 2017-2020']
+    compatibility: ['Sedanes', 'SUVs', 'Camionetas', 'Deportivos']
   },
   {
     id: 'prod-002',
-    name: 'Luneta Trasera para SUV',
-    description: 'Luneta trasera de vidrio templado con líneas de desempañador para modelos populares de SUV. Fácil de instalar y construida para durar.',
-    price: 199.50,
-    image: getImage('product-2'),
-    specifications: {
-      'Material': 'Vidrio Templado',
-      'Espesor': '4mm',
-      'Tinte': 'Negro de Privacidad',
-      'Características': 'Líneas de desempañador térmico'
-    },
-    compatibility: ['Ford Explorer 2020-2024', 'Jeep Grand Cherokee 2018-2023', 'Toyota RAV4 2019-2024']
-  },
-  {
-    id: 'prod-003',
-    name: 'Ventana Lateral del Conductor para Camioneta',
-    description: 'Cristal de ventana lateral duradero para camionetas de trabajo pesado. Resiste rayones e impactos.',
+    name: 'Cristales Laterales',
+    description: 'Reemplazo de ventanas de puertas, aletas y custodias. Nos aseguramos de que el nuevo cristal funcione perfectamente con el mecanismo de tu vehículo.',
     price: 89.00,
     image: getImage('product-3'),
     specifications: {
       'Material': 'Vidrio Templado',
-      'Espesor': '4mm',
-      'Tinte': 'Transparente',
-      'Características': 'Agujeros de montaje pre-perforados'
+      'Servicio': 'Reemplazo e Instalación',
+      'Tinte': 'Original de Fábrica',
+      'Posición': 'Puertas delanteras y traseras'
     },
-    compatibility: ['Ford F-150 2015-2023', 'Chevy Silverado 1500 2019-2024', 'Ram 1500 2019-2024']
+    compatibility: ['Sedanes', 'SUVs', 'Camionetas', 'Deportivos']
+  },
+  {
+    id: 'prod-003',
+    name: 'Medallones',
+    description: 'Instalación de medallones (cristal trasero) con o sin desempañador. Devolvemos la seguridad y visibilidad a la parte trasera de tu coche.',
+    price: 199.50,
+    image: getImage('product-2'),
+    specifications: {
+      'Material': 'Vidrio Templado',
+      'Servicio': 'Reemplazo e Instalación',
+      'Tinte': 'Original de Fábrica',
+      'Características': 'Conexión para desempañador térmico'
+    },
+    compatibility: ['Sedanes', 'SUVs', 'Hatchbacks', 'Deportivos']
   },
   {
     id: 'prod-004',
-    name: 'Cristal para Techo Solar Panorámico',
-    description: 'Panel de cristal de reemplazo para techos solares panorámicos. Ofrece protección UV y una vista clara.',
+    name: 'Quemacocos',
+    description: 'Reparación y reemplazo de cristales para quemacocos y techos panorámicos. Disfruta de una vista clara y sin filtraciones.',
     price: 450.00,
     image: getImage('product-4'),
     specifications: {
-      'Material': 'Vidrio Laminado',
-      'Espesor': '6mm',
+      'Material': 'Vidrio Laminado de Seguridad',
+      'Servicio': 'Reemplazo y Reparación',
       'Tinte': 'Control Solar',
-      'Características': 'Capa de protección UV, Marco pre-adjunto'
+      'Características': 'Protección UV, sellado hermético'
     },
-    compatibility: ['Tesla Model 3', 'Hyundai Palisade', 'Kia Telluride']
+    compatibility: ['Vehículos con quemacocos', 'Techos panorámicos']
   },
   {
     id: 'prod-005',
-    name: 'Parabrisas Delantero para Coche Deportivo',
-    description: 'Parabrisas delantero aerodinámico y ligero diseñado para coches deportivos de alto rendimiento.',
-    price: 399.99,
-    image: getImage('product-5'),
-    specifications: {
-      'Material': 'Híbrido de Gorilla Glass',
-      'Espesor': '4.5mm',
-      'Tinte': 'Azul Claro',
-      'Características': 'Compatible con Head-Up Display (HUD)'
-    },
-    compatibility: ['Porsche 911 2020-2024', 'Chevrolet Corvette C8', 'Ford Mustang 2018-2023']
-  },
-  {
-    id: 'prod-006',
-    name: 'Cristal de Espejo Lateral con Calefacción',
-    description: 'Cristal de reemplazo para espejo lateral con elemento calefactor para despejar hielo y niebla rápidamente.',
+    name: 'Espejos Laterales',
+    description: 'Reemplazo de lunas de espejos laterales, con o sin calefacción y sensores de punto ciego. Recupera la visibilidad completa de tu entorno.',
     price: 49.95,
     image: getImage('product-6'),
     specifications: {
       'Material': 'Cristal de Espejo Convexo',
-      'Espesor': '3mm',
-      'Tinte': 'Transparente',
-      'Características': 'Elemento calefactor, Placa trasera a presión'
+      'Servicio': 'Reemplazo de Luna',
+      'Características': 'Opción con calefacción y sensor de punto ciego',
+      'Posición': 'Espejos de puerta del conductor y pasajero'
     },
-    compatibility: ['Volkswagen Golf GTI', 'Subaru Outback', 'Mazda CX-5']
-  }
+    compatibility: ['La mayoría de marcas y modelos']
+  },
 ];
+
 
 export const faqItems: FaqItem[] = [
     {

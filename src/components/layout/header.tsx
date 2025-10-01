@@ -11,9 +11,9 @@ import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/products", label: "Productos", icon: Car },
-  { href: "/finder", label: "Buscador de Cristales", icon: Wrench },
-  { href: "/quote", label: "Solicitar Cotización", icon: Send },
+  { href: "/products", label: "Servicios", icon: Car },
+  { href: "/finder", label: "Buscador Visual", icon: Wrench },
+  { href: "/quote", label: "Cotiza Aquí", icon: Send },
   { href: "/warranty", label: "Garantía", icon: ShieldCheck },
   { href: "/faq", label: "Preguntas Frecuentes", icon: HelpCircle },
   { href: "/contact", label: "Contacto", icon: Send },
@@ -106,7 +106,7 @@ export function Header() {
           </Sheet>
           <div className="hidden md:flex items-center space-x-2">
             <Button asChild>
-              <Link href="/contact">Contáctanos</Link>
+              <Link href="/quote">Cotiza Aquí</Link>
             </Button>
           </div>
         </div>
