@@ -3,7 +3,7 @@
     {
       "id": "hero-background",
       "description": "Una imagen impactante de un coche de lujo en un entorno oscuro y elegante, destacando sus líneas y diseño.",
-      "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4QZJ7W5QYABM4B3V329R6XJ.png",
+      "imageUrl": "https://storage.googleapis.com/studiog-images/421a7ff7-6b45-42f2-8b65-721200924976",
       "imageHint": "coche lujo"
     },
     {
@@ -57,7 +57,7 @@
     {
       "id": "interactive-car",
       "description": "Un coche sedán moderno de color gris sobre un fondo transparente para un selector interactivo.",
-      "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4R5YB4JSTAWJ9ZRG7RWTSF2.png",
+      "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4RFWJ8P80S0B4Y8GY69M27E.png",
       "imageHint": "coche sedán"
     }
   ]
