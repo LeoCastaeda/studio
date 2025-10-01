@@ -21,10 +21,10 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2, Mail, Phone, MapPin } from "lucide-react";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name is required."),
-  email: z.string().email("Please enter a valid email address."),
-  subject: z.string().min(3, "Subject must be at least 3 characters."),
-  message: z.string().min(10, "Message must be at least 10 characters."),
+  name: z.string().min(2, "El nombre es obligatorio."),
+  email: z.string().email("Por favor, introduce una dirección de correo electrónico válida."),
+  subject: z.string().min(3, "El asunto debe tener al menos 3 caracteres."),
+  message: z.string().min(10, "El mensaje debe tener al menos 10 caracteres."),
 });
 
 export default function ContactPage() {
@@ -46,7 +46,7 @@ export default function ContactPage() {
     const response = await submitContactForm(values);
     if (response.success) {
       toast({
-        title: "Message Sent!",
+        title: "¡Mensaje Enviado!",
         description: response.success,
       });
       form.reset();
@@ -62,9 +62,9 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto py-12 px-4">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-headline font-bold">Contact Us</h1>
+        <h1 className="text-4xl font-headline font-bold">Contáctanos</h1>
         <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-          Have a question or need assistance? We're here to help.
+          ¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para ayudarte.
         </p>
       </div>
 
@@ -72,7 +72,7 @@ export default function ContactPage() {
         <div className="md:col-span-3">
           <Card>
             <CardHeader>
-              <CardTitle>Send us a Message</CardTitle>
+              <CardTitle>Envíanos un Mensaje</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -83,9 +83,9 @@ export default function ContactPage() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Full Name</FormLabel>
+                          <FormLabel>Nombre Completo</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} />
+                            <Input placeholder="Juan Pérez" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -96,9 +96,9 @@ export default function ContactPage() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email Address</FormLabel>
+                          <FormLabel>Correo Electrónico</FormLabel>
                           <FormControl>
-                            <Input placeholder="you@example.com" {...field} />
+                            <Input placeholder="tu@ejemplo.com" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -110,9 +110,9 @@ export default function ContactPage() {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Subject</FormLabel>
+                        <FormLabel>Asunto</FormLabel>
                         <FormControl>
-                          <Input placeholder="e.g., Question about a product" {...field} />
+                          <Input placeholder="p.ej., Pregunta sobre un producto" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -123,16 +123,16 @@ export default function ContactPage() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Message</FormLabel>
+                        <FormLabel>Mensaje</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Your message..." className="min-h-[120px]" {...field} />
+                          <Textarea placeholder="Tu mensaje..." className="min-h-[120px]" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
                   <Button type="submit" disabled={isSubmitting} className="w-full">
-                    {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</> : "Send Message"}
+                    {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando...</> : "Enviar Mensaje"}
                   </Button>
                 </form>
               </Form>
@@ -142,31 +142,31 @@ export default function ContactPage() {
         <div className="md:col-span-2">
             <Card>
                 <CardHeader>
-                    <CardTitle>Our Information</CardTitle>
+                    <CardTitle>Nuestra Información</CardTitle>
                     <CardDescription>
-                        You can also reach us through the following channels.
+                        También puedes contactarnos a través de los siguientes canales.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="flex items-start gap-4">
                         <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <h3 className="font-semibold">Email</h3>
-                            <a href="mailto:contact@glassnou.com" className="text-muted-foreground hover:text-primary transition-colors">contact@glassnou.com</a>
+                            <h3 className="font-semibold">Correo Electrónico</h3>
+                            <a href="mailto:contacto@glassnou.com" className="text-muted-foreground hover:text-primary transition-colors">contacto@glassnou.com</a>
                         </div>
                     </div>
                     <div className="flex items-start gap-4">
                         <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <h3 className="font-semibold">Phone</h3>
+                            <h3 className="font-semibold">Teléfono</h3>
                             <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">+1 (234) 567-890</a>
                         </div>
                     </div>
                     <div className="flex items-start gap-4">
                         <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
-                            <h3 className="font-semibold">Address</h3>
-                            <p className="text-muted-foreground">123 Glass St,<br/>Car City, USA 12345</p>
+                            <h3 className="font-semibold">Dirección</h3>
+                            <p className="text-muted-foreground">123 Calle del Vidrio,<br/>Ciudad Auto, USA 12345</p>
                         </div>
                     </div>
                 </CardContent>

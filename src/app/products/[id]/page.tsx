@@ -57,16 +57,16 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
                     <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
-                    <span>In Stock</span>
+                    <span>En Stock</span>
                     <Separator orientation="vertical" className="h-4 mx-2" />
                     <Truck className="h-4 w-4 mr-2 text-primary" />
-                    <span>Ships within 24 hours</span>
+                    <span>Se envía en 24 horas</span>
                 </div>
               </div>
 
               <div className="mt-6">
                 <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90">
-                    <Link href="/quote">Request a Quote for Installation</Link>
+                    <Link href="/quote">Solicitar Cotización de Instalación</Link>
                 </Button>
               </div>
 
@@ -76,7 +76,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
         <div className="p-6 border-t">
             <div className="grid gap-8 md:grid-cols-2">
                 <div>
-                    <h3 className="text-lg font-semibold font-headline mb-4">Specifications</h3>
+                    <h3 className="text-lg font-semibold font-headline mb-4">Especificaciones</h3>
                     <ul className="space-y-2 text-sm">
                         {Object.entries(product.specifications).map(([key, value]) => (
                             <li key={key} className="flex justify-between">
@@ -87,7 +87,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                     </ul>
                 </div>
                 <div>
-                    <h3 className="text-lg font-semibold font-headline mb-4">Vehicle Compatibility</h3>
+                    <h3 className="text-lg font-semibold font-headline mb-4">Compatibilidad del Vehículo</h3>
                     <div className="flex flex-wrap gap-2">
                         {product.compatibility.map((model) => (
                             <Badge key={model} variant="secondary">{model}</Badge>

@@ -11,12 +11,12 @@ import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/products", label: "Products", icon: Car },
-  { href: "/finder", label: "Glass Finder", icon: Wrench },
-  { href: "/quote", label: "Request a Quote", icon: Send },
-  { href: "/warranty", label: "Warranty", icon: ShieldCheck },
-  { href: "/faq", label: "FAQ", icon: HelpCircle },
-  { href: "/contact", label: "Contact", icon: Send },
+  { href: "/products", label: "Productos", icon: Car },
+  { href: "/finder", label: "Buscador de Cristales", icon: Wrench },
+  { href: "/quote", label: "Solicitar Cotización", icon: Send },
+  { href: "/warranty", label: "Garantía", icon: ShieldCheck },
+  { href: "/faq", label: "Preguntas Frecuentes", icon: HelpCircle },
+  { href: "/contact", label: "Contacto", icon: Send },
 ];
 
 export function Header() {
@@ -62,7 +62,7 @@ export function Header() {
                 className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
               >
                 <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
+                <span className="sr-only">Abrir Menú</span>
               </Button>
             </SheetTrigger>
             <Link href="/" className="flex items-center space-x-2 md:hidden">
@@ -79,7 +79,7 @@ export function Header() {
                     <SheetTrigger asChild>
                          <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                             <X className="h-4 w-4" />
-                            <span className="sr-only">Close Menu</span>
+                            <span className="sr-only">Cerrar Menú</span>
                         </Button>
                     </SheetTrigger>
                 </div>
@@ -106,7 +106,7 @@ export function Header() {
           </Sheet>
           <div className="hidden md:flex items-center space-x-2">
             <Button asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact">Contáctanos</Link>
             </Button>
           </div>
         </div>

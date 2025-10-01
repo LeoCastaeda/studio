@@ -18,9 +18,9 @@ export default function ProductsPage() {
   return (
     <div className="container mx-auto py-12 px-4">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-headline font-bold">Our Product Catalog</h1>
+        <h1 className="text-4xl font-headline font-bold">Nuestro Catálogo de Productos</h1>
         <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-          Find the right glass for your vehicle from our extensive collection of high-quality products.
+          Encuentre el cristal adecuado para su vehículo en nuestra extensa colección de productos de alta calidad.
         </p>
       </div>
 
@@ -29,7 +29,7 @@ export default function ProductsPage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Search for products..."
+            placeholder="Buscar productos..."
             className="pl-10"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -45,7 +45,7 @@ export default function ProductsPage() {
         </div>
       ) : (
         <div className="text-center py-16">
-          <p className="text-lg text-muted-foreground">No products found for "{searchTerm}".</p>
+          <p className="text-lg text-muted-foreground">No se encontraron productos para "{searchTerm}".</p>
         </div>
       )}
     </div>

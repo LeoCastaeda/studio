@@ -21,9 +21,9 @@ import { Loader2, Sparkles, AlertTriangle } from "lucide-react";
 import Link from "next/link";
 
 const formSchema = z.object({
-  vehicleYear: z.string().min(4, "Year must be 4 digits.").max(4, "Year must be 4 digits.").regex(/^\d{4}$/, "Please enter a valid year."),
-  vehicleMake: z.string().min(2, "Make is required."),
-  vehicleModel: z.string().min(1, "Model is required."),
+  vehicleYear: z.string().min(4, "El año debe tener 4 dígitos.").max(4, "El año debe tener 4 dígitos.").regex(/^\d{4}$/, "Por favor, introduce un año válido."),
+  vehicleMake: z.string().min(2, "La marca es obligatoria."),
+  vehicleModel: z.string().min(1, "El modelo es obligatorio."),
 });
 
 export default function FinderPage() {
@@ -61,9 +61,9 @@ export default function FinderPage() {
             <div className="mx-auto bg-primary text-primary-foreground rounded-full h-16 w-16 flex items-center justify-center mb-4">
                 <Sparkles className="h-8 w-8" />
             </div>
-            <CardTitle className="text-3xl font-headline">AI-Powered Glass Finder</CardTitle>
+            <CardTitle className="text-3xl font-headline">Buscador de Cristales con IA</CardTitle>
             <CardDescription>
-              Enter your vehicle's details below, and our AI will find compatible glass products for you.
+              Introduce los detalles de tu vehículo a continuación, y nuestra IA encontrará productos de cristal compatibles para ti.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -74,9 +74,9 @@ export default function FinderPage() {
                   name="vehicleYear"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Vehicle Year</FormLabel>
+                      <FormLabel>Año del Vehículo</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., 2023" {...field} />
+                        <Input placeholder="p.ej., 2023" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -87,9 +87,9 @@ export default function FinderPage() {
                   name="vehicleMake"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Vehicle Make</FormLabel>
+                      <FormLabel>Marca del Vehículo</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Toyota" {...field} />
+                        <Input placeholder="p.ej., Toyota" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -100,9 +100,9 @@ export default function FinderPage() {
                   name="vehicleModel"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Vehicle Model</FormLabel>
+                      <FormLabel>Modelo del Vehículo</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Camry" {...field} />
+                        <Input placeholder="p.ej., Camry" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -112,10 +112,10 @@ export default function FinderPage() {
                   {isLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Finding Glass...
+                      Buscando Cristales...
                     </>
                   ) : (
-                    "Find Compatible Glass"
+                    "Buscar Cristales Compatibles"
                   )}
                 </Button>
               </form>
@@ -125,16 +125,16 @@ export default function FinderPage() {
              <CardFooter className="flex flex-col items-start p-6 border-t">
                 {result && (
                   <div className="w-full">
-                    <h3 className="font-semibold text-lg mb-2">Compatible Products:</h3>
+                    <h3 className="font-semibold text-lg mb-2">Productos Compatibles:</h3>
                     <p className="text-muted-foreground p-4 bg-secondary rounded-md">{result}</p>
-                    <p className="text-sm mt-4 text-muted-foreground">You can now use this information to <Link href="/products" className="text-primary underline">search our products</Link> or <Link href="/quote" className="text-primary underline">request a quote</Link>.</p>
+                    <p className="text-sm mt-4 text-muted-foreground">Ahora puedes usar esta información para <Link href="/products" className="text-primary underline">buscar en nuestros productos</Link> o <Link href="/quote" className="text-primary underline">solicitar una cotización</Link>.</p>
                   </div>
                 )}
                 {error && (
                   <div className="w-full bg-destructive/10 border border-destructive/20 text-destructive p-4 rounded-md flex items-start gap-3">
                     <AlertTriangle className="h-5 w-5 flex-shrink-0 mt-0.5" />
                     <div>
-                        <h4 className="font-bold">An error occurred</h4>
+                        <h4 className="font-bold">Ocurrió un error</h4>
                         <p className="text-sm">{error}</p>
                     </div>
                   </div>

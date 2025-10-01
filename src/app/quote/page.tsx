@@ -23,14 +23,14 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 const quoteSchema = z.object({
-  name: z.string().min(2, "Name is required."),
-  email: z.string().email("Invalid email address."),
+  name: z.string().min(2, "El nombre es obligatorio."),
+  email: z.string().email("Correo electrónico no válido."),
   phone: z.string().optional(),
-  vehicleYear: z.string().min(4, "Year must be 4 digits.").max(4, "Year must be 4 digits."),
-  vehicleMake: z.string().min(2, "Make is required."),
-  vehicleModel: z.string().min(1, "Model is required."),
+  vehicleYear: z.string().min(4, "El año debe tener 4 dígitos.").max(4, "El año debe tener 4 dígitos."),
+  vehicleMake: z.string().min(2, "La marca es obligatoria."),
+  vehicleModel: z.string().min(1, "El modelo es obligatorio."),
   vin: z.string().optional(),
-  glassType: z.string({ required_error: "Please select the type of glass."}),
+  glassType: z.string({ required_error: "Por favor, seleccione el tipo de cristal."}),
   message: z.string().optional(),
 });
 
@@ -57,7 +57,7 @@ export default function QuotePage() {
     const response = await submitQuoteRequest(values);
     if (response.success) {
       toast({
-        title: "Success!",
+        title: "¡Éxito!",
         description: response.success,
         variant: "default",
       });
@@ -75,9 +75,9 @@ export default function QuotePage() {
     <div className="container mx-auto py-12 px-4">
       <Card className="max-w-3xl mx-auto">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-headline">Request a Quote</CardTitle>
+          <CardTitle className="text-3xl font-headline">Solicitar una Cotización</CardTitle>
           <CardDescription>
-            Fill out the form below and we'll get back to you with a personalized quote for your auto glass needs.
+            Rellena el formulario a continuación y te responderemos con una cotización personalizada para tus necesidades de cristales de auto.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -89,9 +89,9 @@ export default function QuotePage() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Full Name</FormLabel>
+                      <FormLabel>Nombre Completo</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Juan Pérez" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -102,9 +102,9 @@ export default function QuotePage() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email Address</FormLabel>
+                      <FormLabel>Correo Electrónico</FormLabel>
                       <FormControl>
-                        <Input placeholder="you@example.com" {...field} />
+                        <Input placeholder="tu@ejemplo.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -117,7 +117,7 @@ export default function QuotePage() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone Number (Optional)</FormLabel>
+                      <FormLabel>Número de Teléfono (Opcional)</FormLabel>
                       <FormControl>
                         <Input placeholder="(123) 456-7890" {...field} />
                       </FormControl>
@@ -132,7 +132,7 @@ export default function QuotePage() {
                   name="vehicleYear"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Vehicle Year</FormLabel>
+                      <FormLabel>Año del Vehículo</FormLabel>
                       <FormControl>
                         <Input placeholder="2023" {...field} />
                       </FormControl>
@@ -145,7 +145,7 @@ export default function QuotePage() {
                   name="vehicleMake"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Vehicle Make</FormLabel>
+                      <FormLabel>Marca del Vehículo</FormLabel>
                       <FormControl>
                         <Input placeholder="Toyota" {...field} />
                       </FormControl>
@@ -158,7 +158,7 @@ export default function QuotePage() {
                   name="vehicleModel"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Vehicle Model</FormLabel>
+                      <FormLabel>Modelo del Vehículo</FormLabel>
                       <FormControl>
                         <Input placeholder="Camry" {...field} />
                       </FormControl>
@@ -173,11 +173,11 @@ export default function QuotePage() {
                   name="vin"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>VIN (Vehicle Identification Number)</FormLabel>
+                      <FormLabel>VIN (Número de Identificación del Vehículo)</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter your 17-digit VIN" {...field} />
+                        <Input placeholder="Introduce tu VIN de 17 dígitos" {...field} />
                       </FormControl>
-                      <FormDescription>Providing the VIN ensures we find the exact match for your vehicle.</FormDescription>
+                      <FormDescription>Proporcionar el VIN nos asegura encontrar la coincidencia exacta para tu vehículo.</FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -188,21 +188,21 @@ export default function QuotePage() {
                 name="glassType"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Type of Glass Needed</FormLabel>
+                    <FormLabel>Tipo de Cristal Necesario</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select the glass you need replaced" />
+                          <SelectValue placeholder="Selecciona el cristal que necesitas reemplazar" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="front-windshield">Front Windshield</SelectItem>
-                        <SelectItem value="rear-windshield">Rear Windshield</SelectItem>
-                        <SelectItem value="driver-side-window">Driver-Side Window</SelectItem>
-                        <SelectItem value="passenger-side-window">Passenger-Side Window</SelectItem>
-                        <SelectItem value="side-mirror">Side Mirror</SelectItem>
-                        <SelectItem value="sunroof">Sunroof</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
+                        <SelectItem value="front-windshield">Parabrisas Delantero</SelectItem>
+                        <SelectItem value="rear-windshield">Luneta Trasera</SelectItem>
+                        <SelectItem value="driver-side-window">Ventana del Conductor</SelectItem>
+                        <SelectItem value="passenger-side-window">Ventana del Pasajero</SelectItem>
+                        <SelectItem value="side-mirror">Espejo Lateral</SelectItem>
+                        <SelectItem value="sunroof">Techo Solar</SelectItem>
+                        <SelectItem value="other">Otro</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -215,16 +215,16 @@ export default function QuotePage() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Additional Information (Optional)</FormLabel>
+                      <FormLabel>Información Adicional (Opcional)</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Tell us more about your needs, e.g., specific features like rain sensors, HUD, etc." {...field} />
+                        <Textarea placeholder="Cuéntanos más sobre tus necesidades, p.ej., características específicas como sensores de lluvia, HUD, etc." {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : "Submit Quote Request"}
+                {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando...</> : "Enviar Solicitud de Cotización"}
               </Button>
             </form>
           </Form>

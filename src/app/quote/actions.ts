@@ -3,14 +3,14 @@
 import { z } from 'zod';
 
 const quoteSchema = z.object({
-  name: z.string().min(2, "Name is required."),
-  email: z.string().email("Invalid email address."),
+  name: z.string().min(2, "El nombre es obligatorio."),
+  email: z.string().email("Correo electrónico no válido."),
   phone: z.string().optional(),
-  vehicleYear: z.string().min(4, "Year is required.").max(4, "Year must be 4 digits."),
-  vehicleMake: z.string().min(2, "Make is required."),
-  vehicleModel: z.string().min(1, "Model is required."),
+  vehicleYear: z.string().min(4, "El año es obligatorio.").max(4, "El año debe tener 4 dígitos."),
+  vehicleMake: z.string().min(2, "La marca es obligatoria."),
+  vehicleModel: z.string().min(1, "El modelo es obligatorio."),
   vin: z.string().optional(),
-  glassType: z.string({ required_error: "Please select the type of glass."}),
+  glassType: z.string({ required_error: "Por favor, seleccione el tipo de cristal."}),
   message: z.string().optional(),
 });
 
@@ -18,11 +18,11 @@ export async function submitQuoteRequest(values: z.infer<typeof quoteSchema>) {
   const validatedFields = quoteSchema.safeParse(values);
 
   if (!validatedFields.success) {
-    return { error: 'Invalid data provided. Please check the form and try again.' };
+    return { error: 'Datos no válidos. Por favor, revise el formulario e inténtalo de nuevo.' };
   }
 
   // In a real app, you would save this to a database or send an email.
-  console.log('New Quote Request:', validatedFields.data);
+  console.log('Nueva Solicitud de Cotización:', validatedFields.data);
 
-  return { success: 'Your quote request has been submitted successfully! We will get back to you shortly.' };
+  return { success: '¡Tu solicitud de cotización ha sido enviada con éxito! Nos pondremos en contacto contigo en breve.' };
 }

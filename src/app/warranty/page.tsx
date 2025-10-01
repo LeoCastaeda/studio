@@ -9,61 +9,61 @@ export default function WarrantyPage() {
             <div className="inline-block bg-primary text-primary-foreground p-4 rounded-full mb-4">
                 <ShieldCheck className="h-12 w-12" />
             </div>
-            <h1 className="text-4xl font-headline font-bold">Warranty Information</h1>
+            <h1 className="text-4xl font-headline font-bold">Información de Garantía</h1>
             <p className="mt-2 text-muted-foreground">
-                Your peace of mind is our priority. Here’s how we stand behind our products and services.
+                Tu tranquilidad es nuestra prioridad. Así es como respaldamos nuestros productos y servicios.
             </p>
         </div>
 
         <div className="space-y-8">
             <Card>
                 <CardHeader>
-                    <CardTitle>Lifetime Workmanship Guarantee</CardTitle>
+                    <CardTitle>Garantía de por Vida en la Mano de Obra</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-muted-foreground">
                     <p>
-                        GlassNou Online guarantees the installation of your new auto glass for as long as you own your vehicle.
-                        This warranty covers any issues related to the installation workmanship, including water leaks, wind noise,
-                        and loose moldings or seals.
+                        GlassNou Online garantiza la instalación de tu nuevo cristal de auto mientras seas dueño de tu vehículo.
+                        Esta garantía cubre cualquier problema relacionado con la mano de obra de la instalación, incluyendo filtraciones de agua, ruido de viento
+                        y molduras o sellos sueltos.
                     </p>
                     <p>
-                        Should you experience any of these issues, simply contact us to schedule a no-cost inspection and repair.
-                        This guarantee is non-transferable and applies only to the vehicle for which the service was performed.
+                        Si experimentas alguno de estos problemas, simplemente contáctanos para programar una inspección y reparación sin costo.
+                        Esta garantía no es transferible y se aplica solo al vehículo para el cual se realizó el servicio.
                     </p>
                 </CardContent>
             </Card>
             <Card>
                 <CardHeader>
-                    <CardTitle>Manufacturer's Defect Warranty</CardTitle>
+                    <CardTitle>Garantía por Defectos del Fabricante</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-muted-foreground">
                     <p>
-                        All glass products we sell are covered by a manufacturer's warranty for a period of one (1) year from the date of installation.
-                        This warranty covers defects in the glass, such as distortion, delamination, or other manufacturing flaws.
+                        Todos los productos de cristal que vendemos están cubiertos por una garantía del fabricante por un período de un (1) año a partir de la fecha de instalación.
+                        Esta garantía cubre defectos en el cristal, como distorsión, delaminación u otros defectos de fabricación.
                     </p>
                     <p>
-                        It does not cover damage from external factors, including but not limited to rock chips, cracks from impact, vandalism,
-                        or stress cracks resulting from accidents or body flex of the vehicle.
+                        No cubre daños por factores externos, incluyendo, entre otros, impactos de piedras, grietas por impacto, vandalismo
+                        o grietas por tensión resultantes de accidentes o flexión de la carrocería del vehículo.
                     </p>
                 </CardContent>
             </Card>
              <Card>
                 <CardHeader>
-                    <CardTitle>Warranty Exclusions & Limitations</CardTitle>
+                    <CardTitle>Exclusiones y Limitaciones de la Garantía</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-muted-foreground">
                     <p>
-                        Our warranty does not cover damage or failure resulting from:
+                        Nuestra garantía no cubre daños o fallas resultantes de:
                     </p>
                     <ul className="list-disc pl-5 space-y-2">
-                        <li>Impact, accidents, vandalism, or any form of external damage.</li>
-                        <li>Pre-existing rust or damage to the vehicle's frame or body where the glass is installed.</li>
-                        <li>Improper maintenance, including the use of harsh chemicals or abrasive materials on the glass.</li>
-                        <li>Any modifications or alterations made to the vehicle or glass after our installation.</li>
+                        <li>Impacto, accidentes, vandalismo o cualquier forma de daño externo.</li>
+                        <li>Óxido o daño preexistente en el marco o carrocería del vehículo donde se instala el cristal.</li>
+                        <li>Mantenimiento inadecuado, incluido el uso de productos químicos agresivos o materiales abrasivos en el cristal.</li>
+                        <li>Cualquier modificación o alteración realizada en el vehículo o el cristal después de nuestra instalación.</li>
                     </ul>
                      <p>
-                        To make a warranty claim, proof of purchase and service from GlassNou Online is required. We reserve the right to inspect the vehicle
-                        and the damage before approving any warranty service.
+                        Para hacer un reclamo de garantía, se requiere un comprobante de compra y servicio de GlassNou Online. Nos reservamos el derecho de inspeccionar el vehículo
+                        y el daño antes de aprobar cualquier servicio de garantía.
                     </p>
                 </CardContent>
             </Card>

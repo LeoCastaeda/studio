@@ -4,9 +4,9 @@ import { findGlass, type FindGlassInput } from '@/ai/flows/glass-finder-tool';
 import { z } from 'zod';
 
 const formSchema = z.object({
-  vehicleYear: z.string().min(4, "Year must be 4 digits.").max(4, "Year must be 4 digits."),
-  vehicleMake: z.string().min(2, "Make is required."),
-  vehicleModel: z.string().min(1, "Model is required."),
+  vehicleYear: z.string().min(4, "El año debe tener 4 dígitos.").max(4, "El año debe tener 4 dígitos."),
+  vehicleMake: z.string().min(2, "La marca es obligatoria."),
+  vehicleModel: z.string().min(1, "El modelo es obligatorio."),
 });
 
 export async function getCompatibleGlass(values: FindGlassInput) {
@@ -14,14 +14,14 @@ export async function getCompatibleGlass(values: FindGlassInput) {
 
   if (!validatedFields.success) {
     const errors = validatedFields.error.flatten().fieldErrors;
-    return { error: `Invalid input: ${Object.values(errors).flat().join(', ')}` };
+    return { error: `Entrada no válida: ${Object.values(errors).flat().join(', ')}` };
   }
 
   try {
     const result = await findGlass(validatedFields.data);
     return { data: result.compatibleProducts };
   } catch (error) {
-    console.error("AI flow error:", error);
-    return { error: 'Failed to find compatible glass. Our AI service might be temporarily unavailable. Please try again later.' };
+    console.error("Error en el flujo de IA:", error);
+    return { error: 'No se pudo encontrar el vidrio compatible. Nuestro servicio de IA podría no estar disponible temporalmente. Por favor, inténtalo de nuevo más tarde.' };
   }
 }

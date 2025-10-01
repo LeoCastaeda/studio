@@ -7,8 +7,8 @@ import { Toaster } from "@/components/ui/toaster";
 
 
 export const metadata: Metadata = {
-  title: 'GlassNou Online - Quality Auto Glass',
-  description: 'Find and purchase high-quality replacement glass for your vehicle with GlassNou Online.',
+  title: 'GlassNou Online - Cristales para Auto de Calidad',
+  description: 'Encuentra y compra cristales de reemplazo de alta calidad para tu vehículo con GlassNou Online.',
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

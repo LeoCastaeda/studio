@@ -15,9 +15,9 @@ export default function FaqPage() {
             <div className="inline-block bg-primary text-primary-foreground p-4 rounded-full mb-4">
                 <HelpCircle className="h-12 w-12" />
             </div>
-          <h1 className="text-4xl font-headline font-bold">Frequently Asked Questions</h1>
+          <h1 className="text-4xl font-headline font-bold">Preguntas Frecuentes</h1>
           <p className="mt-2 text-muted-foreground">
-            Find answers to common questions about our products and services.
+            Encuentra respuestas a preguntas comunes sobre nuestros productos y servicios.
           </p>
         </div>
 
