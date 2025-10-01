@@ -63,8 +63,8 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="text-muted-foreground">
-                  <a href="tel:626711138" className="hover:text-primary">
-                    626 711 138
+                  <a href="tel:686770074" className="hover:text-primary">
+                    686 77 00 74
                   </a>
                 </li>
                 <li className="text-muted-foreground">
