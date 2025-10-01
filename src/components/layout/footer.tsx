@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -16,17 +16,9 @@ export function Footer() {
               Tu socio de confianza para cristales de automoción de alta calidad.
             </p>
             <div className="mt-8 flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <span className="sr-only">GitHub</span>
-                <Github className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <span className="sr-only">Twitter</span>
-                <Twitter className="h-6 w-6" />
-              </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary">
-                <span className="sr-only">LinkedIn</span>
-                <Linkedin className="h-6 w-6" />
+              <Link href="https://www.facebook.com/glassnou/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                <span className="sr-only">Facebook</span>
+                <Facebook className="h-6 w-6" />
               </Link>
             </div>
           </div>
@@ -66,17 +58,17 @@ export function Footer() {
               <p className="text-lg font-medium">Contáctanos</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li className="text-muted-foreground">
-                  <a href="mailto:contacto@glassnou.com" className="hover:text-primary">
-                    contacto@glassnou.com
+                  <a href="mailto:info@glassnou.com" className="hover:text-primary">
+                    info@glassnou.com
                   </a>
                 </li>
                 <li className="text-muted-foreground">
-                  <a href="tel:+1234567890" className="hover:text-primary">
-                    +1 (234) 567-890
+                  <a href="tel:615624732" className="hover:text-primary">
+                    615 62 47 32
                   </a>
                 </li>
                 <li className="text-muted-foreground">
-                  123 Calle del Vidrio, Ciudad Auto, USA
+                  Carrer de la Ciutat d'Asunción, 24, 08030 Barcelona
                 </li>
               </ul>
             </div>

@@ -152,21 +152,21 @@ export default function ContactPage() {
                         <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-semibold">Correo Electrónico</h3>
-                            <a href="mailto:contacto@glassnou.com" className="text-muted-foreground hover:text-primary transition-colors">contacto@glassnou.com</a>
+                            <a href="mailto:info@glassnou.com" className="text-muted-foreground hover:text-primary transition-colors">info@glassnou.com</a>
                         </div>
                     </div>
                     <div className="flex items-start gap-4">
                         <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-semibold">Teléfono</h3>
-                            <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">+1 (234) 567-890</a>
+                            <a href="tel:615624732" className="text-muted-foreground hover:text-primary transition-colors">615 62 47 32</a>
                         </div>
                     </div>
                     <div className="flex items-start gap-4">
                         <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-semibold">Dirección</h3>
-                            <p className="text-muted-foreground">123 Calle del Vidrio,<br/>Ciudad Auto, USA 12345</p>
+                            <p className="text-muted-foreground">Carrer de la Ciutat d'Asunción, 24,<br/>08030 Barcelona</p>
                         </div>
                     </div>
                 </CardContent>
