@@ -43,22 +43,34 @@
       "imageHint": "espejo coche"
     },
     {
-      "id": "finder-tool-bg",
-      "description": "Una persona usando una tableta para revisar detalles de un coche.",
-      "imageUrl": "https://images.unsplash.com/photo-1727893304219-063d142ce6f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXIlMjBzZXJ2aWNlfGVufDB8fHx8MTc1OTE5Njc3MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "servicio coche"
-    },
-    {
       "id": "quote-bg",
       "description": "Primer plano de la placa del número VIN de un coche.",
       "imageUrl": "https://images.unsplash.com/photo-1748444705873-b988d7963bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjBWSU58ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "VIN coche"
     },
     {
-      "id": "interactive-car",
-      "description": "Un coche sedán moderno de color rojo sobre un fondo transparente para un selector interactivo.",
-      "imageUrl": "https://images.unsplash.com/photo-1617531322001-8373b6478985?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "imageHint": "coche sedán"
+      "id": "product-repair",
+      "description": "Un técnico reparando una pequeña grieta en un parabrisas.",
+      "imageUrl": "https://images.unsplash.com/photo-1599029789332-9013d624a8b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "reparación parabrisas"
+    },
+    {
+      "id": "product-adas",
+      "description": "Un coche con gráficos superpuestos que muestran el funcionamiento del sistema ADAS.",
+      "imageUrl": "https://images.unsplash.com/photo-1650393003024-5ac8353a35b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "coche ADAS"
+    },
+    {
+      "id": "product-tint",
+      "description": "Un coche con las lunas traseras tintadas en un tono oscuro.",
+      "imageUrl": "https://images.unsplash.com/photo-1560373028-e48a14bce038?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "lunas tintadas"
+    },
+    {
+      "id": "product-rain",
+      "description": "Gotas de agua resbalando por un parabrisas tratado.",
+      "imageUrl": "https://images.unsplash.com/photo-1519708422194-716b12f71804?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "coche lluvia"
     }
   ]
 }

@@ -81,6 +81,62 @@ export const products: Product[] = [
     },
     compatibility: ['La mayoría de marcas y modelos']
   },
+  {
+    id: 'prod-006',
+    name: 'Reparación de Parabrisas',
+    description: 'Reparamos pequeñas grietas y astillas en tu parabrisas, devolviéndole su resistencia original y evitando que el daño se extienda. Un servicio rápido y económico.',
+    price: 59.99,
+    image: getImage('product-repair'),
+    specifications: {
+      'Servicio': 'Reparación de astillas y grietas',
+      'Tiempo estimado': '30-45 minutos',
+      'Resultado': 'Recupera hasta el 95% de la integridad estructural',
+      'Ventaja': 'Evita el reemplazo completo del parabrisas'
+    },
+    compatibility: ['Todo tipo de parabrisas laminados']
+  },
+  {
+    id: 'prod-007',
+    name: 'Calibración de Sistema ADAS',
+    description: 'Calibración precisa de los sistemas avanzados de asistencia al conductor (ADAS) tras el reemplazo del parabrisas. Esencial para la seguridad y el correcto funcionamiento de tu vehículo.',
+    price: 150.00,
+    image: getImage('product-adas'),
+    specifications: {
+      'Servicio': 'Calibración estática y dinámica',
+      'Tecnología': 'Equipos de última generación',
+      'Requisito': 'Post-reemplazo de parabrisas',
+      'Sistemas': 'Control de crucero adaptativo, asistente de carril, etc.'
+    },
+    compatibility: ['Vehículos equipados con ADAS']
+  },
+  {
+    id: 'prod-008',
+    name: 'Tintado de Lunas',
+    description: 'Instalación profesional de láminas de tintado para lunas. Mejora la estética, aumenta la privacidad y protege el interior de tu coche de los rayos UV.',
+    price: 120.00,
+    image: getImage('product-tint'),
+    specifications: {
+      'Servicio': 'Instalación de láminas de control solar',
+      'Material': 'Lámina de alta calidad',
+      'Beneficios': 'Protección UV, privacidad, reducción de calor',
+      'Legal': 'Cumple con la normativa vigente'
+    },
+    compatibility: ['Cristales laterales y luneta trasera']
+  },
+  {
+    id: 'prod-009',
+    name: 'Tratamiento Antilluvia',
+    description: 'Aplicamos un tratamiento hidrofóbico avanzado a tu parabrisas. Repele el agua, la suciedad y los insectos, mejorando drásticamente la visibilidad en condiciones adversas.',
+    price: 39.99,
+    image: getImage('product-rain'),
+    specifications: {
+      'Servicio': 'Aplicación de tratamiento hidrofóbico',
+      'Duración': 'Hasta 6 meses',
+      'Beneficios': 'Mejora la visibilidad, facilita la limpieza',
+      'Aplicación': 'Parabrisas y cristales delanteros'
+    },
+    compatibility: ['Todos los vehículos']
+  }
 ];
 
 
