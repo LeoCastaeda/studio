@@ -3,73 +3,73 @@
     {
       "id": "hero-background",
       "description": "Un coche deportivo rojo sobre un fondo oscuro y dramático.",
-      "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/red-car-hero.jpg",
       "imageHint": "coche rojo"
     },
     {
       "id": "product-1",
       "description": "Parabrisas delantero para un sedán.",
-      "imageUrl": "https://images.unsplash.com/photo-1628025164553-94443e50f9b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjYXIlMjB3aW5kc2hpZWxkfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/windshield.jpg",
       "imageHint": "parabrisas coche"
     },
     {
       "id": "product-2",
       "description": "Luneta Trasera para un SUV.",
-      "imageUrl": "https://images.unsplash.com/photo-1690022676526-2762ac826843?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2FyJTIwd2luZG93fGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/rear-window.jpg",
       "imageHint": "ventana coche"
     },
     {
       "id": "product-3",
       "description": "Ventana lateral para una camioneta.",
-      "imageUrl": "https://images.unsplash.com/photo-1591754889489-5a59f1cea55a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjB3aW5kb3d8ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/side-window.jpg",
       "imageHint": "ventana coche"
     },
     {
       "id": "product-4",
       "description": "Panel de cristal para techo solar.",
-      "imageUrl": "https://images.unsplash.com/photo-1602612056251-07ff861e3743?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXIlMjBzdW5yb29mfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/sunroof.jpg",
       "imageHint": "techo solar coche"
     },
     {
       "id": "product-5",
       "description": "Parabrisas delantero para un coche deportivo.",
-      "imageUrl": "https://images.unsplash.com/photo-1746329545418-d41732963bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjBWSU58ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/vin.jpg",
       "imageHint": "parabrisas coche"
     },
     {
       "id": "product-6",
       "description": "Cristal de espejo lateral.",
-      "imageUrl": "https://images.unsplash.com/photo-1638486071992-536e48c8fa3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjYXIlMjBtaXJyb3J8ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/side-mirror.jpg",
       "imageHint": "espejo coche"
     },
     {
       "id": "quote-bg",
       "description": "Primer plano de la placa del número VIN de un coche.",
-      "imageUrl": "https://images.unsplash.com/photo-1748444705873-b988d7963bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjBWSU58ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/vin.jpg",
       "imageHint": "VIN coche"
     },
     {
       "id": "product-repair",
       "description": "Un técnico reparando una pequeña grieta en un parabrisas.",
-      "imageUrl": "https://images.unsplash.com/photo-1599029789332-9013d624a8b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/windshield-repair.jpg",
       "imageHint": "reparación parabrisas"
     },
     {
       "id": "product-adas",
       "description": "Un coche con gráficos superpuestos que muestran el funcionamiento del sistema ADAS.",
-      "imageUrl": "https://images.unsplash.com/photo-1650393003024-5ac8353a35b1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/adas-calibration.jpg",
       "imageHint": "coche ADAS"
     },
     {
       "id": "product-tint",
       "description": "Un coche con las lunas traseras tintadas en un tono oscuro.",
-      "imageUrl": "https://images.unsplash.com/photo-1560373028-e48a14bce038?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/window-tint.jpg",
       "imageHint": "lunas tintadas"
     },
     {
       "id": "product-rain",
       "description": "Gotas de agua resbalando por un parabrisas tratado.",
-      "imageUrl": "https://images.unsplash.com/photo-1519708422194-716b12f71804?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/rain-repellent.jpg",
       "imageHint": "coche lluvia"
     }
   ]
