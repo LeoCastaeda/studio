@@ -62,7 +62,7 @@ export default function QuotePage() {
 
 
   function onSubmit(values: z.infer<typeof quoteSchema>) {
-    const glassNouPhoneNumber = "34615624732"; // Número de GlassNou sin el +
+    const glassNouPhoneNumber = "34626711138"; // Número de GlassNou sin el +
 
     const messageParts = [
       `*Nueva Solicitud de Cotización*`,

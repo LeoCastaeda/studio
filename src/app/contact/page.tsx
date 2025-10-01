@@ -159,7 +159,7 @@ export default function ContactPage() {
                         <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-semibold">Teléfono</h3>
-                            <a href="tel:615624732" className="text-muted-foreground hover:text-primary transition-colors">615 62 47 32</a>
+                            <a href="tel:626711138" className="text-muted-foreground hover:text-primary transition-colors">626 711 138</a>
                         </div>
                     </div>
                     <div className="flex items-start gap-4">
