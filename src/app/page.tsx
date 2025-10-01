@@ -36,7 +36,7 @@ export default function Home() {
             Servicio profesional de venta e instalación de cristales para todo tipo de vehículos. Calidad y seguridad garantizada.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button size="lg" asChild className="bg-red-600 hover:bg-red-700 text-white">
+            <Button size="lg" asChild>
               <Link href="/quote">
                 Cotiza Aquí <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
