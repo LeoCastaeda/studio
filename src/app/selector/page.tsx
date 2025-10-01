@@ -68,7 +68,7 @@ export default function SelectorPage() {
                   src={carImage.imageUrl}
                   alt={carImage.description}
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   data-ai-hint={carImage.imageHint}
                 />
               )}
@@ -106,5 +106,3 @@ export default function SelectorPage() {
     </div>
   );
 }
-
-    
