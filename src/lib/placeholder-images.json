@@ -2,74 +2,74 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Un coche deportivo rojo sobre un fondo oscuro y dramático.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/red-car-hero.jpg",
-      "imageHint": "coche rojo"
+      "description": "Ilustración estilizada de un coche deportivo iluminado sobre un fondo oscuro.",
+      "imageUrl": "/images/hero-background.svg",
+      "imageHint": "coche deportivo"
     },
     {
       "id": "product-1",
-      "description": "Parabrisas delantero para un sedán.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/windshield.jpg",
+      "description": "Ilustración de un parabrisas delantero para un sedán.",
+      "imageUrl": "/images/product-1.svg",
       "imageHint": "parabrisas coche"
     },
     {
       "id": "product-2",
-      "description": "Luneta Trasera para un SUV.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/rear-window.jpg",
+      "description": "Ilustración de luneta trasera para un SUV.",
+      "imageUrl": "/images/product-2.svg",
       "imageHint": "ventana coche"
     },
     {
       "id": "product-3",
-      "description": "Ventana lateral para una camioneta.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/side-window.jpg",
+      "description": "Ilustración de ventana lateral para una camioneta.",
+      "imageUrl": "/images/product-3.svg",
       "imageHint": "ventana coche"
     },
     {
       "id": "product-4",
-      "description": "Panel de cristal para techo solar.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/sunroof.jpg",
+      "description": "Ilustración de panel de cristal para techo solar.",
+      "imageUrl": "/images/product-4.svg",
       "imageHint": "techo solar coche"
     },
     {
       "id": "product-5",
-      "description": "Parabrisas delantero para un coche deportivo.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/vin.jpg",
+      "description": "Ilustración de parabrisas delantero para un coche deportivo.",
+      "imageUrl": "/images/product-5.svg",
       "imageHint": "parabrisas coche"
     },
     {
       "id": "product-6",
-      "description": "Cristal de espejo lateral.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/side-mirror.jpg",
+      "description": "Ilustración de cristal para espejo lateral.",
+      "imageUrl": "/images/product-6.svg",
       "imageHint": "espejo coche"
     },
     {
       "id": "quote-bg",
-      "description": "Primer plano de la placa del número VIN de un coche.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/vin.jpg",
+      "description": "Ilustración abstracta de una placa VIN y presupuesto.",
+      "imageUrl": "/images/quote-bg.svg",
       "imageHint": "VIN coche"
     },
     {
       "id": "product-repair",
-      "description": "Un técnico reparando una pequeña grieta en un parabrisas.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/windshield-repair.jpg",
+      "description": "Ilustración de reparación de un parabrisas con herramienta especializada.",
+      "imageUrl": "/images/product-repair.svg",
       "imageHint": "reparación parabrisas"
     },
     {
       "id": "product-adas",
-      "description": "Un coche con gráficos superpuestos que muestran el funcionamiento del sistema ADAS.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/adas-calibration.jpg",
+      "description": "Ilustración de coche con ondas que representan un sistema ADAS calibrado.",
+      "imageUrl": "/images/product-adas.svg",
       "imageHint": "coche ADAS"
     },
     {
       "id": "product-tint",
-      "description": "Un coche con las lunas traseras tintadas en un tono oscuro.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/window-tint.jpg",
+      "description": "Ilustración de coche con lunas traseras tintadas.",
+      "imageUrl": "/images/product-tint.svg",
       "imageHint": "lunas tintadas"
     },
     {
       "id": "product-rain",
-      "description": "Gotas de agua resbalando por un parabrisas tratado.",
-      "imageUrl": "https://storage.googleapis.com/studiopaper-dev.appspot.com/projects/e-com-glass/img/rain-repellent.jpg",
+      "description": "Ilustración de gotas de agua sobre un parabrisas tratado.",
+      "imageUrl": "/images/product-rain.svg",
       "imageHint": "coche lluvia"
     }
   ]

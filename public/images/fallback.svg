@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640">
+  <defs>
+    <linearGradient id="fallback-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+    <linearGradient id="fallback-lines" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="fallback-car" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" fill="url(#fallback-bg)" />
+  <g opacity="0.25" stroke="url(#fallback-lines)" stroke-width="2">
+    <path d="M0 440 H960" />
+    <path d="M0 480 H960" />
+    <path d="M0 520 H960" />
+    <path d="M0 560 H960" />
+    <path d="M0 600 H960" />
+    <path d="M240 360 V640" />
+    <path d="M480 360 V640" />
+    <path d="M720 360 V640" />
+  </g>
+  <ellipse cx="480" cy="500" rx="320" ry="80" fill="#020617" opacity="0.7" />
+  <g transform="translate(160 220)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 140 C210 40 390 0 560 40 C680 70 760 150 820 260" stroke="url(#fallback-car)" stroke-width="16" />
+    <path d="M160 220 H680 C740 220 780 260 780 320 C780 360 760 400 700 400 H200 C140 400 120 360 120 320 C120 260 160 220 160 220 Z" fill="#111827" stroke="#38bdf8" stroke-width="10" />
+    <path d="M220 240 Q480 120 740 240" fill="#1e3a8a" stroke="#93c5fd" stroke-width="8" />
+    <circle cx="260" cy="360" r="60" fill="#0f172a" stroke="#c7d2fe" stroke-width="12" />
+    <circle cx="260" cy="360" r="30" fill="#1f2937" />
+    <circle cx="660" cy="360" r="60" fill="#0f172a" stroke="#c7d2fe" stroke-width="12" />
+    <circle cx="660" cy="360" r="30" fill="#1f2937" />
+    <path d="M340 360 H580" stroke="#60a5fa" stroke-width="10" opacity="0.5" />
+  </g>
+  <g fill="#e0f2fe" font-family="'Poppins', sans-serif" font-size="32" opacity="0.6">
+    <text x="80" y="120">Ilustración no disponible</text>
+    <text x="80" y="160">Mostrando arte de reserva</text>
+  </g>
+</svg>

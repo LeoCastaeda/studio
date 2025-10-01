@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="rain-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <radialGradient id="rain-glow" cx="50%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#1d4ed8" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="rain-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.75" />
+    </linearGradient>
+    <linearGradient id="wiper" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#rain-bg)" />
+  <rect width="1200" height="800" fill="url(#rain-glow)" />
+  <g opacity="0.25" stroke="#60a5fa" stroke-width="2">
+    <path d="M160 620 H1040" />
+    <path d="M160 580 H1040" />
+    <path d="M160 540 H1040" />
+    <path d="M160 500 H1040" />
+    <path d="M360 420 V680" />
+    <path d="M600 420 V680" />
+    <path d="M840 420 V680" />
+  </g>
+  <ellipse cx="600" cy="640" rx="360" ry="90" fill="#010b19" opacity="0.85" />
+  <g transform="translate(200 220)">
+    <path d="M160 260 Q360 60 600 60 Q840 60 1040 260 L1080 340 H120 Z" fill="url(#rain-glass)" stroke="#bfdbfe" stroke-width="10" stroke-linejoin="round" />
+    <path d="M200 320 H1000" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round" opacity="0.5" />
+    <path d="M280 200 Q600 140 920 200" stroke="#bae6fd" stroke-width="8" stroke-linecap="round" opacity="0.5" />
+    <path d="M240 360 Q600 300 960 360" stroke="#bfdbfe" stroke-width="8" stroke-linecap="round" opacity="0.4" />
+    <g opacity="0.45" fill="none" stroke="#93c5fd" stroke-width="6" stroke-linecap="round">
+      <path d="M240 240 C280 200 320 200 360 230" />
+      <path d="M380 230 C420 190 460 190 500 220" />
+      <path d="M520 220 C560 180 600 180 640 210" />
+      <path d="M660 210 C700 170 740 170 780 200" />
+      <path d="M800 200 C840 160 880 160 920 190" />
+    </g>
+    <g fill="#38bdf8" opacity="0.7">
+      <ellipse cx="260" cy="260" rx="16" ry="24" />
+      <ellipse cx="420" cy="240" rx="14" ry="22" />
+      <ellipse cx="580" cy="230" rx="12" ry="20" />
+      <ellipse cx="720" cy="220" rx="14" ry="22" />
+      <ellipse cx="880" cy="230" rx="16" ry="24" />
+      <ellipse cx="340" cy="300" rx="12" ry="18" />
+      <ellipse cx="500" cy="290" rx="14" ry="20" />
+      <ellipse cx="660" cy="290" rx="12" ry="18" />
+      <ellipse cx="820" cy="300" rx="14" ry="20" />
+    </g>
+    <path d="M280 380 L820 200" stroke="url(#wiper)" stroke-width="26" stroke-linecap="round" />
+    <circle cx="280" cy="380" r="38" fill="#0f172a" stroke="#1f2937" stroke-width="10" />
+  </g>
+  <g transform="translate(160 160)" fill="#dbeafe" font-family="'Poppins', sans-serif" font-size="48">
+    <text>Tratamiento hidrofóbico</text>
+    <path d="M0 40 H620" stroke="#60a5fa" stroke-width="4" />
+  </g>
+</svg>

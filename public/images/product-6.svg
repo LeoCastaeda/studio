@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="p6-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <radialGradient id="p6-glow" cx="55%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#0ea5e9" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="p6-body" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="p6-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0f9ff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.75" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#p6-bg)" />
+  <rect width="1200" height="800" fill="url(#p6-glow)" />
+  <g opacity="0.2" stroke="#38bdf8" stroke-width="2">
+    <path d="M160 620 H1040" />
+    <path d="M160 580 H1040" />
+    <path d="M160 540 H1040" />
+    <path d="M160 500 H1040" />
+    <path d="M360 420 V680" />
+    <path d="M600 420 V680" />
+    <path d="M840 420 V680" />
+  </g>
+  <ellipse cx="600" cy="640" rx="360" ry="90" fill="#010b19" opacity="0.85" />
+  <g transform="translate(220 260)">
+    <path d="M160 260 C160 180 220 120 320 120 H760 C860 120 940 200 940 300 C940 380 880 460 800 480 L360 560 C260 580 160 500 160 400 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="12" stroke-linejoin="round" />
+    <path d="M220 280 C220 220 280 170 360 170 H700 C780 170 840 230 840 300 C840 360 800 420 740 440 L360 520 C280 540 220 480 220 400 Z" fill="url(#p6-body)" />
+    <path d="M260 300 C260 250 300 220 360 220 H660 C720 220 760 260 760 310 C760 360 720 400 660 420 L360 500 C300 520 260 470 260 420 Z" fill="url(#p6-glass)" stroke="#e0f2fe" stroke-width="8" />
+    <path d="M320 320 L640 320" stroke="#bae6fd" stroke-width="8" stroke-linecap="round" opacity="0.6" />
+    <path d="M320 360 L620 360" stroke="#cffafe" stroke-width="6" stroke-linecap="round" opacity="0.5" />
+    <path d="M320 400 L560 400" stroke="#e0f2fe" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+    <circle cx="420" cy="520" r="36" fill="#0f172a" stroke="#38bdf8" stroke-width="8" opacity="0.8" />
+    <path d="M760 200 Q860 220 900 300" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" opacity="0.5" />
+    <path d="M760 240 Q840 260 870 320" stroke="#0ea5e9" stroke-width="10" stroke-linecap="round" opacity="0.35" />
+  </g>
+  <g transform="translate(160 160)" fill="#dbeafe" font-family="'Poppins', sans-serif" font-size="48">
+    <text>Cristal espejo lateral</text>
+    <path d="M0 40 H560" stroke="#38bdf8" stroke-width="4" />
+  </g>
+</svg>

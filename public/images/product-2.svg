@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="p2-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="50%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+    <radialGradient id="p2-glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#0f766e" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="p2-body" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#0f766e" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#2dd4bf" />
+    </linearGradient>
+    <linearGradient id="p2-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfeff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#p2-bg)" />
+  <rect width="1200" height="800" fill="url(#p2-glow)" />
+  <g opacity="0.2" stroke="#2dd4bf" stroke-width="2">
+    <path d="M120 600 H1080" />
+    <path d="M120 560 H1080" />
+    <path d="M120 520 H1080" />
+    <path d="M120 480 H1080" />
+    <path d="M360 420 V660" />
+    <path d="M600 420 V660" />
+    <path d="M840 420 V660" />
+  </g>
+  <ellipse cx="600" cy="620" rx="360" ry="90" fill="#0b1120" opacity="0.8" />
+  <g transform="translate(140 260)">
+    <path d="M240 320 L960 320 L1020 440 L180 440 Z" fill="#0f172a" stroke="#2dd4bf" stroke-width="10" stroke-linejoin="round" />
+    <path d="M220 220 C320 100 480 40 600 40 C720 40 880 100 980 220 L1040 320 H160 Z" fill="url(#p2-body)" />
+    <path d="M260 240 Q600 80 940 240 L980 300 H220 Z" fill="url(#p2-glass)" stroke="#a7f3d0" stroke-width="8" stroke-linejoin="round" />
+    <path d="M320 300 H880" stroke="#99f6e4" stroke-width="10" stroke-linecap="round" opacity="0.5" />
+    <path d="M360 260 Q600 160 840 260" stroke="#ccfbf1" stroke-width="8" stroke-linecap="round" opacity="0.5" />
+    <rect x="400" y="340" width="400" height="60" rx="20" fill="#0f172a" stroke="#14b8a6" stroke-width="6" opacity="0.7" />
+  </g>
+  <g transform="translate(140 160)" fill="#d1fae5" font-family="'Poppins', sans-serif" font-size="48">
+    <text>Luneta trasera SUV</text>
+    <path d="M0 40 H520" stroke="#2dd4bf" stroke-width="4" />
+  </g>
+</svg>
