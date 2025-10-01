@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Una imagen impactante de un coche de lujo en un entorno oscuro y elegante, destacando sus líneas y diseño.",
-      "imageUrl": "https://storage.googleapis.com/studiog-images/421a7ff7-6b45-42f2-8b65-721200924976",
-      "imageHint": "coche lujo"
+      "description": "Un coche deportivo rojo sobre un fondo oscuro y dramático.",
+      "imageUrl": "https://images.unsplash.com/photo-1593012586835-62d1648a313b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxyZWQlMjBzcG9ydHMlMjBjYXJ8ZW58MHx8fHwxNzYwMTI3NTIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coche rojo"
     },
     {
       "id": "product-1",
