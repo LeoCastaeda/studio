@@ -4,7 +4,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const getImage = (id: string) => {
   const image = PlaceHolderImages.find((img) => img.id === id);
   if (!image) {
-    return { id: 'fallback', url: 'https://placehold.co/600x400', hint: 'placeholder' };
+    // Use a placeholder from a configured host
+    return { id: 'fallback', url: 'https://picsum.photos/seed/fallback/600/400', hint: 'placeholder' };
   }
   return { id: image.id, url: image.imageUrl, hint: image.imageHint };
 };
