@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="quote-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#4338ca" />
+    </linearGradient>
+    <radialGradient id="quote-glow" cx="45%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#312e81" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="quote-card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+    <linearGradient id="quote-detail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#quote-bg)" />
+  <rect width="1200" height="800" fill="url(#quote-glow)" />
+  <g opacity="0.15" stroke="#6366f1" stroke-width="2">
+    <path d="M0 620 H1200" />
+    <path d="M0 580 H1200" />
+    <path d="M0 540 H1200" />
+    <path d="M0 500 H1200" />
+    <path d="M240 420 V760" />
+    <path d="M480 420 V760" />
+    <path d="M720 420 V760" />
+    <path d="M960 420 V760" />
+  </g>
+  <ellipse cx="600" cy="640" rx="420" ry="110" fill="#010b19" opacity="0.8" />
+  <g transform="translate(200 200)">
+    <rect x="40" y="80" width="920" height="440" rx="48" fill="url(#quote-card)" stroke="#6366f1" stroke-width="6" />
+    <rect x="120" y="160" width="360" height="120" rx="24" fill="#0f172a" stroke="#38bdf8" stroke-width="4" />
+    <rect x="520" y="160" width="360" height="120" rx="24" fill="#111827" stroke="#a855f7" stroke-width="4" />
+    <rect x="120" y="320" width="760" height="60" rx="16" fill="#1f2937" opacity="0.9" />
+    <rect x="120" y="400" width="520" height="60" rx="16" fill="#1f2937" opacity="0.7" />
+    <g transform="translate(160 210)" fill="#e0e7ff" font-family="'Poppins', sans-serif">
+      <text font-size="32">VIN: 1HGBH41JXMN109186</text>
+      <text y="60" font-size="28" opacity="0.7">Cliente: Maria López</text>
+    </g>
+    <g transform="translate(560 210)" fill="#c7d2fe" font-family="'Poppins', sans-serif" font-size="32">
+      <text>Subtotal</text>
+      <text y="60" font-size="48" fill="#38bdf8">$8,450</text>
+    </g>
+    <g transform="translate(160 360)" fill="#c7d2fe" font-family="'Poppins', sans-serif" font-size="26">
+      <text>Parabrisas templado - Instalación incluida</text>
+    </g>
+    <g transform="translate(160 440)" fill="#94a3b8" font-family="'Poppins', sans-serif" font-size="24">
+      <text>Fecha estimada: 18/04/2024 · Garantía 12 meses</text>
+    </g>
+    <path d="M120 520 H840" stroke="url(#quote-detail)" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+  </g>
+</svg>

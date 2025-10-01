@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="p3-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="50%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <radialGradient id="p3-glow" cx="55%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#312e81" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="p3-body" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="p3-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ede9fe" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#c4b5fd" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#p3-bg)" />
+  <rect width="1200" height="800" fill="url(#p3-glow)" />
+  <g opacity="0.2" stroke="#c4b5fd" stroke-width="2">
+    <path d="M140 620 H1060" />
+    <path d="M140 580 H1060" />
+    <path d="M140 540 H1060" />
+    <path d="M140 500 H1060" />
+    <path d="M320 420 V680" />
+    <path d="M520 420 V680" />
+    <path d="M720 420 V680" />
+    <path d="M920 420 V680" />
+  </g>
+  <ellipse cx="600" cy="640" rx="360" ry="90" fill="#020617" opacity="0.8" />
+  <g transform="translate(140 260)">
+    <path d="M160 340 L960 280 C1040 270 1080 320 1080 360 C1080 400 1040 450 960 460 L160 520 C120 520 80 480 80 420 C80 360 120 320 160 340 Z" fill="#1e1b4b" stroke="#a855f7" stroke-width="10" stroke-linejoin="round" />
+    <path d="M200 360 Q520 200 960 260 C1000 270 1020 300 1020 340 C1020 380 1000 420 960 430 L220 500" fill="#0f172a" stroke="#f3e8ff" stroke-width="8" stroke-linejoin="round" />
+    <path d="M240 380 Q520 240 900 300 Q940 308 940 340 C940 380 920 410 880 420 L280 480" fill="url(#p3-glass)" stroke="#ddd6fe" stroke-width="8" />
+    <path d="M260 420 Q540 280 880 340" stroke="#ede9fe" stroke-width="6" stroke-linecap="round" opacity="0.6" />
+    <path d="M300 450 Q560 320 840 360" stroke="#c4b5fd" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+  </g>
+  <g transform="translate(160 160)" fill="#ede9fe" font-family="'Poppins', sans-serif" font-size="48">
+    <text>Ventana lateral pick-up</text>
+    <path d="M0 40 H560" stroke="#a855f7" stroke-width="4" />
+  </g>
+</svg>

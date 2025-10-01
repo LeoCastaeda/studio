@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="p1-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+    <radialGradient id="p1-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="80%" stop-color="#1e3a8a" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="p1-body" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="p1-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.75" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#p1-bg)" />
+  <rect width="1200" height="800" fill="url(#p1-glow)" />
+  <g opacity="0.2" stroke="#38bdf8" stroke-width="2">
+    <path d="M160 620 H1040" />
+    <path d="M160 580 H1040" />
+    <path d="M160 540 H1040" />
+    <path d="M160 500 H1040" />
+    <path d="M400 400 V680" />
+    <path d="M600 400 V680" />
+    <path d="M800 400 V680" />
+  </g>
+  <ellipse cx="600" cy="640" rx="360" ry="90" fill="#010b19" opacity="0.8" />
+  <g transform="translate(200 260)">
+    <path d="M180 220 Q300 70 600 70 Q900 70 1020 220 L1080 340 H120 L180 220 Z" fill="url(#p1-body)" stroke="#60a5fa" stroke-width="8" stroke-linejoin="round" />
+    <path d="M240 240 Q600 40 960 240 L1000 320 H200 Z" fill="url(#p1-glass)" stroke="#bfdbfe" stroke-width="6" stroke-linejoin="round" />
+    <path d="M220 320 H980" stroke="#e0f2fe" stroke-width="10" stroke-linecap="round" opacity="0.5" />
+    <path d="M360 180 Q600 120 840 180" stroke="#bae6fd" stroke-width="8" stroke-linecap="round" opacity="0.6" />
+    <circle cx="320" cy="380" r="74" fill="#0f172a" stroke="#c7d2fe" stroke-width="14" />
+    <circle cx="320" cy="380" r="42" fill="#1e293b" />
+    <circle cx="880" cy="380" r="74" fill="#0f172a" stroke="#c7d2fe" stroke-width="14" />
+    <circle cx="880" cy="380" r="42" fill="#1e293b" />
+    <path d="M420 380 H780" stroke="#60a5fa" stroke-width="12" stroke-linecap="round" opacity="0.5" />
+  </g>
+  <g transform="translate(120 160)" fill="#cbd5f5" font-family="'Poppins', sans-serif" font-size="48">
+    <text>Parabrisas delantero</text>
+    <path d="M0 40 H460" stroke="#3b82f6" stroke-width="4" />
+  </g>
+</svg>

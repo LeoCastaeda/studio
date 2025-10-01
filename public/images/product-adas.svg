@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="adas-bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020617" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#4c1d95" />
+    </linearGradient>
+    <radialGradient id="adas-glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.45" />
+      <stop offset="70%" stop-color="#1e3a8a" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="adas-body" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="adas-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eef2ff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#c7d2fe" stop-opacity="0.75" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#adas-bg)" />
+  <rect width="1200" height="800" fill="url(#adas-glow)" />
+  <g opacity="0.2" stroke="#6366f1" stroke-width="2">
+    <path d="M160 620 H1040" />
+    <path d="M160 580 H1040" />
+    <path d="M160 540 H1040" />
+    <path d="M160 500 H1040" />
+    <path d="M360 420 V680" />
+    <path d="M600 420 V680" />
+    <path d="M840 420 V680" />
+  </g>
+  <ellipse cx="600" cy="640" rx="360" ry="90" fill="#010b19" opacity="0.85" />
+  <g transform="translate(180 240)">
+    <path d="M200 260 Q360 80 600 80 Q840 80 1000 260 L1040 340 H160 Z" fill="url(#adas-body)" stroke="#a5b4fc" stroke-width="10" stroke-linejoin="round" />
+    <path d="M260 260 Q600 100 940 260 L960 320 H240 Z" fill="url(#adas-glass)" stroke="#c7d2fe" stroke-width="8" stroke-linejoin="round" />
+    <path d="M280 320 H920" stroke="#e0e7ff" stroke-width="12" stroke-linecap="round" opacity="0.6" />
+    <path d="M360 200 Q600 150 840 200" stroke="#c7d2fe" stroke-width="10" stroke-linecap="round" opacity="0.4" />
+    <circle cx="320" cy="380" r="72" fill="#111827" stroke="#c7d2fe" stroke-width="14" />
+    <circle cx="320" cy="380" r="38" fill="#1f2937" />
+    <circle cx="880" cy="380" r="72" fill="#111827" stroke="#c7d2fe" stroke-width="14" />
+    <circle cx="880" cy="380" r="38" fill="#1f2937" />
+  </g>
+  <g transform="translate(180 260)" fill="none" stroke-linecap="round">
+    <path d="M880 220 C960 200 1040 240 1080 300" stroke="#6366f1" stroke-width="12" opacity="0.5" />
+    <path d="M880 200 C980 170 1090 220 1140 300" stroke="#a855f7" stroke-width="10" opacity="0.4" />
+    <path d="M880 180 C1000 140 1120 200 1180 300" stroke="#c084fc" stroke-width="8" opacity="0.3" />
+    <path d="M320 220 C240 200 160 240 120 300" stroke="#6366f1" stroke-width="12" opacity="0.5" />
+    <path d="M320 200 C220 170 110 220 60 300" stroke="#a855f7" stroke-width="10" opacity="0.4" />
+    <path d="M320 180 C200 140 80 200 20 300" stroke="#c084fc" stroke-width="8" opacity="0.3" />
+  </g>
+  <g transform="translate(160 160)" fill="#e0e7ff" font-family="'Poppins', sans-serif" font-size="48">
+    <text>Calibración ADAS</text>
+    <path d="M0 40 H460" stroke="#6366f1" stroke-width="4" />
+  </g>
+</svg>
