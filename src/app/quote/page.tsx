@@ -71,7 +71,7 @@ export default function QuotePage() {
       `*Email:* ${values.email}`,
       values.phone ? `*Teléfono:* ${values.phone}` : '',
       `---`,
-      `*Vehículo:* ${values.vehicleMake} ${values.vehicleModel} (${values.vehicleYear})`,
+      `*Vehículo:* ${values.vehicleMake} ${values.vehicleModel} (${values.year})`,
       values.vin ? `*VIN:* ${values.vin}` : '',
       `*Cristal Solicitado:* ${values.glassType}`
     ];

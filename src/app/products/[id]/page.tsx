@@ -37,7 +37,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               alt={product.name}
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
               data-ai-hint={product.image.hint}
             />
           </div>
@@ -66,7 +65,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
               <div className="mt-6">
                 <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90">
-                    <Link href="/quote">Solicitar Cotización de Instalación</Link>
+                    <Link href={`/quote?glassType=${encodeURIComponent(product.name)}`}>Solicitar Cotización de Instalación</Link>
                 </Button>
               </div>
 
