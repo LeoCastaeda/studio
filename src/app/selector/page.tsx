@@ -15,16 +15,17 @@ type GlassPart =
   | "driver-side-window"
   | "passenger-side-window"
   | "driver-rear-window"
-  | "passenger-rear-window"
-  | "sunroof";
+  | "passenger-rear-window";
 
 const glassParts: { id: GlassPart; label: string; path: string }[] = [
-  { id: "front-windshield", label: "Parabrisas Delantero", path: "M 300,150 L 380,125 L 480,125 L 500,150 Z" },
-  { id: "rear-windshield", label: "Luneta Trasera", path: "M 680,150 L 700,125 L 780,125 L 750,150 Z" },
-  { id: "driver-side-window", label: "Ventana del Conductor", path: "M 505,150 L 485,125 L 580,125 L 580,150 Z" },
-  { id: "passenger-side-window", label: "Ventana del Pasajero", path: "M 585,150 L 585,125 L 675,125 L 675,150 Z" },
-  { id: "sunroof", label: "Techo Solar", path: "M 510,124 L 660,124 L 660,118 L 510,118 Z" },
+  { id: "front-windshield", label: "Parabrisas Delantero", path: "M 275,254 L 468,172 L 592,172 L 720,254 Z" },
+  { id: "rear-windshield", label: "Luneta Trasera", path: "M 1020,260 L 1125,188 L 1210,192 L 1278,260 Z" },
+  { id: "driver-side-window", label: "Ventana del Conductor", path: "M 725,255 L 600,174 L 702,175 L 811,255 Z" },
+  { id: "passenger-side-window", label: "Ventana del Pasajero", path: "M 822,255 L 712,175 L 820,175 L 900,255 Z" },
+  { id: "driver-rear-window", label: "Ventana Trasera Izquierda", path: "M 910,256 L 830,176 L 980,183 L 1010,256 Z" },
+  { id: "passenger-rear-window", label: "Ventana Trasera Derecha", path: "M 1015,258 L 988,184 L 1115,188 L 1115,258 Z" },
 ];
+
 
 export default function SelectorPage() {
   const router = useRouter();
@@ -62,28 +63,28 @@ export default function SelectorPage() {
             <CardDescription>Haz clic en una parte de cristal del vehículo para seleccionarla.</CardDescription>
         </CardHeader>
         <CardContent>
-            <div className="relative w-full max-w-4xl mx-auto aspect-[4/2]">
+            <div className="relative w-full max-w-5xl mx-auto aspect-[1500/665]">
               {carImage && (
                 <Image
                   src={carImage.imageUrl}
                   alt={carImage.description}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   data-ai-hint={carImage.imageHint}
                 />
               )}
               <svg
                 className="absolute inset-0 w-full h-full"
-                viewBox="0 0 1000 500"
+                viewBox="0 0 1500 665"
               >
                 {glassParts.map((part) => (
                   <path
                     key={part.id}
                     d={part.path}
                     className={cn(
-                      "fill-cyan-400/20 stroke-cyan-400 stroke-2 transition-all duration-300 cursor-pointer",
-                      "hover:fill-cyan-400/50",
-                      selectedPart === part.id ? "fill-cyan-400/70" : ""
+                      "fill-red-500/20 stroke-red-500 stroke-2 transition-all duration-300 cursor-pointer",
+                      "hover:fill-red-500/50",
+                      selectedPart === part.id ? "fill-red-500/70" : ""
                     )}
                     onClick={() => handlePartClick(part.id)}
                   />

@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Un coche moderno en una carretera abierta, enfocado en el parabrisas.",
-      "imageUrl": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=2070&auto=format&fit=crop",
-      "imageHint": "coche parabrisas"
+      "description": "Una imagen impactante de un coche de lujo en un entorno oscuro y elegante, destacando sus líneas y diseño.",
+      "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4QZJ7W5QYABM4B3V329R6XJ.png",
+      "imageHint": "coche lujo"
     },
     {
       "id": "product-1",
@@ -33,7 +33,7 @@
     {
       "id": "product-5",
       "description": "Parabrisas delantero para un coche deportivo.",
-      "imageUrl": "https://images.unsplash.com/photo-1746329545418-d4173fc0e9a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYXIlMjB3aW5kc2hpZWxkfGVufDB8fHx8MTc1OTI1NTQxMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1746329545418-d41732963bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjBWSU58ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "parabrisas coche"
     },
     {
@@ -56,9 +56,9 @@
     },
     {
       "id": "interactive-car",
-      "description": "Una ilustración de un coche moderno para un selector interactivo.",
-      "imageUrl": "https://images.unsplash.com/photo-1685143114226-84d683366af8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2NoZSUyMGlsdXN0cmFjaSVDMyVCM258ZW58MHx8fHwxNzU5MzA2OTQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "coche ilustración"
+      "description": "Un coche sedán moderno de color gris sobre un fondo transparente para un selector interactivo.",
+      "imageUrl": "https://storage.googleapis.com/studiog-artefacts/01J4R5YB4JSTAWJ9ZRG7RWTSF2.png",
+      "imageHint": "coche sedán"
     }
   ]
 }
