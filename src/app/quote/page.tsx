@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { submitQuoteRequest } from "./actions";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,7 +19,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import { Send } from "lucide-react";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 const quoteSchema = z.object({
   name: z.string().min(2, "El nombre es obligatorio."),
@@ -36,6 +37,7 @@ const quoteSchema = z.object({
 
 export default function QuotePage() {
   const { toast } = useToast();
+  const searchParams = useSearchParams();
   
   const form = useForm<z.infer<typeof quoteSchema>>({
     resolver: zodResolver(quoteSchema),
@@ -51,24 +53,40 @@ export default function QuotePage() {
     },
   });
 
-  const { isSubmitting } = form.formState;
-
-  async function onSubmit(values: z.infer<typeof quoteSchema>) {
-    const response = await submitQuoteRequest(values);
-    if (response.success) {
-      toast({
-        title: "¡Éxito!",
-        description: response.success,
-        variant: "default",
-      });
-      form.reset();
-    } else {
-      toast({
-        title: "Error",
-        description: response.error,
-        variant: "destructive",
-      });
+  useEffect(() => {
+    const glassType = searchParams.get('glassType');
+    if (glassType) {
+      form.setValue('glassType', glassType);
     }
+  }, [searchParams, form]);
+
+
+  function onSubmit(values: z.infer<typeof quoteSchema>) {
+    const glassNouPhoneNumber = "34615624732"; // Número de GlassNou sin el +
+
+    const messageParts = [
+      `*Nueva Solicitud de Cotización*`,
+      `*Cliente:* ${values.name}`,
+      `*Email:* ${values.email}`,
+      values.phone ? `*Teléfono:* ${values.phone}` : '',
+      `---`,
+      `*Vehículo:* ${values.vehicleMake} ${values.vehicleModel} (${values.vehicleYear})`,
+      values.vin ? `*VIN:* ${values.vin}` : '',
+      `*Cristal Solicitado:* ${values.glassType}`,
+      values.message ? `---`, `*Mensaje Adicional:*`, `${values.message}` : ''
+    ].filter(Boolean); // Filtra las partes vacías
+
+    const whatsappMessage = encodeURIComponent(messageParts.join('\n'));
+    const whatsappUrl = `https://wa.me/${glassNouPhoneNumber}?text=${whatsappMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    toast({
+        title: "¡Casi listo!",
+        description: "Se ha abierto WhatsApp para que envíes tu solicitud. ¡Solo pulsa enviar!",
+    });
+    
+    form.reset();
   }
   
   return (
@@ -77,7 +95,7 @@ export default function QuotePage() {
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-headline">Solicitar una Cotización</CardTitle>
           <CardDescription>
-            Rellena el formulario a continuación y te responderemos con una cotización personalizada para tus necesidades de cristales de auto.
+            Rellena el formulario. Al finalizar, se abrirá WhatsApp con un mensaje listo para que nos lo envíes.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -189,20 +207,22 @@ export default function QuotePage() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Tipo de Cristal Necesario</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
                           <SelectValue placeholder="Selecciona el cristal que necesitas reemplazar" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="front-windshield">Parabrisas Delantero</SelectItem>
-                        <SelectItem value="rear-windshield">Luneta Trasera</SelectItem>
-                        <SelectItem value="driver-side-window">Ventana del Conductor</SelectItem>
-                        <SelectItem value="passenger-side-window">Ventana del Pasajero</SelectItem>
-                        <SelectItem value="side-mirror">Espejo Lateral</SelectItem>
-                        <SelectItem value="sunroof">Techo Solar</SelectItem>
-                        <SelectItem value="other">Otro</SelectItem>
+                        <SelectItem value="Parabrisas Delantero">Parabrisas Delantero</SelectItem>
+                        <SelectItem value="Luneta Trasera">Luneta Trasera</SelectItem>
+                        <SelectItem value="Ventana del Conductor">Ventana del Conductor</SelectItem>
+                        <SelectItem value="Ventana del Pasajero">Ventana del Pasajero</SelectItem>
+                        <SelectItem value="Ventana Trasera Izquierda">Ventana Trasera Izquierda</SelectItem>
+                        <SelectItem value="Ventana Trasera Derecha">Ventana Trasera Derecha</SelectItem>
+                        <SelectItem value="Espejo Lateral">Espejo Lateral</SelectItem>
+                        <SelectItem value="Techo Solar">Techo Solar</SelectItem>
+                        <SelectItem value="Otro">Otro</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -223,8 +243,8 @@ export default function QuotePage() {
                     </FormItem>
                   )}
                 />
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Enviando...</> : "Enviar Solicitud de Cotización"}
+              <Button type="submit" className="w-full">
+                <Send className="mr-2 h-4 w-4" /> Enviar por WhatsApp
               </Button>
             </form>
           </Form>

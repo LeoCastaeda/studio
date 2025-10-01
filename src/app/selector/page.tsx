@@ -10,20 +10,20 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 type GlassPart =
-  | "front-windshield"
-  | "rear-windshield"
-  | "driver-side-window"
-  | "passenger-side-window"
-  | "driver-rear-window"
-  | "passenger-rear-window";
+  | "Parabrisas Delantero"
+  | "Luneta Trasera"
+  | "Ventana del Conductor"
+  | "Ventana del Pasajero"
+  | "Ventana Trasera Izquierda"
+  | "Ventana Trasera Derecha";
 
 const glassParts: { id: GlassPart; label: string; path: string }[] = [
-  { id: "front-windshield", label: "Parabrisas Delantero", path: "M 275,254 L 468,172 L 592,172 L 720,254 Z" },
-  { id: "rear-windshield", label: "Luneta Trasera", path: "M 1020,260 L 1125,188 L 1210,192 L 1278,260 Z" },
-  { id: "driver-side-window", label: "Ventana del Conductor", path: "M 725,255 L 600,174 L 702,175 L 811,255 Z" },
-  { id: "passenger-side-window", label: "Ventana del Pasajero", path: "M 822,255 L 712,175 L 820,175 L 900,255 Z" },
-  { id: "driver-rear-window", label: "Ventana Trasera Izquierda", path: "M 910,256 L 830,176 L 980,183 L 1010,256 Z" },
-  { id: "passenger-rear-window", label: "Ventana Trasera Derecha", path: "M 1015,258 L 988,184 L 1115,188 L 1115,258 Z" },
+  { id: "Parabrisas Delantero", label: "Parabrisas Delantero", path: "M 275,254 L 468,172 L 592,172 L 720,254 Z" },
+  { id: "Luneta Trasera", label: "Luneta Trasera", path: "M 1020,260 L 1125,188 L 1210,192 L 1278,260 Z" },
+  { id: "Ventana del Conductor", label: "Ventana del Conductor", path: "M 725,255 L 600,174 L 702,175 L 811,255 Z" },
+  { id: "Ventana del Pasajero", label: "Ventana del Pasajero", path: "M 822,255 L 712,175 L 820,175 L 900,255 Z" },
+  { id: "Ventana Trasera Izquierda", label: "Ventana Trasera Izquierda", path: "M 910,256 L 830,176 L 980,183 L 1010,256 Z" },
+  { id: "Ventana Trasera Derecha", label: "Ventana Trasera Derecha", path: "M 1015,258 L 988,184 L 1115,188 L 1115,258 Z" },
 ];
 
 
@@ -41,7 +41,7 @@ export default function SelectorPage() {
 
   const handleNext = () => {
     if (selectedPart) {
-      router.push(`/quote?glassType=${selectedPart}`);
+      router.push(`/quote?glassType=${encodeURIComponent(selectedPart)}`);
     }
   };
   
@@ -82,9 +82,9 @@ export default function SelectorPage() {
                     key={part.id}
                     d={part.path}
                     className={cn(
-                      "fill-red-500/20 stroke-red-500 stroke-2 transition-all duration-300 cursor-pointer",
-                      "hover:fill-red-500/50",
-                      selectedPart === part.id ? "fill-red-500/70" : ""
+                      "fill-primary/20 stroke-primary stroke-2 transition-all duration-300 cursor-pointer",
+                      "hover:fill-primary/50",
+                      selectedPart === part.id ? "fill-primary/70" : ""
                     )}
                     onClick={() => handlePartClick(part.id)}
                   />
