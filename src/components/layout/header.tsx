@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X } from "lucide-react";
+import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X, Camera } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -29,7 +29,7 @@ export function Header() {
       onClick={() => setIsMobileMenuOpen(false)}
       className={cn(
         "text-sm font-medium transition-colors hover:text-primary",
-        pathname === href ? "text-primary" : "text-muted-foreground",
+        pathname.startsWith(href) ? "text-primary" : "text-muted-foreground",
         className
       )}
     >
@@ -91,7 +91,7 @@ export function Header() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
                         "flex items-center gap-3 rounded-md p-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground",
-                        pathname === href
+                        pathname.startsWith(href)
                           ? "bg-accent text-accent-foreground"
                           : "text-foreground"
                       )}
@@ -114,3 +114,4 @@ export function Header() {
     </header>
   );
 }
+    

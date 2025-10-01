@@ -53,6 +53,12 @@
       "description": "Primer plano de la placa del número VIN de un coche.",
       "imageUrl": "https://images.unsplash.com/photo-1748444705873-b988d7963bc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXIlMjBWSU58ZW58MHx8fHwxNzU5MjU1NDExfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "VIN coche"
+    },
+    {
+      "id": "interactive-car",
+      "description": "Una ilustración de un coche moderno para un selector interactivo.",
+      "imageUrl": "https://images.unsplash.com/photo-1685143114226-84d683366af8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2NoZSUyMGlsdXN0cmFjaSVDMyVCM258ZW58MHx8fHwxNzU5MzA2OTQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "coche ilustración"
     }
   ]
 }
