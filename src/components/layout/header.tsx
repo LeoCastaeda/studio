@@ -12,7 +12,6 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/products", label: "Servicios", icon: Car },
-  { href: "/finder", label: "Buscador Visual", icon: Wrench },
   { href: "/quote", label: "Cotiza Aquí", icon: Send },
   { href: "/warranty", label: "Garantía", icon: ShieldCheck },
   { href: "/faq", label: "Preguntas Frecuentes", icon: HelpCircle },

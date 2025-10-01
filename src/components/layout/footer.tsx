@@ -27,9 +27,6 @@ export function Footer() {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium">Servicios</p>
               <nav className="mt-4 flex flex-col space-y-2 text-sm">
-                <Link href="/finder" className="text-muted-foreground hover:text-primary">
-                  Buscador Visual
-                </Link>
                 <Link href="/quote" className="text-muted-foreground hover:text-primary">
                   Cotiza Aquí
                 </Link>
