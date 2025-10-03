@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
 export default function ProductsPage() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredProducts = products.filter(
@@ -32,7 +36,14 @@ export default function ProductsPage() {
             placeholder="Buscar servicios..."
             className="pl-10"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => {
+              const nextValue = e.target.value;
+              const params = new URLSearchParams(searchParams.toString());
+              params.delete("focus");
+              const queryString = params.toString();
+              router.replace(queryString ? `${pathname}?${queryString}` : pathname);
+              setSearchTerm(nextValue);
+            }}
           />
         </div>
       </div>
