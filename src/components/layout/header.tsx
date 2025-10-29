@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X, Camera } from "lucide-react";
+import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -22,7 +22,15 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const NavLink = ({ href, label, className = '' }: { href: string; label: string; className?: string }) => (
+  const NavLink = ({
+    href,
+    label,
+    className = "",
+  }: {
+    href: string;
+    label: string;
+    className?: string;
+  }) => (
     <Link
       href={href}
       onClick={() => setIsMobileMenuOpen(false)}
@@ -38,13 +46,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+      <div className="container flex h-16 items-center">
+        {/* Desktop */}
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Logo className="h-6 w-6 text-primary" />
-            <span className="hidden font-bold sm:inline-block">
-              GlassNou Online
-            </span>
+            {/* Logo grande en desktop */}
+            <Logo className="h-40 w-[100px]" />
+            <span className="hidden font-bold sm:inline-block">GlassNou Online</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -53,6 +61,7 @@ export function Header() {
           </nav>
         </div>
 
+        {/* Mobile + CTA */}
         <div className="flex flex-1 items-center justify-between md:justify-end">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
@@ -60,28 +69,37 @@ export function Header() {
                 variant="ghost"
                 className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
               >
-                <Menu className="h-5 w-5" />
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Abrir Menú</span>
               </Button>
             </SheetTrigger>
+
+            {/* Marca en móvil (fuera del drawer) */}
             <Link href="/" className="flex items-center space-x-2 md:hidden">
-              <Logo className="h-6 w-6 text-primary" />
+              <Logo className="h-100 w-[300px]" />
               <span className="font-bold">GlassNou Online</span>
             </Link>
+
             <SheetContent side="left" className="pr-0">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between pb-6 pr-6">
-                    <Link href="/" className="flex items-center space-x-2">
-                        <Logo className="h-6 w-6 text-primary" />
-                        <span className="font-bold">GlassNou Online</span>
-                    </Link>
-                    <SheetTrigger asChild>
-                         <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                            <X className="h-4 w-4" />
-                            <span className="sr-only">Cerrar Menú</span>
-                        </Button>
-                    </SheetTrigger>
+                  <Link href="/" className="flex items-center space-x-2">
+                    {/* Logo dentro del drawer móvil */}
+                    <Logo className="h-100 w-[200px]" />
+                    <span className="font-bold">GlassNou Online</span>
+                  </Link>
+                  <SheetTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <X className="h-5 w-5" />
+                      <span className="sr-only">Cerrar Menú</span>
+                    </Button>
+                  </SheetTrigger>
                 </div>
+
                 <div className="flex flex-col space-y-4 pr-6">
                   {navItems.map(({ href, label, icon: Icon }) => (
                     <Link
@@ -103,6 +121,7 @@ export function Header() {
               </div>
             </SheetContent>
           </Sheet>
+
           <div className="hidden md:flex items-center space-x-2">
             <Button asChild>
               <Link href="/quote">Cotiza Aquí</Link>
@@ -113,4 +132,3 @@ export function Header() {
     </header>
   );
 }
-    

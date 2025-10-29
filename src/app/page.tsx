@@ -6,36 +6,42 @@ import { ArrowRight, Car, Wrench, ShieldCheck } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { ProductCard } from "@/components/product-card";
 import { ReviewCard } from "@/components/review-card";
 import { products, reviews } from "@/lib/data";
+import { Logo } from "@/components/logo"; // ← IMPORTA TU LOGO
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
   const featuredProducts = products.slice(0, 3);
 
   return (
     <div className="flex flex-col">
-      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
+      {/* HERO */}
+      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden">
+        <Image
+          src="/images/hero-background.png" // debe existir en /public/images/hero-background.png
+          alt="Coche deportivo moderno - portada GlassNou"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
         <div className="absolute inset-0 bg-black/60" />
+
+        {/* Contenido overlay */}
         <div className="relative z-10 max-w-3xl p-4">
+          {/* LOGO ENCIMA DEL TÍTULO */}
+          <Logo
+  aria-label="GlassNou"
+  className="mx-auto -mt-6 md:-mt-10 mb-2 h-64 w-auto text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+/>
           <h1 className="text-4xl font-headline font-bold md:text-6xl drop-shadow-lg">
             Expertos en Cristales para Autos
           </h1>
           <p className="mt-4 text-lg md:text-xl text-neutral-200 drop-shadow-md">
             Servicio profesional de venta e instalación de cristales para todo tipo de vehículos. Calidad y seguridad garantizada.
           </p>
+
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild>
               <Link href="/quote">
@@ -49,12 +55,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* POR QUÉ ELEGIRNOS */}
       <section id="features" className="container mx-auto py-16 sm:py-24">
         <div className="text-center">
           <h2 className="text-3xl font-headline font-bold">¿Por Qué Elegir GlassNou?</h2>
-          <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-            Somos tu mejor opción para el reemplazo de cristales de auto. Ofrecemos un servicio rápido, materiales de primera y precios competitivos.
-          </p>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           <Card>
@@ -93,6 +97,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SERVICIOS DESTACADOS */}
       <section id="featured-products" className="bg-card py-16 sm:py-24">
         <div className="container mx-auto">
           <div className="text-center">
@@ -113,7 +118,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* RESEÑAS */}
       <section id="reviews" className="container mx-auto py-16 sm:py-24">
         <div className="text-center">
           <h2 className="text-3xl font-headline font-bold">Lo que dicen nuestros clientes</h2>
@@ -122,12 +128,11 @@ export default function Home() {
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
-            {reviews.map((review) => (
-              <ReviewCard key={review.id} review={review} />
-            ))}
+          {reviews.map((review) => (
+            <ReviewCard key={review.id} review={review} />
+          ))}
         </div>
       </section>
-
     </div>
   );
 }

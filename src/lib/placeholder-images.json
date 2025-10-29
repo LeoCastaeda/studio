@@ -3,31 +3,31 @@
     {
       "id": "hero-background",
       "description": "Ilustración estilizada de un coche deportivo iluminado sobre un fondo oscuro.",
-      "imageUrl": "/images/hero-background.svg",
+      "imageUrl": "/images/hero-background.png",
       "imageHint": "coche deportivo"
     },
     {
       "id": "product-1",
-      "description": "Ilustración de un parabrisas delantero para un sedán.",
-      "imageUrl": "/images/product-1.svg",
+      "description": "Parabrisas delantero para un sedán.",
+      "imageUrl": "/images/product-1.png",
       "imageHint": "parabrisas coche"
     },
     {
       "id": "product-2",
-      "description": "Ilustración de luneta trasera para un SUV.",
-      "imageUrl": "/images/product-2.svg",
+      "description": "Luneta trasera para un SUV.",
+      "imageUrl": "/images/product-2.png",
       "imageHint": "ventana coche"
     },
     {
       "id": "product-3",
-      "description": "Ilustración de ventana lateral para una camioneta.",
-      "imageUrl": "/images/product-3.svg",
+      "description": "Ventana lateral para una camioneta.",
+      "imageUrl": "/images/product-3.png",
       "imageHint": "ventana coche"
     },
     {
       "id": "product-4",
-      "description": "Ilustración de panel de cristal para techo solar.",
-      "imageUrl": "/images/product-4.svg",
+      "description": "Panel de cristal para techo solar.",
+      "imageUrl": "/images/product-4.png",
       "imageHint": "techo solar coche"
     },
     {
@@ -39,7 +39,7 @@
     {
       "id": "product-6",
       "description": "Ilustración de cristal para espejo lateral.",
-      "imageUrl": "/images/product-6.svg",
+      "imageUrl": "/images/product-6.png",
       "imageHint": "espejo coche"
     },
     {
@@ -50,26 +50,26 @@
     },
     {
       "id": "product-repair",
-      "description": "Ilustración de reparación de un parabrisas con herramienta especializada.",
-      "imageUrl": "/images/product-repair.svg",
+      "description": "Reparación de un parabrisas con herramienta especializada.",
+      "imageUrl": "/images/product-repair.png",
       "imageHint": "reparación parabrisas"
     },
     {
       "id": "product-adas",
       "description": "Ilustración de coche con ondas que representan un sistema ADAS calibrado.",
-      "imageUrl": "/images/product-adas.svg",
+      "imageUrl": "/images/product-adas.png",
       "imageHint": "coche ADAS"
     },
     {
       "id": "product-tint",
-      "description": "Ilustración de coche con lunas traseras tintadas.",
-      "imageUrl": "/images/product-tint.svg",
+      "description": "Lunas traseras tintadas.",
+      "imageUrl": "/images/product-tint.png",
       "imageHint": "lunas tintadas"
     },
     {
       "id": "product-rain",
       "description": "Ilustración de gotas de agua sobre un parabrisas tratado.",
-      "imageUrl": "/images/product-rain.svg",
+      "imageUrl": "/images/product-rain.png",
       "imageHint": "coche lluvia"
     }
   ]
