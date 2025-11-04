@@ -56,7 +56,7 @@ NEXT_PUBLIC_SITE_URL=https://www.glassnou.com
 ```bash
 npm run dev
 ```
-Visita 👉 [http://localhost:3000](http://localhost:3000)
+Visita 👉 [http://localhost:9002](http://localhost:9002)
 
 ### 5️⃣ Construir para producción
 ```bash
