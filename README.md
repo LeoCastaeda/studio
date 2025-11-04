@@ -37,7 +37,7 @@ El proyecto integra un diseño limpio, un sistema de gestión de productos y ser
 
 ### 1️⃣ Clonar el repositorio
 ```bash
-git clone https://github.com/tuusuario/glassnou-mobility.git
+git clone https://github.com/LeoCastaeda/studio.git
 cd glassnou-mobility
 ```
 
