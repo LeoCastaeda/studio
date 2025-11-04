@@ -14,14 +14,18 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CheckCircle, Truck } from "lucide-react";
 
+// SSG para los ids (esto sigue igual)
 export function generateStaticParams() {
-  return products.map((product) => ({
-    id: product.id,
-  }));
+  return products.map((product) => ({ id: product.id }));
 }
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = products.find((p) => p.id === params.id);
+type PageProps = {
+  params: Promise<{ id: string }>; // ✅ Next 15: params es Promise
+};
+
+export default async function ProductDetailPage({ params }: PageProps) {
+  const { id } = await params; // ✅ await params
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     notFound();
@@ -34,10 +38,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
           <div className="relative aspect-video w-full">
             <Image
               src={product.image.url}
-              alt={product.name}
+              alt={`${product.name} - Servicio profesional de instalación y reparación en Barcelona por GlassNou`}
               fill
+              sizes="(min-width:1024px) 50vw, 100vw"
               className="object-cover"
               data-ai-hint={product.image.hint}
+              priority={false}
             />
           </div>
           <div className="flex flex-col p-6">
@@ -55,45 +61,47 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   ${product.price.toFixed(2)}
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
-                    <span>En Stock</span>
-                    <Separator orientation="vertical" className="h-4 mx-2" />
-                    <Truck className="h-4 w-4 mr-2 text-primary" />
-                    <span>Se envía en 24 horas</span>
+                  <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                  <span>En Stock</span>
+                  <Separator orientation="vertical" className="h-4 mx-2" />
+                  <Truck className="h-4 w-4 mr-2 text-primary" />
+                  <span>Se envía en 24 horas</span>
                 </div>
               </div>
 
               <div className="mt-6">
                 <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90">
-                    <Link href={`/quote?glassType=${encodeURIComponent(product.name)}`}>Solicitar Cotización de Instalación</Link>
+                  <Link href={`/quote?glassType=${encodeURIComponent(product.name)}`}>
+                    Solicitar Cotización de Instalación
+                  </Link>
                 </Button>
               </div>
-
             </CardContent>
           </div>
         </div>
+
         <div className="p-6 border-t">
-            <div className="grid gap-8 md:grid-cols-2">
-                <div>
-                    <h3 className="text-lg font-semibold font-headline mb-4">Especificaciones</h3>
-                    <ul className="space-y-2 text-sm text-card-foreground">
-                        {Object.entries(product.specifications).map(([key, value]) => (
-                            <li key={key} className="flex justify-between">
-                                <span className="text-muted-foreground">{key}</span>
-                                <span className="font-medium text-right">{value}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <h3 className="text-lg font-semibold font-headline mb-4">Compatibilidad del Vehículo</h3>
-                    <div className="flex flex-wrap gap-2">
-                        {product.compatibility.map((model) => (
-                            <Badge key={model} variant="secondary">{model}</Badge>
-                        ))}
-                    </div>
-                </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <h3 className="text-lg font-semibold font-headline mb-4">Especificaciones</h3>
+              <ul className="space-y-2 text-sm text-card-foreground">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <li key={key} className="flex justify-between">
+                    <span className="text-muted-foreground">{key}</span>
+                    <span className="font-medium text-right">{value}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+            <div>
+              <h3 className="text-lg font-semibold font-headline mb-4">Compatibilidad del Vehículo</h3>
+              <div className="flex flex-wrap gap-2">
+                {product.compatibility.map((model) => (
+                  <Badge key={model} variant="secondary">{model}</Badge>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </Card>
     </div>

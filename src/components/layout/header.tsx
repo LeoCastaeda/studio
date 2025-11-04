@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X } from "lucide-react";
+import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X, BookOpen } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/products", label: "Servicios", icon: Car },
+  { href: "/blog", label: "Blog", icon: BookOpen },
   { href: "/quote", label: "Cotiza Aquí", icon: Send },
   { href: "/warranty", label: "Garantía", icon: ShieldCheck },
   { href: "/faq", label: "Preguntas Frecuentes", icon: HelpCircle },

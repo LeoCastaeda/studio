@@ -166,7 +166,11 @@ export default function ContactPage() {
                         <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
                             <h3 className="font-semibold">Dirección</h3>
-                            <p className="text-muted-foreground">Carrer de la Ciutat d'Asunción, 24,<br/>08030 Barcelona</p>
+                            <p className="text-muted-foreground">
+                              Carrer Maria Barrientos, 23, Local 2<br/>
+                              Distrito de Les Corts<br/>
+                              08028 Barcelona
+                            </p>
                         </div>
                     </div>
                 </CardContent>

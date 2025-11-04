@@ -1,0 +1,2 @@
+# Este archivo es reemplazado por src/app/robots.ts
+# Next.js generará automáticamente el robots.txt desde ese archivo

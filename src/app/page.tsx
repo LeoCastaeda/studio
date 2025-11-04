@@ -19,8 +19,8 @@ export default function Home() {
       {/* HERO */}
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden">
         <Image
-          src="/images/hero-background.png" // debe existir en /public/images/hero-background.png
-          alt="Coche deportivo moderno - portada GlassNou"
+          src="/images/hero-background.png"
+          alt="Taller especializado en reparación e instalación de cristales y parabrisas para automóviles en Barcelona - GlassNou"
           fill
           priority
           sizes="100vw"

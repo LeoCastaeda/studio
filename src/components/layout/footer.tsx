@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
-import { Facebook } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
+import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
 export function Footer() {
   return (
@@ -16,9 +17,17 @@ export function Footer() {
               Tu socio de confianza para cristales de automoción de alta calidad.
             </p>
             <div className="mt-8 flex space-x-4">
-              <Link href="https://www.facebook.com/glassnou/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+              <Link href="https://www.facebook.com/glassnou/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <span className="sr-only">Facebook</span>
                 <Facebook className="h-6 w-6" />
+              </Link>
+              <Link href="https://www.instagram.com/glassnou?igsh=NGFjenFmZXN1Z2N3" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">Instagram</span>
+                <Instagram className="h-6 w-6" />
+              </Link>
+              <Link href="https://www.tiktok.com/@glassnou" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">TikTok</span>
+                <TikTokIcon className="h-6 w-6" />
               </Link>
             </div>
           </div>
@@ -65,15 +74,26 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="text-muted-foreground">
-                  Carrer de la Ciutat d'Asunción, 24, 08030 Barcelona
+                  Carrer Maria Barrientos, 23, Local 2<br />
+                  Distrito de Les Corts, 08028 Barcelona
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} GlassNou Online. Todos los derechos reservados.</p>
+        <div className="mt-8 border-t pt-8">
+          <div className="flex flex-col items-center gap-4 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between">
+            <p>&copy; {new Date().getFullYear()} GlassNou Online. Todos los derechos reservados.</p>
+            <div className="flex gap-4">
+              <Link href="/proteccion-datos" className="hover:text-primary transition-colors">
+                Protección de Datos
+              </Link>
+              <Link href="/blog" className="hover:text-primary transition-colors">
+                Blog
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

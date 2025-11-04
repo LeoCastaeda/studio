@@ -23,9 +23,10 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="relative aspect-video w-full">
           <Image
             src={product.image.url}
-            alt={product.name}
+            alt={`Servicio de ${product.name} - Instalación y reparación profesional en Barcelona`}
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             data-ai-hint={product.image.hint}
           />
         </div>
