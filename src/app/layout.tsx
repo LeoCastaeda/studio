@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: {
     default:
       "Reparación e Instalación de Lunas de Coche en Barcelona | GlassNou",
-    template: "%s | GlassNou",
+    template: "%s | glassnou",
   },
   description:
     "Taller experto en cristales de automoción en Barcelona. Sustitución de parabrisas y reparación de lunas con calidad OEM. Presupuesto rápido y atención el mismo día.",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "parabrisas Barcelona",
     "cristales coche Barcelona",
     "taller lunas Barcelona",
-    "GlassNou",
+    "glassnou",
   ],
   metadataBase: new URL(siteConfig.url),
   alternates: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: "Reparación e instalación de lunas y parabrisas en Barcelona - GlassNou",
+        alt: "Reparación e instalación de lunas y parabrisas en Barcelona - glassnou",
       },
     ],
   },

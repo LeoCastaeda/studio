@@ -11,77 +11,7 @@ const getImage = (id: string) => {
 
 export const products: Product[] = [
   {
-    id: 'prod-001',
-    name: 'Parabrisas',
-    description: 'Reemplazo e instalación de parabrisas para todo tipo de vehículos. Utilizamos cristal de la más alta calidad que cumple con los estándares OEM.',
-    price: 249.99,
-    image: getImage('product-1'),
-    specifications: {
-      'Material': 'Vidrio Laminado',
-      'Servicio': 'Reemplazo e Instalación',
-      'Tinte': 'Original de Fábrica',
-      'Características': 'Soporte para sensores de lluvia y ADAS'
-    },
-    compatibility: ['Sedanes', 'SUVs', 'Camionetas', 'Deportivos']
-  },
-  {
-    id: 'prod-002',
-    name: 'Cristales Laterales',
-    description: 'Reemplazo de ventanas de puertas, aletas y custodias. Nos aseguramos de que el nuevo cristal funcione perfectamente con el mecanismo de tu vehículo.',
-    price: 89.00,
-    image: getImage('product-3'),
-    specifications: {
-      'Material': 'Vidrio Templado',
-      'Servicio': 'Reemplazo e Instalación',
-      'Tinte': 'Original de Fábrica',
-      'Posición': 'Puertas delanteras y traseras'
-    },
-    compatibility: ['Sedanes', 'SUVs', 'Camionetas', 'Deportivos']
-  },
-  {
-    id: 'prod-003',
-    name: 'Medallones',
-    description: 'Instalación de medallones (cristal trasero) con o sin desempañador. Devolvemos la seguridad y visibilidad a la parte trasera de tu coche.',
-    price: 199.50,
-    image: getImage('product-2'),
-    specifications: {
-      'Material': 'Vidrio Templado',
-      'Servicio': 'Reemplazo e Instalación',
-      'Tinte': 'Original de Fábrica',
-      'Características': 'Conexión para desempañador térmico'
-    },
-    compatibility: ['Sedanes', 'SUVs', 'Hatchbacks', 'Deportivos']
-  },
-  {
-    id: 'prod-004',
-    name: 'Quemacocos',
-    description: 'Reparación y reemplazo de cristales para quemacocos y techos panorámicos. Disfruta de una vista clara y sin filtraciones.',
-    price: 450.00,
-    image: getImage('product-4'),
-    specifications: {
-      'Material': 'Vidrio Laminado de Seguridad',
-      'Servicio': 'Reemplazo y Reparación',
-      'Tinte': 'Control Solar',
-      'Características': 'Protección UV, sellado hermético'
-    },
-    compatibility: ['Vehículos con quemacocos', 'Techos panorámicos']
-  },
-  {
-    id: 'prod-005',
-    name: 'Espejos Laterales',
-    description: 'Reemplazo de lunas de espejos laterales, con o sin calefacción y sensores de punto ciego. Recupera la visibilidad completa de tu entorno.',
-    price: 49.95,
-    image: getImage('product-6'),
-    specifications: {
-      'Material': 'Cristal de Espejo Convexo',
-      'Servicio': 'Reemplazo de Luna',
-      'Características': 'Opción con calefacción y sensor de punto ciego',
-      'Posición': 'Espejos de puerta del conductor y pasajero'
-    },
-    compatibility: ['La mayoría de marcas y modelos']
-  },
-  {
-    id: 'prod-006',
+    id: 'reparacion-de-parabrisas',
     name: 'Reparación de Parabrisas',
     description: 'Reparamos pequeñas grietas y astillas en tu parabrisas, devolviéndole su resistencia original y evitando que el daño se extienda. Un servicio rápido y económico.',
     price: 59.99,
@@ -95,7 +25,21 @@ export const products: Product[] = [
     compatibility: ['Todo tipo de parabrisas laminados']
   },
   {
-    id: 'prod-007',
+    id: 'sustitucion-de-parabrisas',
+    name: 'Sustitución de Parabrisas',
+    description: 'Reemplazo e instalación profesional de parabrisas para todo tipo de vehículos. Utilizamos cristal de la más alta calidad que cumple con los estándares OEM.',
+    price: 249.99,
+    image: getImage('product-1'),
+    specifications: {
+      'Material': 'Vidrio Laminado',
+      'Servicio': 'Reemplazo e Instalación',
+      'Tinte': 'Original de Fábrica',
+      'Características': 'Soporte para sensores de lluvia y ADAS'
+    },
+    compatibility: ['Sedanes', 'SUVs', 'Camionetas', 'Deportivos']
+  },
+  {
+    id: 'calibracion-de-sistema-adas',
     name: 'Calibración de Sistema ADAS',
     description: 'Calibración precisa de los sistemas avanzados de asistencia al conductor (ADAS) tras el reemplazo del parabrisas. Esencial para la seguridad y el correcto funcionamiento de tu vehículo.',
     price: 150.00,
@@ -109,7 +53,7 @@ export const products: Product[] = [
     compatibility: ['Vehículos equipados con ADAS']
   },
   {
-    id: 'prod-008',
+    id: 'tintado-de-lunas',
     name: 'Tintado de Lunas',
     description: 'Instalación profesional de láminas de tintado para lunas. Mejora la estética, aumenta la privacidad y protege el interior de tu coche de los rayos UV.',
     price: 120.00,
@@ -123,16 +67,44 @@ export const products: Product[] = [
     compatibility: ['Cristales laterales y luneta trasera']
   },
   {
-    id: 'prod-009',
-    name: 'Tratamiento Antilluvia',
+    id: 'escobillas-limpiaparabrisas',
+    name: 'Escobillas Limpiaparabrisas',
+    description: 'Venta e instalación de escobillas limpiaparabrisas de alta calidad. Mejora la visibilidad y seguridad en condiciones de lluvia.',
+    price: 25.00,
+    image: getImage('product-6'),
+    specifications: {
+      'Servicio': 'Venta e instalación',
+      'Material': 'Goma de alta calidad',
+      'Duración': 'Hasta 12 meses',
+      'Beneficios': 'Mejor visibilidad, limpieza eficiente'
+    },
+    compatibility: ['Todos los vehículos']
+  },
+  {
+    id: 'tratamiento-antilluvia-mosquitos',
+    name: 'Tratamiento Antilluvia & Mosquitos',
     description: 'Aplicamos un tratamiento hidrofóbico avanzado a tu parabrisas. Repele el agua, la suciedad y los insectos, mejorando drásticamente la visibilidad en condiciones adversas.',
     price: 39.99,
     image: getImage('product-rain'),
     specifications: {
       'Servicio': 'Aplicación de tratamiento hidrofóbico',
       'Duración': 'Hasta 6 meses',
-      'Beneficios': 'Mejora la visibilidad, facilita la limpieza',
+      'Beneficios': 'Mejora la visibilidad, facilita la limpieza, repele mosquitos',
       'Aplicación': 'Parabrisas y cristales delanteros'
+    },
+    compatibility: ['Todos los vehículos']
+  },
+  {
+    id: 'baliza-homologada',
+    name: 'Baliza de Emergencia Homologada',
+    description: 'Venta de baliza de emergencia homologada DGT 2026. Obligatoria en carretera. Incluye batería y soporte magnético.',
+    price: 54.45,
+    image: getImage('product-4'),
+    specifications: {
+      'Homologación': 'DGT 2026',
+      'Incluye': 'Batería y soporte magnético',
+      'Obligatoria': 'En carretera desde 2026',
+      'Marca': 'OSRAM'
     },
     compatibility: ['Todos los vehículos']
   }

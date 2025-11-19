@@ -11,7 +11,7 @@ export function Footer() {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="flex items-center space-x-2">
               <Logo className="h-8 w-8 text-primary" />
-              <p className="text-xl font-bold">GlassNou Online</p>
+              <p className="text-xl font-bold">glassnou online</p>
             </div>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Tu socio de confianza para cristales de automoción de alta calidad.
@@ -36,10 +36,10 @@ export function Footer() {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium">Servicios</p>
               <nav className="mt-4 flex flex-col space-y-2 text-sm">
-                <Link href="/quote" className="text-muted-foreground hover:text-primary">
+                <Link href="/cotiza" className="text-muted-foreground hover:text-primary">
                   Cotiza Aquí
                 </Link>
-                <Link href="/products" className="text-muted-foreground hover:text-primary">
+                <Link href="/servicios" className="text-muted-foreground hover:text-primary">
                   Catálogo de Servicios
                 </Link>
               </nav>
@@ -48,13 +48,13 @@ export function Footer() {
             <div className="text-center sm:text-left">
               <p className="text-lg font-medium">Sobre Nosotros</p>
               <nav className="mt-4 flex flex-col space-y-2 text-sm">
-                <Link href="/contact" className="text-muted-foreground hover:text-primary">
+                <Link href="/contacto" className="text-muted-foreground hover:text-primary">
                   Contacto
                 </Link>
-                <Link href="/faq" className="text-muted-foreground hover:text-primary">
+                <Link href="/preguntas-frecuentes" className="text-muted-foreground hover:text-primary">
                   Preguntas Frecuentes
                 </Link>
-                <Link href="/warranty" className="text-muted-foreground hover:text-primary">
+                <Link href="/garantia" className="text-muted-foreground hover:text-primary">
                   Garantía
                 </Link>
               </nav>
@@ -64,8 +64,8 @@ export function Footer() {
               <p className="text-lg font-medium">Contáctanos</p>
               <ul className="mt-4 space-y-2 text-sm">
                 <li className="text-muted-foreground">
-                  <a href="mailto:info@glassnou.com" className="hover:text-primary">
-                    info@glassnou.com
+                  <a href="mailto:glassnou@gmail.com" className="hover:text-primary">
+                    glassnou@gmail.com
                   </a>
                 </li>
                 <li className="text-muted-foreground">
@@ -74,17 +74,38 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="text-muted-foreground">
-                  Carrer Maria Barrientos, 23, Local 2<br />
-                  Distrito de Les Corts, 08028 Barcelona
+                  <a 
+                    href="https://www.google.com/maps/place/GLASSNOU+I+Taller+de+reparaci%C3%B3n,+sustituci%C3%B3n,+tintado+y+venta+de+lunas+de+coche+Barcelona/@41.3809456,2.1253225,17z/data=!4m15!1m8!3m7!1s0x12a4988a62b40001:0xcc44c5d787685603!2sCarrer+Maria+Barrientos,+23,+Local+2,+Distrito+de+Les+Corts,+08028+Barcelona!3b1!8m2!3d41.3809456!4d2.1278974!16s%2Fg%2F11shd0n17z!3m5!1s0x12a49981ea0f2679:0x757434d486669db9!8m2!3d41.3809456!4d2.1278974!16s%2Fg%2F11sf716z8c?entry=ttu&g_ep=EgoyMDI1MTExMS4wIKXMDSoASAFQAw%3D%3D" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Carrer Maria Barrientos, 23, Local 2<br />
+                    Distrito de Les Corts, 08028 Barcelona
+                  </a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
+        {/* Glass Talleres Badge */}
         <div className="mt-8 border-t pt-8">
+          <div className="flex flex-col items-center gap-4 mb-6">
+            <div className="flex flex-col items-center gap-2">
+              <img 
+                src="/images/glass-talleres-logo.png" 
+                alt="Logo glass talleres - Red de talleres especializados en cristales de automoción" 
+                className="h-16 w-auto"
+              />
+              <p className="text-sm text-muted-foreground">
+                Formamos parte de la red glass talleres
+              </p>
+            </div>
+          </div>
+          
           <div className="flex flex-col items-center gap-4 text-center text-sm text-muted-foreground sm:flex-row sm:justify-between">
-            <p>&copy; {new Date().getFullYear()} GlassNou Online. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} glassnou online. Todos los derechos reservados.</p>
             <div className="flex gap-4">
               <Link href="/proteccion-datos" className="hover:text-primary transition-colors">
                 Protección de Datos

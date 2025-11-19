@@ -4,7 +4,7 @@ import { BlogListContent } from './blog-list-content';
 import { getBlogCategories } from '@/lib/blog/blog-utils';
 
 export const metadata: Metadata = {
-  title: 'Blog - GlassNou | Artículos sobre Cristales de Automoción',
+  title: 'Blog - Glassnou | Artículos sobre Cristales de Automoción',
   description: 'Descubre artículos informativos sobre reparación, instalación y mantenimiento de cristales de automoción. Consejos de expertos y las últimas noticias del sector.',
   keywords: [
     'blog cristales automoción',
@@ -15,14 +15,14 @@ export const metadata: Metadata = {
     'noticias sector cristales'
   ],
   openGraph: {
-    title: 'Blog - GlassNou | Artículos sobre Cristales de Automoción',
+    title: 'Blog - Glassnou | Artículos sobre Cristales de Automoción',
     description: 'Descubre artículos informativos sobre reparación, instalación y mantenimiento de cristales de automoción.',
     type: 'website',
     url: '/blog',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - GlassNou | Artículos sobre Cristales de Automoción',
+    title: 'Blog - Glassnou | Artículos sobre Cristales de Automoción',
     description: 'Descubre artículos informativos sobre reparación, instalación y mantenimiento de cristales de automoción.',
   },
   alternates: {
@@ -53,7 +53,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Blog de <span className="text-red-600">Glass</span>Nou
+              Blog de <span className="text-red-600">glass</span>nou
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
               Descubre artículos informativos sobre cristales de automoción, 

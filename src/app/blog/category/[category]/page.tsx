@@ -44,19 +44,19 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const posts = await getBlogPostsByCategory(category);
 
   return {
-    title: `${categoryName} - Blog GlassNou`,
+    title: `${categoryName} - Blog Glassnou`,
     description: `Descubre todos nuestros artículos sobre ${categoryName.toLowerCase()}. ${posts.length} artículos disponibles sobre cristales de automoción, reparaciones y mantenimiento.`,
-    keywords: [categoryName, 'cristales automoción', 'GlassNou', 'blog'],
+    keywords: [categoryName, 'cristales automoción', 'Glassnou', 'blog'],
     openGraph: {
-      title: `${categoryName} - Blog GlassNou`,
-      description: `Artículos sobre ${categoryName.toLowerCase()} en el blog de GlassNou`,
+      title: `${categoryName} - Blog Glassnou`,
+      description: `Artículos sobre ${categoryName.toLowerCase()} en el blog de Glassnou`,
       type: 'website',
       url: `/blog/category/${category}`,
     },
     twitter: {
       card: 'summary',
-      title: `${categoryName} - Blog GlassNou`,
-      description: `Artículos sobre ${categoryName.toLowerCase()} en el blog de GlassNou`,
+      title: `${categoryName} - Blog Glassnou`,
+      description: `Artículos sobre ${categoryName.toLowerCase()} en el blog de Glassnou`,
     },
     alternates: {
       canonical: `/blog/category/${category}`,

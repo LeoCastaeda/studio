@@ -46,19 +46,19 @@ export async function generateMetadata({ params }: TagPageProps): Promise<Metada
   const posts = await getBlogPostsByTag(decodedTag);
 
   return {
-    title: `${decodedTag} - Blog GlassNou`,
+    title: `${decodedTag} - Blog Glassnou`,
     description: `Descubre todos nuestros artículos etiquetados con "${decodedTag}". ${posts.length} artículos disponibles sobre cristales de automoción, reparaciones y mantenimiento.`,
-    keywords: [decodedTag, 'cristales automoción', 'GlassNou', 'blog'],
+    keywords: [decodedTag, 'cristales automoción', 'Glassnou', 'blog'],
     openGraph: {
-      title: `${decodedTag} - Blog GlassNou`,
-      description: `Artículos etiquetados con "${decodedTag}" en el blog de GlassNou`,
+      title: `${decodedTag} - Blog Glassnou`,
+      description: `Artículos etiquetados con "${decodedTag}" en el blog de Glassnou`,
       type: 'website',
       url: `/blog/tag/${tag}`,
     },
     twitter: {
       card: 'summary',
-      title: `${decodedTag} - Blog GlassNou`,
-      description: `Artículos etiquetados con "${decodedTag}" en el blog de GlassNou`,
+      title: `${decodedTag} - Blog Glassnou`,
+      description: `Artículos etiquetados con "${decodedTag}" en el blog de Glassnou`,
     },
     alternates: {
       canonical: `/blog/tag/${tag}`,

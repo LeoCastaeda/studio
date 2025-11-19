@@ -36,13 +36,11 @@ export function ProductCard({ product }: ProductCardProps) {
         <CardDescription className="mt-2 text-sm line-clamp-3 flex-1">
           {product.description}
         </CardDescription>
-        <div className="mt-4 text-2xl font-bold text-primary">
-          ${product.price.toFixed(2)}
-        </div>
+        {/* Precio oculto - solicitar cotización */}
       </div>
       <CardFooter>
         <Button asChild className="w-full">
-          <Link href={`/products/${product.id}`}>
+          <Link href={`/servicios/${product.id}`}>
             Ver Detalles <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>

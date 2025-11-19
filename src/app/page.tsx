@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ProductCard } from "@/components/product-card";
 import { ReviewCard } from "@/components/review-card";
+import { InsurancePartners } from "@/components/insurance-partners";
 import { products, reviews } from "@/lib/data";
-import { Logo } from "@/components/logo"; // ← IMPORTA TU LOGO
+import { Logo } from "@/components/logo";
 
 export default function Home() {
   const featuredProducts = products.slice(0, 3);
@@ -20,7 +21,7 @@ export default function Home() {
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden">
         <Image
           src="/images/hero-background.png"
-          alt="Taller especializado en reparación e instalación de cristales y parabrisas para automóviles en Barcelona - GlassNou"
+          alt="Taller especializado en reparación e instalación de cristales y parabrisas para automóviles en Barcelona - glassnou"
           fill
           priority
           sizes="100vw"
@@ -31,10 +32,14 @@ export default function Home() {
         {/* Contenido overlay */}
         <div className="relative z-10 max-w-3xl p-4">
           {/* LOGO ENCIMA DEL TÍTULO */}
-          <Logo
-  aria-label="GlassNou"
-  className="mx-auto -mt-6 md:-mt-10 mb-2 h-64 w-auto text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
-/>
+          <Image
+            src="/images/logo-glassnou1.png"
+            alt="GlassNou - Expertos en cristales para autos"
+            width={400}
+            height={200}
+            priority
+            className="mx-auto -mt-6 md:-mt-10 mb-2 h-auto w-[300px] md:w-[400px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+          />
           <h1 className="text-4xl font-headline font-bold md:text-6xl drop-shadow-lg">
             Expertos en Cristales para Autos
           </h1>
@@ -44,12 +49,12 @@ export default function Home() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild>
-              <Link href="/quote">
+              <Link href="/cotiza">
                 Cotiza Aquí <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="secondary" asChild>
-              <Link href="/products">Nuestros Servicios</Link>
+              <Link href="/servicios">Nuestros Servicios</Link>
             </Button>
           </div>
         </div>
@@ -58,7 +63,7 @@ export default function Home() {
       {/* POR QUÉ ELEGIRNOS */}
       <section id="features" className="container mx-auto py-16 sm:py-24">
         <div className="text-center">
-          <h2 className="text-3xl font-headline font-bold">¿Por Qué Elegir GlassNou?</h2>
+          <h2 className="text-3xl font-headline font-bold">¿Por Qué Elegir glassnou?</h2>
         </div>
         <div className="mt-12 grid gap-8 md:grid-cols-3">
           <Card>
@@ -113,11 +118,14 @@ export default function Home() {
           </div>
           <div className="mt-12 text-center">
             <Button asChild variant="outline">
-              <Link href="/products">Ver Todos los Servicios</Link>
+              <Link href="/servicios">Ver Todos los Servicios</Link>
             </Button>
           </div>
         </div>
       </section>
+
+      {/* ASEGURADORAS */}
+      <InsurancePartners />
 
       {/* RESEÑAS */}
       <section id="reviews" className="container mx-auto py-16 sm:py-24">

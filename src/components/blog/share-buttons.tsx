@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Facebook, Twitter, Linkedin, MessageCircle, Link2, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,9 +23,14 @@ export function ShareButtons({
   variant = 'default'
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [fullUrl, setFullUrl] = useState(url);
 
-  // Ensure we have the full URL
-  const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+  // Ensure we have the full URL (only on client side)
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !url.startsWith('http')) {
+      setFullUrl(`${window.location.origin}${url}`);
+    }
+  }, [url]);
   
   // Encode text for URLs
   const encodedTitle = encodeURIComponent(title);

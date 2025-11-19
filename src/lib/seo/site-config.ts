@@ -3,7 +3,7 @@
  */
 
 export const siteConfig = {
-  name: 'GlassNou',
+  name: 'glassnou',
   description: 'Taller experto en cristales de automoción en Barcelona. Sustitución de parabrisas y reparación de lunas con calidad OEM.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:9002',
   ogImage: '/images/hero-background.png',
@@ -14,7 +14,7 @@ export const siteConfig = {
   },
   contact: {
     phone: '+34 686 770 074',
-    email: 'info@glassnoubarcelona.com',
+    email: 'glassnou@gmail.com',
     address: {
       street: 'Carrer Maria Barrientos, 23, Local 2',
       locality: 'Distrito de Les Corts',

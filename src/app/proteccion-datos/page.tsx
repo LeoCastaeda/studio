@@ -49,7 +49,14 @@ export default function DataProtectionPage() {
                 <div className="space-y-2 text-muted-foreground">
                   <div className="flex items-start gap-2">
                     <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                    <span>Carrer Maria Barrientos, 23, Local 2, Distrito de Les Corts, 08028 Barcelona</span>
+                    <a 
+                      href="https://www.google.com/maps/place/GLASSNOU+I+Taller+de+reparaci%C3%B3n,+sustituci%C3%B3n,+tintado+y+venta+de+lunas+de+coche+Barcelona/@41.3809456,2.1253225,17z/data=!4m15!1m8!3m7!1s0x12a4988a62b40001:0xcc44c5d787685603!2sCarrer+Maria+Barrientos,+23,+Local+2,+Distrito+de+Les+Corts,+08028+Barcelona!3b1!8m2!3d41.3809456!4d2.1278974!16s%2Fg%2F11shd0n17z!3m5!1s0x12a49981ea0f2679:0x757434d486669db9!8m2!3d41.3809456!4d2.1278974!16s%2Fg%2F11sf716z8c?entry=ttu&g_ep=EgoyMDI1MTExMS4wIKXMDSoASAFQAw%3D%3D" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      Carrer Maria Barrientos, 23, Local 2, Distrito de Les Corts, 08028 Barcelona
+                    </a>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4 flex-shrink-0" />
@@ -57,7 +64,7 @@ export default function DataProtectionPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4 flex-shrink-0" />
-                    <span>info@glassnoubarcelona.com</span>
+                    <span>glassnou@gmail.com</span>
                   </div>
                 </div>
               </div>
@@ -156,8 +163,8 @@ export default function DataProtectionPage() {
               </ul>
               <p className="mt-4">
                 Para ejercer estos derechos, contáctanos en:{" "}
-                <a href="mailto:info@glassnoubarcelona.com" className="text-primary hover:underline">
-                  info@glassnoubarcelona.com
+                <a href="mailto:glassnou@gmail.com" className="text-primary hover:underline">
+                  glassnou@gmail.com
                 </a>
               </p>
             </CardContent>
@@ -220,8 +227,8 @@ export default function DataProtectionPage() {
               <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Mail className="h-4 w-4 flex-shrink-0" />
-                  <a href="mailto:info@glassnoubarcelona.com" className="text-primary hover:underline">
-                    info@glassnoubarcelona.com
+                  <a href="mailto:glassnou@gmail.com" className="text-primary hover:underline">
+                    glassnou@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-2">
@@ -238,10 +245,10 @@ export default function DataProtectionPage() {
         {/* Footer Actions */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild variant="outline">
-            <Link href="/quote">Solicitar Cotización</Link>
+            <Link href="/cotiza">Solicitar Cotización</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/contact">Contactar</Link>
+            <Link href="/contacto">Contactar</Link>
           </Button>
         </div>
       </div>

@@ -11,12 +11,12 @@ import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/products", label: "Servicios", icon: Car },
+  { href: "/servicios", label: "Servicios", icon: Car },
   { href: "/blog", label: "Blog", icon: BookOpen },
-  { href: "/quote", label: "Cotiza Aquí", icon: Send },
-  { href: "/warranty", label: "Garantía", icon: ShieldCheck },
-  { href: "/faq", label: "Preguntas Frecuentes", icon: HelpCircle },
-  { href: "/contact", label: "Contacto", icon: Send },
+  { href: "/cotiza", label: "Cotiza Aquí", icon: Send },
+  { href: "/garantia", label: "Garantía", icon: ShieldCheck },
+  { href: "/preguntas-frecuentes", label: "Preguntas Frecuentes", icon: HelpCircle },
+  { href: "/contacto", label: "Contacto", icon: Send },
 ];
 
 export function Header() {
@@ -53,7 +53,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             {/* Logo grande en desktop */}
             <Logo className="h-40 w-[100px]" />
-            <span className="hidden font-bold sm:inline-block">GlassNou Online</span>
+            <span className="hidden font-bold sm:inline-block">glassnou online</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -78,7 +78,7 @@ export function Header() {
             {/* Marca en móvil (fuera del drawer) */}
             <Link href="/" className="flex items-center space-x-2 md:hidden">
               <Logo className="h-100 w-[300px]" />
-              <span className="font-bold">GlassNou Online</span>
+              <span className="font-bold">Glassnou Online</span>
             </Link>
 
             <SheetContent side="left" className="pr-0">
@@ -87,7 +87,7 @@ export function Header() {
                   <Link href="/" className="flex items-center space-x-2">
                     {/* Logo dentro del drawer móvil */}
                     <Logo className="h-100 w-[200px]" />
-                    <span className="font-bold">GlassNou Online</span>
+                    <span className="font-bold">glassnou online</span>
                   </Link>
                   <SheetTrigger asChild>
                     <Button
@@ -125,7 +125,7 @@ export function Header() {
 
           <div className="hidden md:flex items-center space-x-2">
             <Button asChild>
-              <Link href="/quote">Cotiza Aquí</Link>
+              <Link href="/cotiza">Cotiza Aquí</Link>
             </Button>
           </div>
         </div>

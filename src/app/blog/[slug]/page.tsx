@@ -37,12 +37,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: 'Artículo no encontrado | GlassNou',
+      title: 'Artículo no encontrado | Glassnou',
       description: 'El artículo que buscas no existe o ha sido eliminado.',
     };
   }
 
-  const title = post.seo.metaTitle || `${post.title} | GlassNou Blog`;
+  const title = post.seo.metaTitle || `${post.title} | Glassnou Blog`;
   const description = post.seo.metaDescription || post.excerpt;
   const keywords = post.seo.keywords || post.tags;
 
@@ -107,12 +107,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Header with back button */}
       <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">
-          <Button variant="ghost" asChild className="mb-4">
-            <Link href="/blog" className="flex items-center gap-2">
+          <Link href="/blog">
+            <Button variant="ghost" className="flex items-center gap-2">
               <ArrowLeft className="h-4 w-4" />
               Volver al blog
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -176,7 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="relative aspect-video overflow-hidden rounded-lg mb-8">
               <Image
                 src={post.featuredImage}
-                alt={`Imagen destacada del artículo: ${post.title} - Blog GlassNou sobre cristales de automoción en Barcelona`}
+                alt={`Imagen destacada del artículo: ${post.title} - Blog Glassnou sobre cristales de automoción en Barcelona`}
                 fill
                 className="object-cover"
                 priority
