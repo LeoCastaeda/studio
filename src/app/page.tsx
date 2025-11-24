@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* HERO */}
-      <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
         <Image
           src="/images/hero-background.png"
           alt="Taller especializado en reparación e instalación de cristales y parabrisas para automóviles en Barcelona - glassnou"
@@ -34,17 +34,17 @@ export default function Home() {
           {/* LOGO ENCIMA DEL TÍTULO */}
           <Image
             src="/images/logo-glassnou1.png"
-            alt="GlassNou - Expertos en cristales para autos"
+            alt="GlassNou - Expertos en lunas de automóvil"
             width={400}
             height={200}
             priority
-            className="mx-auto -mt-6 md:-mt-10 mb-2 h-auto w-[300px] md:w-[400px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+            className="mx-auto -mt-24 md:-mt-32 mb-0 h-auto w-[300px] md:w-[400px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
           />
-          <h1 className="text-4xl font-headline font-bold md:text-6xl drop-shadow-lg">
-            Expertos en Cristales para Autos
+          <h1 className="text-4xl font-headline font-bold md:text-6xl drop-shadow-lg -mt-2">
+            Expertos en Lunas de Automóvil
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-neutral-200 drop-shadow-md">
-            Servicio profesional de venta e instalación de cristales para todo tipo de vehículos. Calidad y seguridad garantizada.
+          <p className="mt-2 text-lg md:text-xl text-neutral-200 drop-shadow-md">
+            Tu reparación de parabrisas en 20 minutos y tramitamos todo por ti
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">

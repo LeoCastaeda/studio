@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Shield, Wind, Sun, Droplets } from "lucide-react";
-import { Model3DViewer } from "@/components/model-3d-viewer";
+import { Model3DViewerClickable } from "@/components/model-3d-viewer-clickable";
 
 export function GlassGuide() {
   const [activeTab, setActiveTab] = useState("parabrisas");
@@ -20,9 +20,12 @@ export function GlassGuide() {
       <CardContent>
         {/* Modelo 3D */}
         <div className="mb-8">
-          <Model3DViewer modelPath="/images/3D_model/car.glb" />
+          <Model3DViewerClickable 
+            modelPath="/images/3d_model/Model_Car3D.glb"
+            onGlassClick={(glassType) => setActiveTab(glassType)}
+          />
           <p className="text-sm text-muted-foreground text-center mt-2">
-            Usa el ratón para rotar y explorar el modelo 3D
+            🖱️ Haz clic en los cristales del modelo para ver su información | Arrastra para rotar
           </p>
         </div>
 
