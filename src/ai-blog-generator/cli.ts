@@ -112,7 +112,7 @@ program
       console.log('🚀 Iniciando generación de artículo...\n');
       
       // Select topic
-      let topic;
+      let topic: Awaited<ReturnType<typeof repository.getTopic>>;
       if (options.topic) {
         topic = await repository.getTopic(options.topic);
         if (!topic) {
@@ -136,10 +136,13 @@ program
         console.log(`📝 Tema seleccionado: ${topic.title}`);
       }
       
+      // Convert database topic to application topic
+      const appTopic = Repository.mapTopicToApp(topic);
+      
       // Generate article
       console.log('✍️  Generando contenido con IA...');
       const article = await aiGenerator.generateArticle({
-        topic,
+        topic: appTopic,
         targetWordCount: 1200,
         tone: 'professional',
         includeCallToAction: true,

@@ -5,11 +5,13 @@
  */
 
 import { DatabaseConnection } from './connection';
+import { Topic as TopicType } from '../types';
 
 // ============================================================================
 // Type Definitions
 // ============================================================================
 
+// Database row type (snake_case)
 export interface Topic {
   id: string;
   title: string;
@@ -408,6 +410,25 @@ export class Repository {
   // ==========================================================================
   // Utility Methods
   // ==========================================================================
+
+  /**
+   * Convert database Topic (snake_case) to application Topic (camelCase)
+   */
+  static mapTopicToApp(dbTopic: Topic): TopicType {
+    return {
+      id: dbTopic.id,
+      title: dbTopic.title,
+      category: dbTopic.category as any,
+      tags: JSON.parse(dbTopic.tags),
+      priority: dbTopic.priority,
+      seasonal: dbTopic.seasonal_months ? { months: JSON.parse(dbTopic.seasonal_months) } : undefined,
+      keywords: JSON.parse(dbTopic.keywords),
+      lastUsed: dbTopic.last_used ? new Date(dbTopic.last_used) : undefined,
+      timesUsed: dbTopic.times_used,
+      status: dbTopic.status,
+      createdAt: new Date(dbTopic.created_at),
+    };
+  }
 
   private generateId(): string {
     return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
