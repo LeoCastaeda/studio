@@ -112,13 +112,14 @@ program
       console.log('🚀 Iniciando generación de artículo...\n');
       
       // Select topic
-      let topic: Awaited<ReturnType<typeof repository.getTopic>> | null;
+      let topic;
       if (options.topic) {
-        topic = await repository.getTopic(options.topic);
-        if (!topic) {
+        const dbTopic = await repository.getTopic(options.topic);
+        if (!dbTopic) {
           console.error(`❌ Error: Tema con ID "${options.topic}" no encontrado`);
           process.exit(1);
         }
+        topic = Repository.mapTopicToApp(dbTopic);
         console.log(`📝 Usando tema: ${topic.title}`);
       } else {
         const criteria = {
@@ -136,13 +137,10 @@ program
         console.log(`📝 Tema seleccionado: ${topic.title}`);
       }
       
-      // Convert database topic to application topic
-      const appTopic = Repository.mapTopicToApp(topic);
-      
       // Generate article
       console.log('✍️  Generando contenido con IA...');
       const article = await aiGenerator.generateArticle({
-        topic: appTopic,
+        topic,
         targetWordCount: 1200,
         tone: 'professional',
         includeCallToAction: true,
