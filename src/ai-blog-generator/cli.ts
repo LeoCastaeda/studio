@@ -112,7 +112,7 @@ program
       console.log('🚀 Iniciando generación de artículo...\n');
       
       // Select topic
-      let topic: Awaited<ReturnType<typeof repository.getTopic>>;
+      let topic: Awaited<ReturnType<typeof repository.getTopic>> | null;
       if (options.topic) {
         topic = await repository.getTopic(options.topic);
         if (!topic) {
