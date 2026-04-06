@@ -15,6 +15,8 @@ import { ShareButtons } from '@/components/blog/share-buttons';
 import { ArticleNavigation } from '@/components/blog/article-navigation';
 import { siteConfig, getAbsoluteUrl } from '@/lib/seo/site-config';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { InsuranceLogos } from '@/components/blog/insurance-logos';
+import { BalizaPromo } from '@/components/blog/baliza-promo';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -93,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : null;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema
         items={[
@@ -104,66 +106,75 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         ]}
       />
 
-      {/* Header with back button */}
-      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4">
+      {/* Header with back button - Mejorado */}
+      <div className="sticky top-0 z-50 border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-sm">
+        <div className="container mx-auto px-4 py-3">
           <Link href="/blog">
-            <Button variant="ghost" className="flex items-center gap-2">
+            <Button variant="ghost" className="flex items-center gap-2 hover:bg-red-50 dark:hover:bg-red-950/20 hover:text-red-600 dark:hover:text-red-400 transition-colors">
               <ArrowLeft className="h-4 w-4" />
-              Volver al blog
+              <span className="font-medium">Volver al blog</span>
             </Button>
           </Link>
         </div>
       </div>
 
-      <article className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Article Header */}
-        <header className="mb-8">
+      <article className="container mx-auto px-4 py-12 max-w-5xl">
+        {/* Article Header - Mejorado */}
+        <header className="mb-12 space-y-6">
           {/* Category Badge */}
-          <div className="mb-4">
+          <div className="flex items-center gap-3">
             <Link href={`/blog/category/${post.category}`}>
-              <Badge variant="secondary" className="hover:bg-secondary/80 transition-colors">
-                <Folder className="h-3 w-3 mr-1" />
+              <Badge className="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 text-sm font-semibold transition-colors">
+                <Folder className="h-3.5 w-3.5 mr-1.5" />
                 {CATEGORY_NAMES[post.category as keyof typeof CATEGORY_NAMES] || post.category}
               </Badge>
             </Link>
+            {formattedUpdatedDate && (
+              <Badge variant="outline" className="px-3 py-1 text-xs">
+                Actualizado: {formattedUpdatedDate}
+              </Badge>
+            )}
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-red-600 to-gray-900 dark:from-white dark:via-red-500 dark:to-white">
             {post.title}
           </h1>
 
           {/* Excerpt */}
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">{post.excerpt}</p>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+            {post.excerpt}
+          </p>
 
           {/* Metadata */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-6">
-            <div className="flex items-center gap-1">
-              <User className="h-4 w-4" />
-              <span>{post.author}</span>
-            </div>
-
-            <div className="flex items-center gap-1">
-              <Calendar className="h-4 w-4" />
-              <time dateTime={post.publishedAt.toISOString()}>{formattedDate}</time>
-            </div>
-
-            {formattedUpdatedDate && (
-              <div className="flex items-center gap-1">
-                <span className="text-xs">Actualizado:</span>
-                <time dateTime={post.updatedAt?.toISOString()}>{formattedUpdatedDate}</time>
+          <div className="flex flex-wrap items-center gap-6 py-4 border-y border-gray-200 dark:border-gray-800">
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white text-lg font-bold shadow-lg">
+                {post.author.charAt(0).toUpperCase()}
               </div>
-            )}
+              <div>
+                <div className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                  <User className="h-4 w-4" />
+                  {post.author}
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <Calendar className="h-3.5 w-3.5" />
+                  <time dateTime={post.publishedAt.toISOString()}>{formattedDate}</time>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Tags */}
           {post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <Link key={tag} href={`/blog/tag/${encodeURIComponent(tag)}`}>
-                  <Badge variant="outline" className="hover:bg-accent transition-colors">
-                    <Tag className="h-3 w-3 mr-1" />
+                  <Badge 
+                    variant="outline" 
+                    className="px-3 py-1.5 hover:bg-red-50 dark:hover:bg-red-950/20 hover:text-red-600 dark:hover:text-red-400 hover:border-red-300 dark:hover:border-red-700 transition-all duration-200"
+                  >
+                    <Tag className="h-3 w-3 mr-1.5" />
                     {tag}
                   </Badge>
                 </Link>
@@ -173,10 +184,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Featured Image */}
           {post.featuredImage && (
-            <div className="relative aspect-video overflow-hidden rounded-lg mb-8">
+            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-200 dark:ring-gray-800">
               <Image
                 src={post.featuredImage}
-                alt={`Imagen destacada del artículo: ${post.title} - Blog Glassnou sobre cristales de automoción en Barcelona`}
+                alt={`${post.title} - Blog Glassnou`}
                 fill
                 className="object-cover"
                 priority
@@ -186,15 +197,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </header>
 
-        {/* Article Content */}
-        <Card className="mb-8">
-          <CardContent className="p-6 md:p-8">
-            <div
-              className="prose prose-gray dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-img:rounded-lg prose-img:shadow-md"
-              dangerouslySetInnerHTML={{ __html: post.content }}
-            />
-          </CardContent>
-        </Card>
+        {/* Article Content - Mejorado */}
+        <div className="mb-12">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
+            <div className="p-8 md:p-12">
+              <div
+                className="prose prose-lg prose-gray dark:prose-invert max-w-none 
+                prose-headings:font-bold prose-headings:tracking-tight
+                prose-h1:text-4xl prose-h1:mb-6 prose-h1:text-gray-900 dark:prose-h1:text-white
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-gray-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800 prose-h2:pb-3
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-gray-800 dark:prose-h3:text-gray-200
+                prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6
+                prose-a:text-red-600 dark:prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-bold
+                prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
+                prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
+                prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:my-2
+                prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-gray-800 prose-img:my-8
+                prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300
+                prose-code:text-red-600 dark:prose-code:text-red-400 prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
+                prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:text-gray-100 prose-pre:rounded-xl prose-pre:shadow-xl prose-pre:ring-1 prose-pre:ring-gray-800"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Share Buttons */}
         <div className="mb-8">
@@ -220,6 +247,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {/* Article Navigation and Related Posts */}
         <ArticleNavigation previousPost={previousPost} nextPost={nextPost} relatedPosts={relatedPosts} />
       </article>
+
+      {/* Baliza Promo Banner */}
+      <BalizaPromo />
+
+      {/* Insurance Logos */}
+      <InsuranceLogos />
 
       {/* Schema.org JSON-LD */}
       <script

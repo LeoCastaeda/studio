@@ -41,9 +41,15 @@ export function parseMarkdown(markdownContent: string): {
  * Convert markdown content to HTML
  */
 export async function markdownToHtml(markdown: string): Promise<string> {
+  // Fix escaped newlines that might come from AI-generated content
+  const cleanedMarkdown = markdown
+    .replace(/\\n/g, '\n')  // Replace literal \n with actual newlines
+    .replace(/\\r/g, '\r')  // Replace literal \r with actual carriage returns
+    .replace(/\\t/g, '\t'); // Replace literal \t with actual tabs
+  
   const result = await remark()
     .use(html, { sanitize: false })
-    .process(markdown);
+    .process(cleanedMarkdown);
   
   return result.toString();
 }
