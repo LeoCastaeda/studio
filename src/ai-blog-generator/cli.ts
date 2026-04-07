@@ -616,7 +616,8 @@ program
         const failedTasks = await repository.getScheduledTasksByStatus('failed');
         tasks = [...allTasks, ...completedTasks, ...failedTasks]
           .sort((a, b) => new Date(b.scheduled_for).getTime() - new Date(a.scheduled_for).getTime())
-          .slice(0, parseInt(options.limit));
+          .slice(0, parseInt(options.limit))
+          .map(t => Repository.mapScheduledTaskToApp(t));
       } else {
         tasks = await scheduler.getUpcomingTasks(parseInt(options.limit));
       }

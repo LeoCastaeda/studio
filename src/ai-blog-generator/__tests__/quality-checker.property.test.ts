@@ -42,7 +42,7 @@ describe('QualityChecker Property Tests', () => {
             fc.string({ minLength: 800, maxLength: 1000 }).map(s => s + '\n[broken link]('),
           ),
           suggestedTags: fc.array(fc.string({ minLength: 1, maxLength: 20 }), { maxLength: 2 }),
-          suggestedCategory: fc.constantFrom('reparacion', 'sustitucion', 'mantenimiento') as fc.Arbitrary<BlogCategorySlug>,
+          suggestedCategory: fc.constantFrom('reparaciones', 'instalacion', 'consejos') as fc.Arbitrary<BlogCategorySlug>,
           seoMetadata: fc.record({
             metaTitle: fc.oneof(
               fc.constant(''), // Empty title (should fail)
@@ -112,7 +112,7 @@ describe('QualityChecker Property Tests', () => {
             return `# Introducción\n\n${intro}\n\n## Desarrollo\n\n${desarrollo}\n\n## Conclusión\n\n${conclusion}`;
           }),
           suggestedTags: fc.array(fc.string({ minLength: 3, maxLength: 15 }), { minLength: 3, maxLength: 7 }),
-          suggestedCategory: fc.constantFrom('reparacion', 'sustitucion', 'mantenimiento') as fc.Arbitrary<BlogCategorySlug>,
+          suggestedCategory: fc.constantFrom('reparaciones', 'instalacion', 'consejos') as fc.Arbitrary<BlogCategorySlug>,
           seoMetadata: fc.record({
             metaTitle: fc.string({ minLength: 30, maxLength: 60 }),
             metaDescription: fc.string({ minLength: 150, maxLength: 160 }),
@@ -162,7 +162,7 @@ describe('QualityChecker Property Tests', () => {
           excerpt: fc.string({ minLength: 50, maxLength: 200 }),
           content: fc.string({ minLength: 500, maxLength: 1500 }),
           suggestedTags: fc.array(fc.string({ minLength: 3, maxLength: 15 }), { minLength: 1, maxLength: 5 }),
-          suggestedCategory: fc.constantFrom('reparacion', 'sustitucion', 'mantenimiento') as fc.Arbitrary<BlogCategorySlug>,
+          suggestedCategory: fc.constantFrom('reparaciones', 'instalacion', 'consejos') as fc.Arbitrary<BlogCategorySlug>,
           seoMetadata: fc.record({
             metaTitle: fc.string({ minLength: 10, maxLength: 80 }),
             metaDescription: fc.string({ minLength: 50, maxLength: 200 }),
@@ -210,7 +210,7 @@ describe('QualityChecker Property Tests', () => {
             return `# Introducción\n\n${content.substring(0, 300)}\n\n## Desarrollo\n\n${content.substring(300, 900)}\n\n## Conclusión\n\n${content.substring(900)}`;
           }),
           suggestedTags: fc.array(fc.string({ minLength: 3, maxLength: 15 }), { minLength: 3, maxLength: 5 }),
-          suggestedCategory: fc.constantFrom('reparacion', 'sustitucion', 'mantenimiento') as fc.Arbitrary<BlogCategorySlug>,
+          suggestedCategory: fc.constantFrom('reparaciones', 'instalacion', 'consejos') as fc.Arbitrary<BlogCategorySlug>,
           seoMetadata: fc.record({
             metaTitle: fc.string({ minLength: 30, maxLength: 60 }),
             metaDescription: fc.string({ minLength: 150, maxLength: 160 }),

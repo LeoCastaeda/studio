@@ -16,7 +16,7 @@ import { MetricsTracker } from '../metrics-tracker';
 import { UpdateManager } from '../update-manager';
 import { Repository } from '../database/repository';
 import { AIContentGenerator } from '../ai-generator';
-import { getDbPath } from '../config';
+import { getDatabasePath } from '../config';
 
 async function testLogging() {
   console.log('🧪 Testing comprehensive logging system...\n');
@@ -86,7 +86,7 @@ async function testLogging() {
   try {
     const repository = new Repository(getDbPath());
     const topicManager = new TopicManager(repository);
-    
+
     // This will log internally
     await topicManager.getAvailableTopics();
     console.log('✅ Test 6 passed\n');
@@ -97,7 +97,7 @@ async function testLogging() {
   // Test 7: Component logging - QualityChecker
   console.log('📝 Test 7: Component logging - QualityChecker');
   const qualityChecker = new QualityChecker(createDefaultQualityConfig());
-  
+
   const testArticle = {
     title: 'Test Article',
     excerpt: 'This is a test excerpt for the article',
@@ -114,7 +114,7 @@ async function testLogging() {
     wordCount: 50,
     generatedAt: new Date(),
   };
-  
+
   await qualityChecker.checkArticle(testArticle);
   console.log('✅ Test 7 passed\n');
 
@@ -123,7 +123,7 @@ async function testLogging() {
   try {
     const repository = new Repository(getDbPath());
     const metricsTracker = new MetricsTracker(repository);
-    
+
     // This will log internally
     await metricsTracker.trackArticleMetrics('test-slug', {
       views: 100,
@@ -175,3 +175,7 @@ testLogging().catch(error => {
   console.error('❌ Test failed:', error);
   process.exit(1);
 });
+
+function getDbPath(): import("../database").DatabaseConnection {
+  throw new Error('Function not implemented.');
+}

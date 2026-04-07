@@ -202,7 +202,7 @@ export class TopicManager {
    * Balance topic selection by category to ensure variety
    * Requirement 2.2: Select varied topics
    */
-  private async balanceByCategory(topics: Topic[]): Topic[] {
+  private async balanceByCategory(topics: Topic[]): Promise<Topic[]> {
     // Get all generated articles to analyze category distribution
     const articles = await this.repository.getAllGeneratedArticles();
     

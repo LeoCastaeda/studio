@@ -48,8 +48,12 @@ async function main() {
 
   // Initialize other components for scheduler
   const topicManager = new TopicManager(repository);
-  const qualityChecker = new QualityChecker();
-  const publisher = new AutoPublisher(repository);
+  const qualityChecker = new QualityChecker({
+    minWordCount: 800, maxWordCount: 2000, requireCallToAction: true, requireInternalLinks: true, minReadabilityScore: 75, checkPlagiarism: false, checkFactualAccuracy: false
+  });
+  const publisher = new AutoPublisher(repository, {
+    autoPublish: false, requireManualReview: true, notifyOnPublish: false
+  });
 
   const schedulerConfig: SchedulerConfig = {
     frequency: 'custom',

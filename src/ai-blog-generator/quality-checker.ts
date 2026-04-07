@@ -418,7 +418,7 @@ export class QualityChecker {
       excerpt: '',
       content,
       suggestedTags: [],
-      suggestedCategory: 'reparacion-parabrisas',
+      suggestedCategory: 'reparaciones',
       seoMetadata: {
         metaTitle: '',
         metaDescription: '',

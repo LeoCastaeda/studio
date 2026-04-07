@@ -256,11 +256,11 @@ describe('Blog Utils', () => {
 
   describe('searchBlogPosts', () => {
     it('should search posts by title', async () => {
-      mockFs.existsSync.mockReturnValue(true);
-      mockFs.readdirSync.mockReturnValue(['post1.md'] as any);
+      mockExistsSync.mockReturnValue(true);
+      mockReaddirSync.mockReturnValue(['post1.md'] as any);
       
       mockGenerateSlugFromFilename.mockReturnValue('post1');
-      mockFs.readFileSync.mockReturnValue('mock content');
+      mockReadFileSync.mockReturnValue('mock content');
       
       mockParseMarkdown.mockReturnValue({
         frontmatter: {
@@ -283,11 +283,11 @@ describe('Blog Utils', () => {
     });
 
     it('should search posts by excerpt', async () => {
-      mockFs.existsSync.mockReturnValue(true);
-      mockFs.readdirSync.mockReturnValue(['post1.md'] as any);
+      mockExistsSync.mockReturnValue(true);
+      mockReaddirSync.mockReturnValue(['post1.md'] as any);
       
       mockGenerateSlugFromFilename.mockReturnValue('post1');
-      mockFs.readFileSync.mockReturnValue('mock content');
+      mockReadFileSync.mockReturnValue('mock content');
       
       mockParseMarkdown.mockReturnValue({
         frontmatter: {
@@ -309,11 +309,11 @@ describe('Blog Utils', () => {
     });
 
     it('should search posts by tags', async () => {
-      mockFs.existsSync.mockReturnValue(true);
-      mockFs.readdirSync.mockReturnValue(['post1.md'] as any);
+      mockExistsSync.mockReturnValue(true);
+      mockReaddirSync.mockReturnValue(['post1.md'] as any);
       
       mockGenerateSlugFromFilename.mockReturnValue('post1');
-      mockFs.readFileSync.mockReturnValue('mock content');
+      mockReadFileSync.mockReturnValue('mock content');
       
       mockParseMarkdown.mockReturnValue({
         frontmatter: {
@@ -335,11 +335,11 @@ describe('Blog Utils', () => {
     });
 
     it('should return empty array when no matches found', async () => {
-      mockFs.existsSync.mockReturnValue(true);
-      mockFs.readdirSync.mockReturnValue(['post1.md'] as any);
+      mockExistsSync.mockReturnValue(true);
+      mockReaddirSync.mockReturnValue(['post1.md'] as any);
       
       mockGenerateSlugFromFilename.mockReturnValue('post1');
-      mockFs.readFileSync.mockReturnValue('mock content');
+      mockReadFileSync.mockReturnValue('mock content');
       
       mockParseMarkdown.mockReturnValue({
         frontmatter: {

@@ -90,7 +90,7 @@ export function loadErrorRecoveryConfig(): ErrorRecoveryConfig {
   return {
     maxRetries: parseInt(process.env.ERROR_MAX_RETRIES || '3', 10),
     retryDelay: parseInt(process.env.ERROR_RETRY_DELAY || '1000', 10),
-    backoffMultiplier: parseFloat(process.env.ERROR_BACKOFF_MULTIPLIER || '2', 10),
+    backoffMultiplier: parseFloat(process.env.ERROR_BACKOFF_MULTIPLIER || '2'),
     notifyOnFailure: process.env.ERROR_NOTIFY_ON_FAILURE === 'true',
     fallbackBehavior: (process.env.ERROR_FALLBACK_BEHAVIOR || 'retry_later') as 'skip' | 'retry_later' | 'manual_intervention',
   };

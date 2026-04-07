@@ -52,7 +52,7 @@ Si la astilla es mayor a 5cm o está en el campo de visión del conductor, es me
 La reparación temprana de astillas puede ahorrarte dinero y mantener tu vehículo seguro. Contacta con profesionales para obtener los mejores resultados.
     `.trim(),
     suggestedTags: ['reparación', 'parabrisas', 'mantenimiento', 'seguridad'],
-    suggestedCategory: 'reparacion-parabrisas',
+    suggestedCategory: 'reparaciones',
     seoMetadata: {
       metaTitle: 'Cómo Reparar un Parabrisas Astillado - Guía Completa',
       metaDescription: 'Descubre las mejores técnicas para reparar un parabrisas astillado. Guía profesional con consejos expertos para mantener tu vehículo seguro y ahorrar dinero.',
@@ -99,7 +99,7 @@ Los cristales son importantes.
 Hay varios tipos de cristales para coches.
     `.trim(),
     suggestedTags: ['cristales'],
-    suggestedCategory: 'reparacion-parabrisas',
+    suggestedCategory: 'reparaciones',
     seoMetadata: {
       metaTitle: 'Cristales de coche - Todo lo que necesitas saber sobre cristales automotrices',
       metaDescription: 'Cristales',
@@ -172,7 +172,7 @@ Si detectas algún daño, es importante repararlo lo antes posible para evitar q
 El mantenimiento preventivo de los cristales de tu vehículo puede ahorrarte dinero y garantizar tu seguridad en la carretera.
     `.trim(),
     suggestedTags: ['mantenimiento', 'cristales', 'cuidado'],
-    suggestedCategory: 'reparacion-parabrisas',
+    suggestedCategory: 'reparaciones',
     seoMetadata: {
       metaTitle: 'Mant',
       metaDescription: 'Esta es una descripción muy larga que excede el límite recomendado de 160 caracteres para meta descriptions en SEO, lo cual puede causar que se corte en los resultados de búsqueda.',

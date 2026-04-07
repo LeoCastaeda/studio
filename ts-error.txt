@@ -1,0 +1,7 @@
+﻿
+> nextn@0.1.0 typecheck
+> tsc --noEmit
+
+src/ai-blog-generator/quality-checker.ts(421,7): error TS2322: Type '"reparacion-parabrisas"' is not assignable to type 'BlogCategorySlug'.
+src/ai-blog-generator/scripts/test-logging.ts(87,39): error TS2304: Cannot find name 'getDbPath'.
+src/ai-blog-generator/scripts/test-logging.ts(124,39): error TS2304: Cannot find name 'getDbPath'.

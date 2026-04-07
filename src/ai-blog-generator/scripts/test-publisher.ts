@@ -98,7 +98,7 @@ El mantenimiento regular de los cristales de tu automóvil es una inversión en 
 
 ¿Necesitas ayuda profesional? [Contáctanos hoy](/contacto) para una evaluación gratuita.`,
     suggestedTags: ['mantenimiento', 'cristales', 'seguridad', 'consejos'],
-    suggestedCategory: 'mantenimiento',
+    suggestedCategory: 'reparaciones',
     seoMetadata: {
       metaTitle: 'Guía Completa de Mantenimiento de Cristales de Automóvil',
       metaDescription: 'Aprende todo sobre el mantenimiento de cristales de automóvil. Consejos profesionales para limpieza, inspección y prevención de daños.',
@@ -117,7 +117,7 @@ El mantenimiento regular de los cristales de tu automóvil es una inversión en 
   console.log('\n📝 Creating test topic...');
   const topic = await repository.createTopic({
     title: 'Mantenimiento de Cristales',
-    category: 'mantenimiento',
+    category: 'reparaciones',
     tags: JSON.stringify(['mantenimiento', 'cristales']),
     priority: 'high',
     seasonal_months: null,
