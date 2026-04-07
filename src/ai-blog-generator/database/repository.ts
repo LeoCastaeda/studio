@@ -5,7 +5,7 @@
  */
 
 import { DatabaseConnection } from './connection';
-import { Topic as TopicType } from '../types';
+import { Topic as TopicType, ScheduledTask as ScheduledTaskType } from '../types';
 
 // ============================================================================
 // Type Definitions
@@ -427,6 +427,23 @@ export class Repository {
       timesUsed: dbTopic.times_used,
       status: dbTopic.status,
       createdAt: new Date(dbTopic.created_at),
+    };
+  }
+
+  /**
+   * Convert database ScheduledTask (snake_case) to application ScheduledTask (camelCase)
+   */
+  static mapScheduledTaskToApp(dbTask: ScheduledTask): ScheduledTaskType {
+    return {
+      id: dbTask.id,
+      type: dbTask.type,
+      scheduledFor: new Date(dbTask.scheduled_for),
+      status: dbTask.status,
+      topicId: dbTask.topic_id || undefined,
+      articleSlug: dbTask.article_slug || undefined,
+      createdAt: new Date(dbTask.created_at),
+      completedAt: dbTask.completed_at ? new Date(dbTask.completed_at) : undefined,
+      error: dbTask.error || undefined,
     };
   }
 
