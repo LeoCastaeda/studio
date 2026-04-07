@@ -21,7 +21,7 @@ export function GlassGuide() {
         {/* Modelo 3D */}
         <div className="mb-8">
           <Model3DViewerClickable 
-            modelPath="/images/3d_model/Model_Car3D.glb"
+            modelPath="/images/3D_model/Model_Car3D.glb"
             onGlassClick={(glassType) => setActiveTab(glassType)}
           />
           <p className="text-sm text-muted-foreground text-center mt-2">

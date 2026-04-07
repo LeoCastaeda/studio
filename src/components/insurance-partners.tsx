@@ -11,7 +11,7 @@ const insuranceCompanies = [
   { name: "Zurich", logo: "/images/insurance/zurich.svg" },
   { name: "Liberty Seguro", logo: "/images/insurance/liberty.svg" },
   { name: "Línea Directa", logo: "/images/insurance/linea-directa.svg" },
-  { name: "Catalana Occidente", logo: "/images/insurance/catalana-occidente.svg" },
+  { name: "Catalana Occidente", logo: "/images/insurance/Catalana-Occidente.svg" },
   { name: "Pelayo", logo: "/images/insurance/pelayo.svg" },
 ];
 
