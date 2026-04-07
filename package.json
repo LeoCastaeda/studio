@@ -99,6 +99,8 @@
     "@types/react-dom": "^18",
     "@types/winston": "^2.4.4",
     "@vitest/ui": "^4.0.6",
+    "eslint": "^10.2.0",
+    "eslint-config-next": "^16.2.2",
     "fast-check": "^4.4.0",
     "genkit-cli": "^1.14.1",
     "jsdom": "^27.1.0",
