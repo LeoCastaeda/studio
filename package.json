@@ -69,7 +69,7 @@
     "genkit": "^1.14.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.475.0",
-    "next": "15.3.3",
+    "next": "15.3.8",
     "next-intl": "^4.4.0",
     "node-cron": "^4.2.1",
     "openai": "^6.10.0",
