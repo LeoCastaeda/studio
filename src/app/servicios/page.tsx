@@ -56,19 +56,19 @@ function ProductsContent() {
     params.delete("focus");
 
     const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname);
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQ, pathname, router]);
 
   const filteredProducts = useMemo(() => {
-    const q = searchTerm.trim().toLowerCase();
+    const q = debouncedQ.trim().toLowerCase();
     if (!q) return products;
     return products.filter(
       (p) =>
         p.name.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q)
     );
-  }, [searchTerm]);
+  }, [debouncedQ]);
 
   return (
     <div className="container mx-auto py-12 px-4">
