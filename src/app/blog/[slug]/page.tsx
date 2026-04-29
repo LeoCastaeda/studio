@@ -95,19 +95,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : null;
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover"
-        aria-hidden="true"
-      >
-        <source src="/video/video_blog.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 bg-black/70" />
+    <div className="min-h-screen bg-background text-foreground">
+
+      {/* Hero compacto con video — solo cubre el encabezado */}
+      <div className="relative h-[35svh] min-h-[220px] overflow-hidden bg-black">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
+          aria-hidden="true"
+        >
+          <source src="/video/video_blog.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/60" />
+        {/* Gradiente inferior para transición suave */}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
+      </div>
 
       {/* Breadcrumb Schema for SEO */}
       <div className="relative z-10">
@@ -121,8 +127,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
       </div>
 
-      {/* Header with back button - Mejorado */}
-      <div className="sticky top-0 z-50 border-b border-gray-800/60 bg-background/90 dark:bg-background/90 backdrop-blur-xl shadow-sm">
+      {/* Header with back button */}
+      <div className="sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800/60 bg-background/90 dark:bg-background/90 backdrop-blur-xl shadow-sm">
         <div className="container mx-auto px-4 py-3">
           <Link href="/blog">
             <Button variant="ghost" className="flex items-center gap-2 hover:bg-red-50 dark:hover:bg-red-950/20 hover:text-red-600 dark:hover:text-red-400 transition-colors">
