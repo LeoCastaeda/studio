@@ -20,15 +20,18 @@ export default function Home() {
       {/* HERO */}
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
         <video
-          src="/video/hero_video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
+          autoPlay={true}
+          muted={true}
+          loop={true}
+          playsInline={true}
           preload="metadata"
+          poster="/images/hero-background.png"
           className="absolute inset-0 h-full w-full object-cover"
           aria-hidden="true"
-        />
+        >
+          <source src="/video/hero_video.mp4" type="video/mp4" />
+          Tu navegador no soporta reproducción de video.
+        </video>
         <div className="absolute inset-0 bg-black/60" />
 
         {/* Contenido overlay */}
