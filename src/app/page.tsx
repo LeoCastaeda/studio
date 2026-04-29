@@ -19,13 +19,15 @@ export default function Home() {
     <div className="flex flex-col">
       {/* HERO */}
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
-        <Image
-          src="/images/hero-background.png"
-          alt="Taller especializado en reparación e instalación de cristales y parabrisas para automóviles en Barcelona - glassnou"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
+        <video
+          src="/video/hero_video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden="true"
         />
         <div className="absolute inset-0 bg-black/60" />
 
