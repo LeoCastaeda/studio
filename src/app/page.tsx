@@ -33,15 +33,6 @@ export default function Home() {
 
         {/* Contenido overlay */}
         <div className="relative z-10 max-w-3xl p-4">
-          {/* LOGO ENCIMA DEL TÍTULO */}
-          <Image
-            src="/images/logo-glassnou1.png"
-            alt="GlassNou - Expertos en lunas de automóvil"
-            width={400}
-            height={200}
-            priority
-            className="mx-auto -mt-24 md:-mt-32 mb-0 h-auto w-[300px] md:w-[400px] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
-          />
           <h1 className="text-4xl font-headline font-bold md:text-6xl drop-shadow-lg -mt-2">
             Expertos en Lunas de Automóvil
           </h1>
