@@ -163,7 +163,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-red-600 to-gray-900 dark:from-white dark:via-red-500 dark:to-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
             {post.title}
           </h1>
 
