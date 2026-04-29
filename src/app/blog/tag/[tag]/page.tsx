@@ -111,7 +111,42 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
   });
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-background text-foreground">
+
+      {/* Hero con video — igual que el resto del blog */}
+      <section className="relative overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
+          aria-hidden="true"
+        >
+          <source src="/video/video_blog.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" aria-hidden="true" />
+
+        <div className="relative z-10 container mx-auto py-16 px-4 pb-24 text-center">
+          <p className="text-sm font-medium text-red-400 uppercase tracking-widest mb-2">Etiqueta</p>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white drop-shadow-lg">
+            #{decodedTag}
+          </h1>
+          <p className="mt-3 text-base md:text-lg text-slate-200 max-w-xl mx-auto drop-shadow">
+            Explora todos nuestros artículos etiquetados con "{decodedTag}".
+          </p>
+          <div className="mt-4">
+            <Badge className="bg-white/20 text-white border-white/30 text-sm backdrop-blur-sm">
+              {totalPosts} {totalPosts === 1 ? 'artículo' : 'artículos'}
+            </Badge>
+          </div>
+        </div>
+      </section>
+
+      {/* Contenido — fondo limpio */}
+      <div className="container mx-auto px-4 py-8">
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema
         items={[
@@ -233,6 +268,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
         >
           ← Volver al blog principal
         </Link>
+      </div>
       </div>
     </div>
   );

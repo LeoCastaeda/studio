@@ -63,7 +63,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
           aria-hidden="true"
         >
-          <source src="/video/blog1.mp4" type="video/mp4" />
+          <source src="/video/video_blog.mp4" type="video/mp4" />
         </video>
         {/* Overlay oscuro */}
         <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
