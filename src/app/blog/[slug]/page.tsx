@@ -17,6 +17,8 @@ import { siteConfig, getAbsoluteUrl } from '@/lib/seo/site-config';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { InsuranceLogos } from '@/components/blog/insurance-logos';
 import { BalizaPromo } from '@/components/blog/baliza-promo';
+import { ReadingProgress } from '@/components/blog/reading-progress';
+import { TableOfContents } from '@/components/blog/table-of-contents';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -139,7 +141,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
 
-      <article className="relative z-10 container mx-auto px-4 py-12 max-w-5xl">
+      {/* Barra de progreso de lectura */}
+      <ReadingProgress />
+
+      <article className="relative z-10 container mx-auto px-4 py-12 max-w-6xl">
         {/* Article Header - Mejorado */}
         <header className="mb-12 space-y-6">
           {/* Category Badge */}
@@ -218,26 +223,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </header>
 
-        {/* Article Content - Mejorado */}
-        <div className="mb-12">
-          <div className="bg-white text-slate-900 dark:bg-gray-900 dark:text-white rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
-            <div className="p-8 md:p-12">
-              <div
-                className="prose prose-lg prose-slate text-slate-900 dark:prose-invert dark:text-white max-w-none 
-                prose-headings:font-bold prose-headings:tracking-tight
-                prose-h1:text-4xl prose-h1:mb-6 prose-h1:text-slate-900 dark:prose-h1:text-white
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800 prose-h2:pb-3
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-slate-800 dark:prose-h3:text-slate-200
-                prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-red-600 dark:prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-bold
-                prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
-                prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-                prose-li:text-slate-700 dark:prose-li:text-slate-300 prose-li:my-2
-                prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-gray-800 prose-img:my-8
-                prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-slate-700 dark:prose-blockquote:text-slate-300"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+        {/* Layout: TOC lateral + contenido */}
+        <div className="flex gap-10 items-start">
+
+          {/* Tabla de contenidos — solo en xl+ */}
+          <TableOfContents />
+
+          {/* Contenido del artículo */}
+          <div className="flex-1 min-w-0 mb-12">
+            <div className="bg-white text-slate-900 dark:bg-gray-900 dark:text-white rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
+              <div className="p-8 md:p-12">
+                <div
+                  className="article-content prose prose-lg prose-slate text-slate-900 dark:prose-invert dark:text-white max-w-none
+                  prose-headings:font-bold prose-headings:tracking-tight
+                  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800 prose-h2:pb-3
+                  prose-h3:text-xl prose-h3:mt-7 prose-h3:mb-3 prose-h3:text-slate-800 dark:prose-h3:text-slate-200
+                  prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-5
+                  prose-a:text-red-600 dark:prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                  prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-bold
+                  prose-ul:my-5 prose-ul:list-disc prose-ul:pl-6
+                  prose-ol:my-5 prose-ol:list-decimal prose-ol:pl-6
+                  prose-li:text-slate-700 dark:prose-li:text-slate-300 prose-li:my-1.5
+                  prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-gray-800 prose-img:my-8
+                  prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-red-50 dark:prose-blockquote:bg-red-950/20 prose-blockquote:py-2 prose-blockquote:rounded-r-lg prose-blockquote:text-slate-700 dark:prose-blockquote:text-slate-300
+                  prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              </div>
             </div>
           </div>
         </div>
