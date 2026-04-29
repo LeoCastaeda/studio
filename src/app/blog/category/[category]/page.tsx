@@ -176,14 +176,14 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
             {totalPosts} {totalPosts === 1 ? 'artículo' : 'artículos'}
           </Badge>
         </div>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-lg text-slate-600 dark:text-slate-300">
           Explora todos nuestros artículos sobre {categoryName.toLowerCase()}. 
           Encuentra información útil, consejos y guías especializadas.
         </p>
       </div>
 
       {/* Results Summary */}
-      <div className="mb-6 text-sm text-muted-foreground">
+      <div className="mb-6 text-sm text-slate-500 dark:text-slate-400">
         Mostrando {startIndex + 1} - {Math.min(endIndex, totalPosts)} de {totalPosts} artículos
       </div>
 

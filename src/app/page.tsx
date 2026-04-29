@@ -18,15 +18,14 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* HERO */}
-      <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden bg-black">
         <video
           autoPlay={true}
           muted={true}
           loop={true}
           playsInline={true}
           preload="metadata"
-          poster="/images/hero-background.png"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover bg-black"
           aria-hidden="true"
         >
           <source src="/video/hero_video.mp4" type="video/mp4" />

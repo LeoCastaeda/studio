@@ -5,7 +5,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { BlogPost, BlogCategory, BlogPaginationInfo } from '@/lib/blog/blog-types';
 import { getBlogPostsAction } from './actions';
 import { ArticleCard } from '@/components/blog/article-card';
-import { SearchBar } from '@/components/blog/search-bar';
 import { CategoryFilter, CategoryFilterDropdown } from '@/components/blog/category-filter';
 import { Pagination } from '@/components/blog/pagination';
 import { Button } from '@/components/ui/button';
@@ -137,7 +136,7 @@ export function BlogListContent({ searchParams, categories }: BlogListContentPro
           {/* Search and View Controls */}
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
             <div className="w-full sm:w-auto sm:flex-1 max-w-md">
-              <SearchBar placeholder="Buscar artículos..." />
+              {/* Search handled in the main blog header */}
             </div>
             
             {/* View Mode Toggle */}

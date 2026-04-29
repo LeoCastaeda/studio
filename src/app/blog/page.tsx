@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { BlogListContent } from './blog-list-content';
 import { getBlogCategories } from '@/lib/blog/blog-utils';
 import { InsurancePartners } from '@/components/insurance-partners';
-import { BalizaPromo } from '@/components/blog/baliza-promo';
 
 export const metadata: Metadata = {
   title: 'Blog - Glassnou | Artículos sobre Cristales de Automoción',
@@ -49,12 +49,34 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const categories = await getBlogCategories();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      {/**
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src="/video/video_blog.mp4" type="video/mp4" />
+      </video>
+      */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/hero_Dev.jpeg')" }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-black/60" />
+
       {/* Hero Section */}
-      <section className="container mx-auto py-12 px-4">
+      <section className="relative z-10 container mx-auto py-12 px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-headline font-bold">Blog de Glassnou</h1>
-          <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
+          <h1 className="text-4xl font-headline font-bold text-foreground">
+            Blog de <span className="text-red-600">glass</span><span className="text-white">nou</span>
+          </h1>
+          <p className="mt-2 text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Expertos en cristales de automoción en Barcelona. Descubre guías, consejos y las últimas novedades del sector.
           </p>
         </div>
@@ -62,18 +84,19 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         {/* Category Pills */}
         <div className="flex flex-wrap gap-2 justify-center mt-6">
           {categories.slice(0, 5).map((category) => (
-            <span
+            <Link
               key={category.slug}
-              className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium transition-colors hover:bg-secondary/80"
+              href={`/blog/category/${category.slug}`}
+              className="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-medium transition-colors hover:bg-red-700"
             >
               {category.name}
-            </span>
+            </Link>
           ))}
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <Suspense fallback={<BlogListSkeleton />}>
             <BlogListContent 
@@ -83,9 +106,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </Suspense>
         </div>
       </section>
-
-      {/* Baliza Promo Banner */}
-      <BalizaPromo />
 
       {/* Insurance Logos */}
       <InsurancePartners />

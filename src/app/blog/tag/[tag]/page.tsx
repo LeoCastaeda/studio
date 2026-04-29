@@ -150,7 +150,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
             {totalPosts} {totalPosts === 1 ? 'artículo' : 'artículos'}
           </Badge>
         </div>
-        <p className="text-lg text-muted-foreground">
+        <p className="text-lg text-slate-600 dark:text-slate-300">
           Explora todos nuestros artículos etiquetados con "{decodedTag}". 
           Encuentra contenido específico y especializado sobre este tema.
         </p>
@@ -175,7 +175,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
       ) : (
         <>
           {/* Results Summary */}
-          <div className="mb-6 text-sm text-muted-foreground">
+          <div className="mb-6 text-sm text-slate-500 dark:text-slate-400">
             Mostrando {startIndex + 1} - {Math.min(endIndex, totalPosts)} de {totalPosts} artículos
           </div>
 
@@ -229,7 +229,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
       <div className="mt-8 text-center">
         <Link 
           href="/blog"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="text-sm text-slate-600 dark:text-slate-300 hover:text-foreground transition-colors"
         >
           ← Volver al blog principal
         </Link>

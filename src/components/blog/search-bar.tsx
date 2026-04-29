@@ -22,8 +22,14 @@ export function SearchBar({
 }: SearchBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [query, setQuery] = useState(searchParams.get('search') || '');
+  const [query, setQuery] = useState('');
+  const [mounted, setMounted] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+
+  useEffect(() => {
+    setQuery(searchParams.get('search') || '');
+    setMounted(true);
+  }, [searchParams]);
 
   // Debounced search function
   const debouncedSearch = useCallback(
@@ -100,11 +106,12 @@ export function SearchBar({
         <Input
           type="search"
           placeholder={placeholder}
-          value={query}
+          value={mounted ? query : ''}
           onChange={handleInputChange}
           className="pl-10 pr-10"
           aria-label="Buscar artículos del blog"
           autoComplete="off"
+          suppressHydrationWarning
         />
         
         {/* Clear Button */}

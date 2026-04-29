@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { BlogCategory, CATEGORY_NAMES } from '@/lib/blog/blog-types';
 import { Badge } from '@/components/ui/badge';
@@ -23,7 +24,11 @@ export function CategoryFilter({
 }: CategoryFilterProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const selectedCategory = searchParams.get('category');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    setSelectedCategory(searchParams.get('category'));
+  }, [searchParams]);
 
   const handleCategoryClick = (categorySlug: string | null) => {
     if (onCategoryChange) {
@@ -142,7 +147,11 @@ export function CategoryFilterDropdown({
   showAllOption = true,
 }: Omit<CategoryFilterProps, 'variant'>) {
   const searchParams = useSearchParams();
-  const selectedCategory = searchParams.get('category');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  useEffect(() => {
+    setSelectedCategory(searchParams.get('category'));
+  }, [searchParams]);
   
   const selectedCategoryData = categories.find(cat => cat.slug === selectedCategory);
   const selectedDisplayName = selectedCategoryData 

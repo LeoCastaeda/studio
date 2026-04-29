@@ -95,19 +95,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover"
+        aria-hidden="true"
+      >
+        <source src="/video/video_blog.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-black/70" />
+
       {/* Breadcrumb Schema for SEO */}
-      <BreadcrumbSchema
-        items={[
-          { name: 'Inicio', url: '/' },
-          { name: 'Blog', url: '/blog' },
-          { name: CATEGORY_NAMES[post.category as keyof typeof CATEGORY_NAMES] || post.category, url: `/blog/category/${post.category}` },
-          { name: post.title, url: `/blog/${post.slug}` },
-        ]}
-      />
+      <div className="relative z-10">
+        <BreadcrumbSchema
+          items={[
+            { name: 'Inicio', url: '/' },
+            { name: 'Blog', url: '/blog' },
+            { name: CATEGORY_NAMES[post.category as keyof typeof CATEGORY_NAMES] || post.category, url: `/blog/category/${post.category}` },
+            { name: post.title, url: `/blog/${post.slug}` },
+          ]}
+        />
+      </div>
 
       {/* Header with back button - Mejorado */}
-      <div className="sticky top-0 z-50 border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-sm">
+      <div className="sticky top-0 z-50 border-b border-gray-800/60 bg-background/90 dark:bg-background/90 backdrop-blur-xl shadow-sm">
         <div className="container mx-auto px-4 py-3">
           <Link href="/blog">
             <Button variant="ghost" className="flex items-center gap-2 hover:bg-red-50 dark:hover:bg-red-950/20 hover:text-red-600 dark:hover:text-red-400 transition-colors">
@@ -118,7 +133,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
 
-      <article className="container mx-auto px-4 py-12 max-w-5xl">
+      <article className="relative z-10 container mx-auto px-4 py-12 max-w-5xl">
         {/* Article Header - Mejorado */}
         <header className="mb-12 space-y-6">
           {/* Category Badge */}
@@ -142,7 +157,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </h1>
 
           {/* Excerpt */}
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed font-light">
             {post.excerpt}
           </p>
 
@@ -199,24 +214,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Article Content - Mejorado */}
         <div className="mb-12">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
+          <div className="bg-white text-slate-900 dark:bg-gray-900 dark:text-white rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
             <div className="p-8 md:p-12">
               <div
-                className="prose prose-lg prose-gray dark:prose-invert max-w-none 
+                className="prose prose-lg prose-slate text-slate-900 dark:prose-invert dark:text-white max-w-none 
                 prose-headings:font-bold prose-headings:tracking-tight
-                prose-h1:text-4xl prose-h1:mb-6 prose-h1:text-gray-900 dark:prose-h1:text-white
-                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-gray-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800 prose-h2:pb-3
-                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-gray-800 dark:prose-h3:text-gray-200
-                prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6
+                prose-h1:text-4xl prose-h1:mb-6 prose-h1:text-slate-900 dark:prose-h1:text-white
+                prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800 prose-h2:pb-3
+                prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-slate-800 dark:prose-h3:text-slate-200
+                prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-6
                 prose-a:text-red-600 dark:prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-bold
+                prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-bold
                 prose-ul:my-6 prose-ul:list-disc prose-ul:pl-6
                 prose-ol:my-6 prose-ol:list-decimal prose-ol:pl-6
-                prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:my-2
+                prose-li:text-slate-700 dark:prose-li:text-slate-300 prose-li:my-2
                 prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-gray-800 prose-img:my-8
-                prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 dark:prose-blockquote:text-gray-300
-                prose-code:text-red-600 dark:prose-code:text-red-400 prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:font-mono prose-code:text-sm
-                prose-pre:bg-gray-900 dark:prose-pre:bg-gray-950 prose-pre:text-gray-100 prose-pre:rounded-xl prose-pre:shadow-xl prose-pre:ring-1 prose-pre:ring-gray-800"
+                prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-slate-700 dark:prose-blockquote:text-slate-300"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
