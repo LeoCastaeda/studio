@@ -231,28 +231,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Contenido del artículo */}
           <div className="flex-1 min-w-0 mb-12">
-            <div className="bg-white text-slate-900 dark:bg-gray-900 dark:text-white rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
+            <div className="bg-gray-900 text-white rounded-2xl shadow-xl ring-1 ring-gray-700 overflow-hidden">
               <div className="p-8 md:p-12">
                 <div
-                  className="article-content prose prose-lg prose-slate text-slate-900 dark:prose-invert dark:text-white max-w-none
+                  className="article-content prose prose-lg prose-invert max-w-none
                   prose-headings:font-bold prose-headings:tracking-tight
-                  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-slate-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-800 prose-h2:pb-3
-                  prose-h3:text-xl prose-h3:mt-7 prose-h3:mb-3 prose-h3:text-slate-800 dark:prose-h3:text-slate-200
-                  prose-p:text-slate-700 dark:prose-p:text-slate-300 prose-p:leading-relaxed prose-p:mb-5
-                  prose-a:text-red-600 dark:prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                  prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-bold
+                  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-white prose-h2:border-b prose-h2:border-gray-700 prose-h2:pb-3
+                  prose-h3:text-xl prose-h3:mt-7 prose-h3:mb-3 prose-h3:text-white
+                  prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-5
+                  prose-a:text-red-400 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                  prose-strong:text-white prose-strong:font-bold
                   prose-ul:my-5 prose-ul:list-disc prose-ul:pl-6
                   prose-ol:my-5 prose-ol:list-decimal prose-ol:pl-6
-                  prose-li:text-slate-700 dark:prose-li:text-slate-300 prose-li:my-1.5
-                  prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-gray-800 prose-img:my-8
-                  prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-red-50 dark:prose-blockquote:bg-red-950/20 prose-blockquote:py-2 prose-blockquote:rounded-r-lg prose-blockquote:text-slate-700 dark:prose-blockquote:text-slate-300
-                  prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm"
+                  prose-li:text-gray-300 prose-li:my-1.5
+                  prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-700 prose-img:my-8
+                  prose-blockquote:border-l-4 prose-blockquote:border-red-500 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-red-950/30 prose-blockquote:py-2 prose-blockquote:rounded-r-lg prose-blockquote:text-gray-300
+                  prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-gray-200"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
               </div>
             </div>
           </div>
         </div>
+
 
         {/* Share Buttons */}
         <div className="mb-8">
