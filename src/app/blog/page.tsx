@@ -49,54 +49,53 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   const categories = await getBlogCategories();
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
-      {/**
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover"
-        aria-hidden="true"
-      >
-        <source src="/video/video_blog.mp4" type="video/mp4" />
-      </video>
-      */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero_Dev.jpeg')" }}
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-black/60" />
+    <div className="min-h-screen bg-background text-foreground">
 
-      {/* Hero Section */}
-      <section className="relative z-10 container mx-auto py-12 px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-headline font-bold text-foreground">
-            Blog de <span className="text-red-600">glass</span><span className="text-white">nou</span>
+      {/* Hero Section — con imagen de fondo */}
+      <section className="relative overflow-hidden">
+        {/* Vídeo de fondo en loop */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          aria-hidden="true"
+        >
+          <source src="/video/blog1.mp4" type="video/mp4" />
+        </video>
+        {/* Overlay oscuro */}
+        <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+        {/* Gradiente en la parte inferior para transición suave */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" aria-hidden="true" />
+
+        {/* Contenido del hero */}
+        <div className="relative z-10 container mx-auto py-20 px-4 pb-28 text-center">
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white drop-shadow-lg">
+            Blog de <span className="text-red-500">glass</span><span className="text-white">nou</span>
           </h1>
-          <p className="mt-2 text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-slate-200 max-w-2xl mx-auto drop-shadow">
             Expertos en cristales de automoción en Barcelona. Descubre guías, consejos y las últimas novedades del sector.
           </p>
-        </div>
 
-        {/* Category Pills */}
-        <div className="flex flex-wrap gap-2 justify-center mt-6">
-          {categories.slice(0, 5).map((category) => (
-            <Link
-              key={category.slug}
-              href={`/blog/category/${category.slug}`}
-              className="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-medium transition-colors hover:bg-red-700"
-            >
-              {category.name}
-            </Link>
-          ))}
+          {/* Category Pills */}
+          <div className="flex flex-wrap gap-2 justify-center mt-8">
+            {categories.slice(0, 5).map((category) => (
+              <Link
+                key={category.slug}
+                href={`/blog/category/${category.slug}`}
+                className="px-4 py-2 bg-red-600 text-white rounded-full text-sm font-medium transition-colors hover:bg-red-700"
+              >
+                {category.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16 md:py-24">
+      {/* Main Content — fondo limpio */}
+      <section className="py-12 md:py-20 bg-background">
         <div className="container mx-auto px-4">
           <Suspense fallback={<BlogListSkeleton />}>
             <BlogListContent 
