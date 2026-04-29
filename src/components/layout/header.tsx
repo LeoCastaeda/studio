@@ -7,7 +7,6 @@ import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X, BookOpen } from "l
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -51,9 +50,10 @@ export function Header() {
         {/* Desktop */}
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            {/* Logo grande en desktop */}
-            <Logo className="h-40 w-[100px]" />
-            <span className="hidden font-bold sm:inline-block">glassnou online</span>
+            <span className="hidden font-bold sm:inline-flex">
+              <span className="text-red-500">glass</span>
+              <span className="text-white">nou online</span>
+            </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -77,17 +77,20 @@ export function Header() {
 
             {/* Marca en móvil (fuera del drawer) */}
             <Link href="/" className="flex items-center space-x-2 md:hidden">
-              <Logo className="h-100 w-[300px]" />
-              <span className="font-bold">Glassnou Online</span>
+              <span className="font-bold">
+                <span className="text-red-500">glass</span>
+                <span className="text-white">nou Online</span>
+              </span>
             </Link>
 
             <SheetContent side="left" className="pr-0">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between pb-6 pr-6">
                   <Link href="/" className="flex items-center space-x-2">
-                    {/* Logo dentro del drawer móvil */}
-                    <Logo className="h-100 w-[200px]" />
-                    <span className="font-bold">glassnou online</span>
+                    <span className="font-bold">
+                      <span className="text-red-500">glass</span>
+                      <span className="text-white">nou online</span>
+                    </span>
                   </Link>
                   <SheetTrigger asChild>
                     <Button
