@@ -4,7 +4,7 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { products } from "@/lib/data";
 import { ProductCard } from "@/components/product-card";
-import { GlassGuide } from "@/components/glass-guide";
+
 import { Input } from "@/components/ui/input";
 import { Search, Phone, MessageCircle, Wrench } from "lucide-react";
 import Link from "next/link";
@@ -64,10 +64,7 @@ function ProductsContent() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      {/* Guía 3D */}
-      <div className="mb-12">
-        <GlassGuide />
-      </div>
+
 
       {/* Buscador */}
       <div className="mb-8 max-w-md mx-auto">
