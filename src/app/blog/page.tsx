@@ -54,7 +54,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden="true"
         >
           <source src="/video/video_blog.mp4" type="video/mp4" />

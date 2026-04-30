@@ -16,6 +16,9 @@ const nextConfig = {
       },
     ],
   },
+  turbopack: {
+    root: 'c:\\Users\\Usuario\\proyecto_glassnou\\studio-2',
+  },
 };
 
 export default nextConfig;

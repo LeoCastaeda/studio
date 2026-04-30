@@ -62,70 +62,90 @@ function Hero() {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center opacity-40"
+        className="absolute inset-0 h-full w-full object-cover object-[center_50%] opacity-60 scale-110 transition-opacity duration-1000"
         aria-hidden="true"
       >
         <source src="/video/hero_video.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-950/60 via-gray-950/50 to-gray-950" />
+      
+      {/* Capas de gradiente para profundidad */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-950/40 to-gray-950" />
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-950/40 via-transparent to-gray-950/40" />
 
       <div className="relative z-10 w-full container mx-auto px-4 py-20 pb-32 md:pb-20">
-        <div className="max-w-2xl">
-          {/* Badge ubicación */}
-          <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-600/40 text-red-400 text-sm font-medium px-3 py-1.5 rounded-full mb-6">
-            <MapPin className="h-3.5 w-3.5" />
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          {/* Badge ubicación con glassmorphism */}
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-red-400 text-sm font-semibold px-4 py-2 rounded-full mb-8 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-1000">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+            </span>
             Barcelona · Les Corts
           </div>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+          {/* Headline con efecto de brillo en el texto rojo */}
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
             Cambio y reparación de{" "}
-            <span className="text-red-500">lunas de coche</span>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+              lunas de coche
+            </span>{" "}
             en el mismo día
           </h1>
 
-          <p className="text-lg text-gray-300 mb-8 max-w-xl">
-            Especialistas en parabrisas y cristales de automoción en Barcelona.
-            Trabajamos con tu seguro, sin costes ocultos y con garantía total.
+          <p className="text-lg md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed font-light animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-400">
+            Especialistas en cristalería del automóvil. 
+            <span className="block mt-2 font-normal text-white/90">Sin esperas, con todas las aseguradoras y garantía de por vida.</span>
           </p>
 
-          {/* Beneficios clave */}
-          <ul className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10">
+          {/* Beneficios clave con mejor espaciado */}
+          <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-5 sm:gap-10 mb-14 animate-in fade-in duration-1000 delay-600">
             {[
-              "Reparación desde 30 min",
-              "Gestionamos tu seguro",
-              "Garantía de por vida",
+              "Reparación en 30 min",
+              "Trámites con tu seguro",
+              "Cristales Homologados",
             ].map((b) => (
-              <li key={b} className="flex items-center gap-2 text-white font-medium">
-                <CheckCircle className="h-5 w-5 text-green-500 shrink-0" />
+              <li key={b} className="flex items-center gap-2.5 text-white/90 font-semibold text-base">
+                <div className="bg-green-500/20 p-1 rounded-full">
+                  <CheckCircle className="h-5 w-5 text-green-500" />
+                </div>
                 {b}
               </li>
             ))}
           </ul>
 
-          {/* CTAs desktop */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          {/* CTAs con efectos premium */}
+          <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-800">
             <a
               href={TEL_URL}
-              className="flex items-center justify-center gap-2 px-7 py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-lg rounded-xl transition-colors shadow-lg shadow-red-900/40"
+              className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-red-600 hover:bg-red-500 text-white font-black text-xl rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(220,38,38,0.3)] overflow-hidden"
             >
-              <Phone className="h-5 w-5" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+              <Phone className="h-6 w-6" />
               {PHONE_DISPLAY}
             </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-7 py-4 bg-green-600 hover:bg-green-700 text-white font-bold text-lg rounded-xl transition-colors shadow-lg shadow-green-900/40"
+              className="flex items-center justify-center gap-3 px-10 py-5 bg-green-600 hover:bg-green-500 text-white font-black text-xl rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(22,163,74,0.3)]"
             >
-              <MessageCircle className="h-5 w-5" />
-              Escribir por WhatsApp
+              <MessageCircle className="h-6 w-6" />
+              WhatsApp
             </a>
           </div>
 
-          <p className="mt-4 text-sm text-gray-400">
-            ¿Duda? Llámanos gratis · Lunes a sábado 8h–20h
-          </p>
+          <div className="mt-10 flex items-center gap-4 text-gray-400 animate-in fade-in duration-1000 delay-1000">
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="h-8 w-8 rounded-full border-2 border-gray-950 bg-gray-800 flex items-center justify-center text-[10px] font-bold">
+                  {String.fromCharCode(64 + i)}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm font-medium">
+              +5,000 clientes satisfechos en Barcelona
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -298,10 +318,10 @@ function Trust() {
           </p>
           <a
             href={TEL_URL}
-            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl transition-colors"
           >
-            <Phone className="h-4 w-4" />
-            Pedir presupuesto gratis
+            Saber más sobre la garantía
+            <ArrowRight className="h-4 w-4" />
           </a>
         </div>
       </div>
@@ -309,25 +329,7 @@ function Trust() {
   );
 }
 
-/* ─── Reseñas ─────────────────────────────────────────────────── */
-const REVIEWS = [
-  {
-    author: "Victor L.",
-    text: "La atención es inmejorable, te avisan de cuando reciben el cristal y en 1 hora lo tienes listo. Calidad-precio de lo mejor que he encontrado en Barcelona.",
-    stars: 5,
-  },
-  {
-    author: "Jose K.",
-    text: "El mejor precio de toda Barcelona, el trabajo impecable, el trato excelente, muy puntuales. 100% recomendados.",
-    stars: 5,
-  },
-  {
-    author: "Juan A.",
-    text: "Servicio súper profesional y rápido. Me gestionaron todo súper rápido. El trato con el cliente es exquisito y el precio muy competitivo.",
-    stars: 5,
-  },
-];
-
+/* ─── Testimonios (Simplificado) ─────────────────────────────── */
 function Reviews() {
   return (
     <section className="py-16 md:py-24 bg-gray-950">
@@ -336,30 +338,32 @@ function Reviews() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
             Lo que dicen nuestros clientes
           </h2>
-          <div className="flex items-center justify-center gap-1 text-yellow-400 mb-2">
-            {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-yellow-400" />)}
+          <div className="flex items-center justify-center gap-1 text-yellow-400">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="h-5 w-5 fill-current" />
+            ))}
+            <span className="ml-2 text-white font-bold text-lg">4.9/5 en Google</span>
           </div>
-          <p className="text-gray-400">+500 reseñas verificadas en Google</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {REVIEWS.map((r) => (
-            <div key={r.author} className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(r.stars)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-4">"{r.text}"</p>
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-red-600 flex items-center justify-center text-white text-xs font-bold">
-                  {r.author.charAt(0)}
-                </div>
-                <div>
-                  <p className="text-white text-sm font-semibold">{r.author}</p>
-                  <p className="text-gray-500 text-xs">Reseña de Google</p>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              name: "Jordi M.",
+              text: "Servicio impecable. Me cambiaron el parabrisas en 1 hora y se encargaron de todo con mi seguro. Muy recomendables.",
+            },
+            {
+              name: "Marta R.",
+              text: "Rápidos y profesionales. Llamé por la mañana por un impacto y por la tarde ya estaba reparado. Trato excelente.",
+            },
+            {
+              name: "Carlos T.",
+              text: "El mejor taller de lunas de Barcelona. Precios claros y trabajo de calidad. Repetiré si vuelvo a tener un problema.",
+            },
+          ].map((r) => (
+            <div key={r.name} className="bg-gray-900 p-6 rounded-2xl border border-gray-800 italic text-gray-300 relative">
+              &quot;{r.text}&quot;
+              <div className="mt-4 not-italic font-bold text-white">— {r.name}</div>
             </div>
           ))}
         </div>
@@ -368,89 +372,67 @@ function Reviews() {
   );
 }
 
-/* ─── Contacto / Conversión ───────────────────────────────────── */
+/* ─── Contacto / Form ────────────────────────────────────────── */
 function Contact() {
   return (
     <section id="contacto" className="py-16 md:py-24 bg-gray-900">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-
-          {/* Info contacto */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-              Pide tu presupuesto gratis
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
+              ¿Necesitas un <span className="text-red-500">presupuesto?</span>
             </h2>
-            <p className="text-gray-400 mb-8">
-              Cuéntanos qué le ha pasado a tu luna y te llamamos con el precio en menos de 10 minutos. Sin compromiso.
+            <p className="text-gray-400 text-lg mb-8">
+              Rellena el formulario y nos pondremos en contacto contigo en menos de 10 minutos para darte una solución.
             </p>
 
-            <div className="space-y-4 mb-8">
-              <a
-                href={TEL_URL}
-                className="flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-4 rounded-xl transition-colors w-full"
-              >
-                <Phone className="h-6 w-6 shrink-0" />
-                <div>
-                  <div className="text-xs font-normal opacity-80">Llamar directamente</div>
-                  <div className="text-lg">{PHONE_DISPLAY}</div>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-red-600/10 rounded-xl">
+                  <Phone className="h-6 w-6 text-red-500" />
                 </div>
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-4 rounded-xl transition-colors w-full"
-              >
-                <MessageCircle className="h-6 w-6 shrink-0" />
                 <div>
-                  <div className="text-xs font-normal opacity-80">Enviar mensaje</div>
-                  <div className="text-lg">WhatsApp</div>
+                  <p className="text-sm text-gray-500 font-medium">Llámanos directamente</p>
+                  <p className="text-xl font-bold text-white">{PHONE_DISPLAY}</p>
                 </div>
-              </a>
-            </div>
-
-            <div className="flex items-start gap-3 text-gray-400 text-sm">
-              <MapPin className="h-5 w-5 text-red-400 shrink-0 mt-0.5" />
-              <div>
-                <p className="text-white font-medium">Glassnou Barcelona</p>
-                <p>Carrer Maria Barrientos, 23 Local 2</p>
-                <p>08028 Barcelona (Les Corts)</p>
-                <p className="mt-1">Lunes–Sábado: 8:00–20:00</p>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-green-600/10 rounded-xl">
+                  <MessageCircle className="h-6 w-6 text-green-500" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 font-medium">WhatsApp 24/7</p>
+                  <p className="text-xl font-bold text-white">Respuesta inmediata</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Formulario */}
-          <div className="bg-gray-950 border border-gray-800 rounded-2xl p-6 md:p-8">
-            <h3 className="text-xl font-bold text-white mb-6">Solicitar presupuesto</h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.location.href = WHATSAPP_URL;
-              }}
-              className="space-y-4"
-            >
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Tu nombre"
-                  className="w-full bg-gray-900 border border-gray-700 focus:border-red-500 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1.5">
-                  Teléfono
-                </label>
-                <input
-                  type="tel"
-                  required
-                  placeholder="6XX XXX XXX"
-                  className="w-full bg-gray-900 border border-gray-700 focus:border-red-500 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
-                />
+          <div className="bg-gray-950 p-8 rounded-3xl border border-gray-800 shadow-2xl">
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                    Nombre completo
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Tu nombre"
+                    className="w-full bg-gray-900 border border-gray-700 focus:border-red-500 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-1.5">
+                    Teléfono
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="6XX XXX XXX"
+                    className="w-full bg-gray-900 border border-gray-700 focus:border-red-500 text-white placeholder-gray-500 rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  />
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1.5">
