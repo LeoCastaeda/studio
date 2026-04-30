@@ -5,31 +5,31 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { products } from "@/lib/data";
-
-import { Button } from "@/components/ui/button";
 import {
   Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Send } from "lucide-react";
+import { Send, Phone, MessageCircle, CheckCircle } from "lucide-react";
 import Link from "next/link";
+
+const PHONE = "+34686770074";
+const PHONE_DISPLAY = "+34 686 770 074";
 
 const quoteSchema = z.object({
   name: z.string().min(2, "El nombre es obligatorio."),
-  email: z.string().email("Correo electrónico no válido."),
-  phone: z.string().optional(),
-  vehicleYear: z.string().min(4, "El año debe tener 4 dígitos.").max(4, "El año debe tener 4 dígitos."),
+  phone: z.string().min(9, "Introduce un teléfono válido."),
   vehicleMake: z.string().min(2, "La marca es obligatoria."),
   vehicleModel: z.string().min(1, "El modelo es obligatorio."),
+  vehicleYear: z.string().min(4, "El año debe tener 4 dígitos.").max(4),
   licensePlate: z.string().min(1, "La matrícula es obligatoria."),
-  vin: z.string().optional(),
-  glassType: z.string({ required_error: "Por favor, seleccione el tipo de cristal." }),
-  paymentMethod: z.string({ required_error: "Por favor, seleccione el método de pago." }),
+  glassType: z.string({ required_error: "Selecciona el tipo de cristal." }),
+  paymentMethod: z.string({ required_error: "Selecciona el método de pago." }),
   message: z.string().optional(),
   dataProtection: z.boolean().refine((val) => val === true, {
     message: "Debes aceptar la política de protección de datos.",
@@ -43,213 +43,274 @@ export default function QuoteForm({ initialGlassType = "" }: { initialGlassType?
     resolver: zodResolver(quoteSchema),
     defaultValues: {
       name: "",
-      email: "",
       phone: "",
       vehicleYear: "",
       vehicleMake: "",
       vehicleModel: "",
       licensePlate: "",
-      vin: "",
       message: "",
-      glassType: initialGlassType, // ✅ viene del server
+      glassType: initialGlassType,
       paymentMethod: "",
       dataProtection: false,
     },
   });
 
   function onSubmit(values: z.infer<typeof quoteSchema>) {
-    const glassNouPhoneNumber = "34686770074";
-
     const messageParts = [
-      `*Nueva Solicitud de Cotización*`,
+      `*Nueva Solicitud de Presupuesto*`,
       `*Cliente:* ${values.name}`,
-      `*Email:* ${values.email}`,
-      values.phone ? `*Teléfono:* ${values.phone}` : "",
+      `*Teléfono:* ${values.phone}`,
       `---`,
       `*Vehículo:* ${values.vehicleMake} ${values.vehicleModel} (${values.vehicleYear})`,
       `*Matrícula:* ${values.licensePlate}`,
-      values.vin ? `*Número de Bastidor:* ${values.vin}` : "",
-      `*Cristal Solicitado:* ${values.glassType}`,
-      `*Método de Pago:* ${values.paymentMethod}`,
+      `*Cristal:* ${values.glassType}`,
+      `*Pago:* ${values.paymentMethod}`,
     ];
-    if (values.message) {
-      messageParts.push("---", "*Mensaje Adicional:*", values.message);
-    }
+    if (values.message) messageParts.push("---", values.message);
 
-    const whatsappMessage = encodeURIComponent(messageParts.filter(Boolean).join("\n"));
-    const whatsappUrl = `https://wa.me/${glassNouPhoneNumber}?text=${whatsappMessage}`;
-    window.open(whatsappUrl, "_blank");
+    const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(messageParts.filter(Boolean).join("\n"))}`;
+    window.open(url, "_blank");
 
     toast({
       title: "¡Casi listo!",
-      description: "Se ha abierto WhatsApp para que envíes tu solicitud. ¡Solo pulsa enviar!",
+      description: "Se ha abierto WhatsApp. Solo pulsa enviar.",
     });
 
     form.reset();
   }
 
   return (
-    <div className="container mx-auto py-12 px-4">
-      <Card className="max-w-3xl mx-auto">
-        <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-headline">Solicitar una Cotización</CardTitle>
-          <CardDescription>
-            Rellena el formulario. Al finalizar, se abrirá WhatsApp con un mensaje listo para que nos lo envíes.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <FormField name="name" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Nombre Completo</FormLabel>
-                    <FormControl><Input placeholder="Juan Pérez" {...field} /></FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-                <FormField name="email" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Correo Electrónico</FormLabel>
-                    <FormControl><Input placeholder="tu@ejemplo.com" {...field} /></FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-              </div>
+    <div className="min-h-screen bg-gray-950 text-white">
+      {/* Hero con video */}
+      <section className="relative overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
+          aria-hidden="true"
+        >
+          <source src="/video/video_blog.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" aria-hidden="true" />
 
-              <FormField name="phone" control={form.control} render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Número de Teléfono (Opcional)</FormLabel>
-                  <FormControl><Input placeholder="(123) 456-7890" {...field} /></FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} />
+        <div className="relative z-10 container mx-auto max-w-3xl text-center py-16 px-4">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
+            Solicitar presupuesto
+          </h1>
+          <p className="text-gray-200 text-lg drop-shadow">
+            Rellena el formulario y te respondemos en menos de 10 minutos. Sin compromiso.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-6">
+            {["Presupuesto gratuito", "Sin compromiso", "Respuesta en 10 min"].map((b) => (
+              <span key={b} className="flex items-center gap-2 text-green-400 text-sm font-medium backdrop-blur-sm bg-black/20 px-3 py-1 rounded-full border border-white/10">
+                <CheckCircle className="h-4 w-4" /> {b}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <FormField name="vehicleYear" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Año del Vehículo</FormLabel>
-                    <FormControl><Input placeholder="2023" {...field} /></FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-                <FormField name="vehicleMake" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Marca del Vehículo</FormLabel>
-                    <FormControl><Input placeholder="Toyota" {...field} /></FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-                <FormField name="vehicleModel" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Modelo del Vehículo</FormLabel>
-                    <FormControl><Input placeholder="Camry" {...field} /></FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-12 px-4">
+        <div className="container mx-auto max-w-5xl grid md:grid-cols-3 gap-8 items-start">
+
+          {/* Sidebar contacto directo */}
+          <div className="space-y-4">
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
+              <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">¿Prefieres llamar?</p>
+              <a
+                href={`tel:${PHONE}`}
+                className="flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-bold px-5 py-3 rounded-xl transition-colors w-full mb-3"
+              >
+                <Phone className="h-5 w-5" />
+                <div>
+                  <div className="text-xs opacity-80 font-normal">Llamar ahora</div>
+                  <div>{PHONE_DISPLAY}</div>
+                </div>
+              </a>
+              <a
+                href={`https://wa.me/${PHONE}?text=${encodeURIComponent("Hola, quiero pedir presupuesto.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-3 rounded-xl transition-colors w-full"
+              >
+                <MessageCircle className="h-5 w-5" />
+                <div>
+                  <div className="text-xs opacity-80 font-normal">Escribir</div>
+                  <div>WhatsApp</div>
+                </div>
+              </a>
+            </div>
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 text-sm text-gray-400 space-y-2">
+              <p className="text-white font-semibold">Horario de atención</p>
+              <p>Lunes – Viernes: 8:00 – 20:00</p>
+              <p>Sábado: 8:00 – 14:00</p>
+              <p>Domingo: Cerrado</p>
+            </div>
+          </div>
+
+          {/* Formulario */}
+          <div className="md:col-span-2 bg-gray-900 border border-gray-800 rounded-2xl p-6 md:p-8">
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <FormField name="name" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Nombre</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Tu nombre" {...field}
+                          className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                  <FormField name="phone" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Teléfono</FormLabel>
+                      <FormControl>
+                        <Input placeholder="6XX XXX XXX" {...field}
+                          className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  <FormField name="vehicleMake" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Marca</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Toyota" {...field}
+                          className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                  <FormField name="vehicleModel" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Modelo</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Corolla" {...field}
+                          className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                  <FormField name="vehicleYear" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Año</FormLabel>
+                      <FormControl>
+                        <Input placeholder="2022" {...field}
+                          className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                </div>
+
                 <FormField name="licensePlate" control={form.control} render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Matrícula del Vehículo</FormLabel>
-                    <FormControl><Input placeholder="1234 ABC" {...field} /></FormControl>
-                    <FormDescription>Introduce la matrícula de tu vehículo.</FormDescription>
+                    <FormLabel className="text-gray-300">Matrícula</FormLabel>
+                    <FormControl>
+                      <Input placeholder="1234 ABC" {...field}
+                        className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500" />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
-                
-                <FormField name="vin" control={form.control} render={({ field }) => (
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <FormField name="glassType" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Tipo de cristal</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value || ""}>
+                        <FormControl>
+                          <SelectTrigger className="bg-gray-950 border-gray-700 text-white">
+                            <SelectValue placeholder="Selecciona el cristal" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="bg-gray-900 border-gray-700 text-white">
+                          {products.map((p) => (
+                            <SelectItem key={p.id} value={p.name} className="focus:bg-gray-800">{p.name}</SelectItem>
+                          ))}
+                          <SelectItem value="Otro" className="focus:bg-gray-800">Otro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                  <FormField name="paymentMethod" control={form.control} render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-gray-300">Forma de pago</FormLabel>
+                      <Select onValueChange={field.onChange} value={field.value || ""}>
+                        <FormControl>
+                          <SelectTrigger className="bg-gray-950 border-gray-700 text-white">
+                            <SelectValue placeholder="¿Cómo pagarás?" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="bg-gray-900 border-gray-700 text-white">
+                          <SelectItem value="Contado" className="focus:bg-gray-800">Contado</SelectItem>
+                          <SelectItem value="Compañía de Seguros" className="focus:bg-gray-800">Seguro</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )} />
+                </div>
+
+                <FormField name="message" control={form.control} render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Número de Bastidor (Opcional)</FormLabel>
-                    <FormControl><Input placeholder="VIN de 17 dígitos" {...field} /></FormControl>
-                    <FormDescription>También conocido como VIN.</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )} />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <FormField name="glassType" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Tipo de Cristal Necesario</FormLabel>
-                    <Select onValueChange={field.onChange} value={field.value || ""}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Selecciona el cristal que necesitas reemplazar" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {products.map((product) => (
-                          <SelectItem key={product.id} value={product.name}>{product.name}</SelectItem>
-                        ))}
-                        <SelectItem value="Otro">Otro</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <FormLabel className="text-gray-300">Información adicional (opcional)</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder="Describe el daño, si tienes sensores, cámara, etc."
+                        {...field}
+                        className="bg-gray-950 border-gray-700 text-white placeholder-gray-500 focus:border-red-500 resize-none"
+                        rows={3}
+                      />
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )} />
 
-                <FormField name="paymentMethod" control={form.control} render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Método de Pago</FormLabel>
-                    <Select onValueChange={field.onChange} value={field.value || ""}>
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="¿Cómo realizarás el pago?" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="Contado">Contado</SelectItem>
-                        <SelectItem value="Compañía de Seguros">Compañía de Seguros</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
+                <FormField name="dataProtection" control={form.control} render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 bg-gray-950 border border-gray-700 rounded-xl p-4">
+                    <FormControl>
+                      <Checkbox checked={field.value} onCheckedChange={field.onChange}
+                        className="border-gray-600 data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600" />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel className="text-gray-300 font-normal cursor-pointer">
+                        He leído y acepto la{" "}
+                        <Link href="/proteccion-datos" className="text-red-400 underline hover:text-red-300" target="_blank">
+                          política de protección de datos
+                        </Link>
+                      </FormLabel>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )} />
-              </div>
 
-              <FormField name="message" control={form.control} render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Información Adicional (Opcional)</FormLabel>
-                  <FormControl>
-                    <Textarea placeholder="Cuéntanos más sobre tus necesidades, p.ej., sensores de lluvia, HUD, etc." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )} />
-
-              <FormField name="dataProtection" control={form.control} render={({ field }) => (
-                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-                  <FormControl>
-                    <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                  </FormControl>
-                  <div className="space-y-1 leading-none">
-                    <FormLabel>
-                      He leído y acepto la{" "}
-                      <Link
-                        href="/proteccion-datos"
-                        className="text-primary underline hover:text-primary/80"
-                        target="_blank"
-                      >
-                        política de protección de datos
-                      </Link>
-                    </FormLabel>
-                    <FormDescription>
-                      Tus datos serán tratados conforme a nuestra política de privacidad.
-                    </FormDescription>
-                    <FormMessage />
-                  </div>
-                </FormItem>
-              )} />
-
-              <Button type="submit" className="w-full">
-                <Send className="mr-2 h-4 w-4" /> Enviar por WhatsApp
-              </Button>
-            </form>
-          </Form>
-        </CardContent>
-      </Card>
+                <button
+                  type="submit"
+                  className="w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-xl transition-colors text-base"
+                >
+                  <Send className="h-5 w-5" />
+                  Enviar solicitud por WhatsApp
+                </button>
+                <p className="text-xs text-gray-500 text-center">
+                  Al enviar, se abrirá WhatsApp con tu solicitud lista para enviarnos.
+                </p>
+              </form>
+            </Form>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

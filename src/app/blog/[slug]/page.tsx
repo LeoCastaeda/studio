@@ -15,8 +15,8 @@ import { ShareButtons } from '@/components/blog/share-buttons';
 import { ArticleNavigation } from '@/components/blog/article-navigation';
 import { siteConfig, getAbsoluteUrl } from '@/lib/seo/site-config';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
-import { InsuranceLogos } from '@/components/blog/insurance-logos';
-import { BalizaPromo } from '@/components/blog/baliza-promo';
+import { InsurancePartners } from '@/components/insurance-partners';
+
 import { ReadingProgress } from '@/components/blog/reading-progress';
 import { TableOfContents } from '@/components/blog/table-of-contents';
 
@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : null;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-gray-950 text-white">
 
       {/* Hero compacto con video — solo cubre el encabezado */}
       <div className="relative h-[35svh] min-h-[220px] overflow-hidden bg-black">
@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </video>
         <div className="absolute inset-0 bg-black/60" />
         {/* Gradiente inferior para transición suave */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-950 to-transparent" />
       </div>
 
       {/* Breadcrumb Schema for SEO */}
@@ -130,13 +130,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
 
       {/* Header with back button */}
-      <div className="sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800/60 bg-background/90 dark:bg-background/90 backdrop-blur-xl shadow-sm">
+      <div className="sticky top-0 z-50 border-b border-gray-800 bg-gray-950/90 backdrop-blur-xl">
         <div className="container mx-auto px-4 py-3">
-          <Link href="/blog">
-            <Button variant="ghost" className="flex items-center gap-2 hover:bg-red-50 dark:hover:bg-red-950/20 hover:text-red-600 dark:hover:text-red-400 transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-              <span className="font-medium">Volver al blog</span>
-            </Button>
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            <span className="font-medium">Volver al blog</span>
           </Link>
         </div>
       </div>
@@ -168,22 +169,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </h1>
 
           {/* Excerpt */}
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
             {post.excerpt}
           </p>
 
           {/* Metadata */}
-          <div className="flex flex-wrap items-center gap-6 py-4 border-y border-gray-200 dark:border-gray-800">
+          <div className="flex flex-wrap items-center gap-6 py-4 border-y border-gray-800">
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white text-lg font-bold shadow-lg">
                 {post.author.charAt(0).toUpperCase()}
               </div>
               <div>
-                <div className="flex items-center gap-2 text-sm font-semibold text-gray-900 dark:text-white">
+                <div className="flex items-center gap-2 text-sm font-semibold text-white">
                   <User className="h-4 w-4" />
                   {post.author}
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
                   <Calendar className="h-3.5 w-3.5" />
                   <time dateTime={post.publishedAt.toISOString()}>{formattedDate}</time>
                 </div>
@@ -195,14 +196,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <Link key={tag} href={`/blog/tag/${encodeURIComponent(tag)}`}>
-                  <Badge 
-                    variant="outline" 
-                    className="px-3 py-1.5 hover:bg-red-50 dark:hover:bg-red-950/20 hover:text-red-600 dark:hover:text-red-400 hover:border-red-300 dark:hover:border-red-700 transition-all duration-200"
-                  >
-                    <Tag className="h-3 w-3 mr-1.5" />
-                    {tag}
-                  </Badge>
+                <Link
+                  key={tag}
+                  href={`/blog/tag/${encodeURIComponent(tag)}`}
+                  className="inline-flex items-center gap-1.5 bg-gray-800 border border-gray-700 hover:border-red-600/50 text-gray-300 hover:text-white text-xs px-3 py-1.5 rounded-full transition-colors"
+                >
+                  <Tag className="h-3 w-3 text-red-400" />
+                  {tag}
                 </Link>
               ))}
             </div>
@@ -210,7 +210,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Featured Image */}
           {post.featuredImage && (
-            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-200 dark:ring-gray-800">
+            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-800">
               <Image
                 src={post.featuredImage}
                 alt={`${post.title} - Blog Glassnou`}
@@ -231,22 +231,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Contenido del artículo */}
           <div className="flex-1 min-w-0 mb-12">
-            <div className="bg-white dark:bg-gray-900 text-slate-900 dark:text-white rounded-2xl shadow-xl ring-1 ring-gray-200 dark:ring-gray-800 overflow-hidden">
+            <div className="bg-gray-900 text-white rounded-2xl shadow-xl ring-1 ring-gray-800 overflow-hidden">
               <div className="p-8 md:p-12">
                 <div
-                  className="article-content prose prose-lg prose-slate dark:prose-invert max-w-none
+                  className="article-content prose prose-lg prose-invert max-w-none
                   prose-headings:font-bold prose-headings:tracking-tight
-                  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-gray-900 dark:prose-h2:text-white prose-h2:border-b prose-h2:border-gray-200 dark:prose-h2:border-gray-700 prose-h2:pb-3
-                  prose-h3:text-xl prose-h3:mt-7 prose-h3:mb-3 prose-h3:text-gray-800 dark:prose-h3:text-white
-                  prose-p:text-slate-700 dark:prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-5
-                  prose-a:text-red-600 dark:prose-a:text-red-400 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-                  prose-strong:text-slate-900 dark:prose-strong:text-white prose-strong:font-bold
+                  prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-white prose-h2:border-b prose-h2:border-gray-700 prose-h2:pb-3
+                  prose-h3:text-xl prose-h3:mt-7 prose-h3:mb-3 prose-h3:text-white
+                  prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-5
+                  prose-a:text-red-400 prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+                  prose-strong:text-white prose-strong:font-bold
                   prose-ul:my-5 prose-ul:list-disc prose-ul:pl-6
                   prose-ol:my-5 prose-ol:list-decimal prose-ol:pl-6
-                  prose-li:text-slate-700 dark:prose-li:text-gray-300 prose-li:my-1.5
-                  prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-200 dark:prose-img:ring-gray-700 prose-img:my-8
-                  prose-blockquote:border-l-4 prose-blockquote:border-red-600 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-red-50 dark:prose-blockquote:bg-red-950/20 prose-blockquote:py-2 prose-blockquote:rounded-r-lg prose-blockquote:text-slate-700 dark:prose-blockquote:text-gray-300
-                  prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm"
+                  prose-li:text-gray-300 prose-li:my-1.5
+                  prose-img:rounded-2xl prose-img:shadow-2xl prose-img:ring-1 prose-img:ring-gray-700 prose-img:my-8
+                  prose-blockquote:border-l-4 prose-blockquote:border-red-500 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:bg-red-950/20 prose-blockquote:py-2 prose-blockquote:rounded-r-lg prose-blockquote:text-gray-300
+                  prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:text-gray-200"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
               </div>
@@ -261,18 +261,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Article Footer */}
-        <footer className="border-t pt-8 mb-8">
+        <footer className="border-t border-gray-800 pt-8 mb-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div className="text-sm text-muted-foreground">
-              <p>
-                Publicado por <strong>{post.author}</strong> el {formattedDate}
-              </p>
+            <div className="text-sm text-gray-400">
+              <p>Publicado por <strong className="text-white">{post.author}</strong> el {formattedDate}</p>
               {formattedUpdatedDate && <p>Última actualización: {formattedUpdatedDate}</p>}
             </div>
-
-            <Button variant="outline" asChild>
-              <Link href="/blog">Ver más artículos</Link>
-            </Button>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm"
+            >
+              Ver más artículos
+            </Link>
           </div>
         </footer>
 
@@ -280,11 +280,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <ArticleNavigation previousPost={previousPost} nextPost={nextPost} relatedPosts={relatedPosts} />
       </article>
 
-      {/* Baliza Promo Banner */}
-      <BalizaPromo />
-
-      {/* Insurance Logos */}
-      <InsuranceLogos />
+      {/* Insurance Partners */}
+      <InsurancePartners />
 
       {/* Schema.org JSON-LD */}
       <script
