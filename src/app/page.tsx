@@ -54,7 +54,7 @@ function StickyMobileCTA() {
 /* ─── Hero ────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative min-h-[92svh] flex items-center overflow-hidden bg-gray-950">
+    <section className="relative min-h-screen md:min-h-[92svh] flex items-center overflow-hidden bg-gray-950">
       {/* Video fondo */}
       <video
         autoPlay
@@ -62,7 +62,7 @@ function Hero() {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover object-[center_50%] opacity-60 scale-110 transition-opacity duration-1000"
+        className="absolute inset-0 h-full w-full object-cover object-[center_50%] opacity-60 scale-105 transition-opacity duration-1000"
         aria-hidden="true"
       >
         <source src="/video/hero_video.mp4" type="video/mp4" />
@@ -72,10 +72,10 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-950/40 to-gray-950" />
       <div className="absolute inset-0 bg-gradient-to-r from-gray-950/40 via-transparent to-gray-950/40" />
 
-      <div className="relative z-10 w-full container mx-auto px-4 py-20 pb-32 md:pb-20">
+      <div className="relative z-10 w-full container mx-auto px-4 py-12 md:py-20 pb-32 md:pb-20">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           {/* Badge ubicación con glassmorphism */}
-          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-red-400 text-sm font-semibold px-4 py-2 rounded-full mb-8 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-1000">
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-red-400 text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-6 sm:mb-8 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-1000">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
@@ -84,7 +84,7 @@ function Hero() {
           </div>
 
           {/* Headline con efecto de brillo en el texto rojo */}
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white leading-[1.05] mb-8 tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
+          <h1 className="text-3xl sm:text-5xl md:text-8xl font-black text-white leading-[1.1] sm:leading-[1.05] mb-6 sm:mb-8 tracking-tighter animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-200">
             Cambio y reparación de{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
               lunas de coche
@@ -92,19 +92,19 @@ function Hero() {
             en el mismo día
           </h1>
 
-          <p className="text-lg md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed font-light animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-400">
+          <p className="text-base sm:text-lg md:text-2xl text-gray-300 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed font-light animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-400 px-2 sm:px-0">
             Especialistas en cristalería del automóvil. 
             <span className="block mt-2 font-normal text-white/90">Sin esperas, con todas las aseguradoras y garantía de por vida.</span>
           </p>
 
           {/* Beneficios clave con mejor espaciado */}
-          <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-5 sm:gap-10 mb-14 animate-in fade-in duration-1000 delay-600">
+          <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-10 mb-10 sm:mb-14 animate-in fade-in duration-1000 delay-600">
             {[
               "Reparación en 30 min",
               "Trámites con tu seguro",
               "Cristales Homologados",
             ].map((b) => (
-              <li key={b} className="flex items-center gap-2.5 text-white/90 font-semibold text-base">
+              <li key={b} className="flex items-center gap-2.5 text-white/90 font-semibold text-sm sm:text-base">
                 <div className="bg-green-500/20 p-1 rounded-full">
                   <CheckCircle className="h-5 w-5 text-green-500" />
                 </div>
@@ -114,35 +114,35 @@ function Hero() {
           </ul>
 
           {/* CTAs con efectos premium */}
-          <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-800">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full sm:w-auto animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-800">
             <a
               href={TEL_URL}
-              className="group relative flex items-center justify-center gap-3 px-10 py-5 bg-red-600 hover:bg-red-500 text-white font-black text-xl rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(220,38,38,0.3)] overflow-hidden"
+              className="group relative flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 bg-red-600 hover:bg-red-500 text-white font-black text-lg sm:text-xl rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(220,38,38,0.3)] overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-              <Phone className="h-6 w-6" />
+              <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
               {PHONE_DISPLAY}
             </a>
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-10 py-5 bg-green-600 hover:bg-green-500 text-white font-black text-xl rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(22,163,74,0.3)]"
+              className="flex items-center justify-center gap-3 px-8 py-4 sm:px-10 sm:py-5 bg-green-600 hover:bg-green-500 text-white font-black text-lg sm:text-xl rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(22,163,74,0.3)]"
             >
-              <MessageCircle className="h-6 w-6" />
+              <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
               WhatsApp
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-4 text-gray-400 animate-in fade-in duration-1000 delay-1000">
+          <div className="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4 text-gray-400 animate-in fade-in duration-1000 delay-1000">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="h-8 w-8 rounded-full border-2 border-gray-950 bg-gray-800 flex items-center justify-center text-[10px] font-bold">
+                <div key={i} className="h-7 w-7 sm:h-8 sm:w-8 rounded-full border-2 border-gray-950 bg-gray-800 flex items-center justify-center text-[10px] font-bold">
                   {String.fromCharCode(64 + i)}
                 </div>
               ))}
             </div>
-            <p className="text-sm font-medium">
+            <p className="text-xs sm:text-sm font-medium">
               +5,000 clientes satisfechos en Barcelona
             </p>
           </div>
