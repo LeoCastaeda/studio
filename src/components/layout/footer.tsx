@@ -16,7 +16,7 @@ export function Footer() {
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover md:hidden"
+        className="absolute inset-0 h-full w-full object-contain md:hidden"
       >
         <source src="/video/footer_mobile.mp4" type="video/mp4" />
       </video>
