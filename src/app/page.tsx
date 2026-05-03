@@ -63,7 +63,6 @@ function Hero() {
         playsInline
         preload="metadata"
         className="absolute inset-0 h-full w-full object-cover md:hidden opacity-60 scale-105"
-        poster="/images/hero_centrado1.png"
       >
         <source src="/video/hero_mobile.mp4" type="video/mp4" />
       </video>

@@ -17,7 +17,6 @@ export function Footer() {
         playsInline
         preload="metadata"
         className="absolute inset-0 h-full w-full object-cover md:hidden"
-        poster="/images/footersecundario.png"
       >
         <source src="/video/footer_mobile.mp4" type="video/mp4" />
       </video>
