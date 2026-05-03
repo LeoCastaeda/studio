@@ -57,11 +57,11 @@ function Hero() {
     <section className="relative min-h-[55svh] md:min-h-[70svh] flex items-center overflow-hidden bg-gray-950">
       {/* Imagen de fondo */}
       <Image
-        src="/images/hero_centrado.png"
+        src="/images/hero_centrado1.png"
         alt="Glassnou Barcelona"
         fill
         priority
-        className="object-cover object-center opacity-90 transition-opacity duration-1000"
+        className="object-contain md:object-cover object-center opacity-90 transition-opacity duration-1000"
       />
       
       {/* Capas de gradiente para profundidad */}
