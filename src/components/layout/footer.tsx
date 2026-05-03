@@ -9,17 +9,29 @@ const WHATSAPP_URL = `https://wa.me/${PHONE}?text=${encodeURIComponent("Hola, ne
 export function Footer() {
   return (
     <footer className="relative overflow-hidden">
-      {/* Video de fondo */}
+      {/* Video para Móvil */}
       <video
         autoPlay
         muted
         loop
         playsInline
         preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
-        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+        poster="/images/footersecundario.png"
       >
-        <source src="/video/footer.mp4" type="video/mp4" />
+        <source src="/video/footer_mobile.mp4" type="video/mp4" />
+      </video>
+
+      {/* Video para Desktop */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover hidden md:block"
+      >
+        <source src="/video/footer_desktop.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay oscuro */}

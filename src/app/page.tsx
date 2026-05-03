@@ -55,14 +55,30 @@ function StickyMobileCTA() {
 function Hero() {
   return (
     <section className="relative min-h-[55svh] md:min-h-[70svh] flex items-center overflow-hidden bg-gray-950">
-      {/* Imagen de fondo */}
-      <Image
-        src="/images/hero_centrado1.png"
-        alt="Glassnou Barcelona"
-        fill
-        priority
-        className="object-contain md:object-cover object-top md:object-center opacity-90 transition-opacity duration-1000"
-      />
+      {/* Video para Móvil (Optimizado) */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover md:hidden opacity-60 scale-105"
+        poster="/images/hero_centrado1.png"
+      >
+        <source src="/video/hero_mobile.mp4" type="video/mp4" />
+      </video>
+
+      {/* Video para Desktop */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover hidden md:block opacity-60"
+      >
+        <source src="/video/hero_desktop.mp4" type="video/mp4" />
+      </video>
       
       {/* Capas de gradiente para profundidad */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-950/40 to-gray-950" />
