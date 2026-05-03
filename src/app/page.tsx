@@ -54,25 +54,21 @@ function StickyMobileCTA() {
 /* ─── Hero ────────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section className="relative min-h-screen md:min-h-[92svh] flex items-center overflow-hidden bg-gray-950">
-      {/* Video fondo */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover object-[center_50%] opacity-60 scale-105 transition-opacity duration-1000"
-        aria-hidden="true"
-      >
-        <source src="/video/hero_video.mp4" type="video/mp4" />
-      </video>
+    <section className="relative min-h-[55svh] md:min-h-[70svh] flex items-center overflow-hidden bg-gray-950">
+      {/* Imagen de fondo */}
+      <Image
+        src="/images/hero_principal.png"
+        alt="Cambio de lunas Barcelona"
+        fill
+        priority
+        className="object-cover object-center opacity-60 transition-opacity duration-1000"
+      />
       
       {/* Capas de gradiente para profundidad */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-950/40 to-gray-950" />
       <div className="absolute inset-0 bg-gradient-to-r from-gray-950/40 via-transparent to-gray-950/40" />
 
-      <div className="relative z-10 w-full container mx-auto px-4 py-12 md:py-20 pb-32 md:pb-20">
+      <div className="relative z-10 w-full container mx-auto px-4 py-6 md:py-12 pb-20 md:pb-12">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           {/* Badge ubicación con glassmorphism */}
           <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-red-400 text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-6 sm:mb-8 shadow-2xl animate-in fade-in slide-in-from-top-4 duration-1000">
