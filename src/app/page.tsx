@@ -61,7 +61,7 @@ function Hero() {
         alt="Glassnou Barcelona"
         fill
         priority
-        className="object-contain md:object-cover object-center opacity-90 transition-opacity duration-1000"
+        className="object-contain md:object-cover object-top md:object-center opacity-90 transition-opacity duration-1000"
       />
       
       {/* Capas de gradiente para profundidad */}
