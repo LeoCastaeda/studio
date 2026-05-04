@@ -64,7 +64,7 @@ export default function WarrantyPage() {
         <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" aria-hidden="true" />
 
-        <div className="relative z-10 container mx-auto max-w-3xl text-center py-16 px-4">
+        <div className="relative z-10 container mx-auto text-center max-w-3xl py-20 px-4 pb-28">
           <div className="inline-flex items-center justify-center bg-green-600/20 border border-green-600/30 rounded-full p-4 mb-6 backdrop-blur-sm">
             <Shield className="h-8 w-8 text-green-400" />
           </div>

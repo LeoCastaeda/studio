@@ -63,7 +63,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" aria-hidden="true" />
 
-        <div className="relative z-10 container mx-auto py-20 px-4 pb-28 text-center">
+        <div className="relative z-10 container mx-auto text-center max-w-3xl py-20 px-4 pb-28">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg mb-4">
             Blog de <span className="text-red-500">glass</span>nou
           </h1>

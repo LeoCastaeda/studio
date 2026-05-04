@@ -130,7 +130,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
         <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" aria-hidden="true" />
 
-        <div className="relative z-10 container mx-auto py-16 px-4 pb-24 text-center">
+        <div className="relative z-10 container mx-auto text-center max-w-3xl py-20 px-4 pb-28">
           <p className="text-sm font-medium text-red-400 uppercase tracking-widest mb-2">Etiqueta</p>
           <h1 className="text-4xl md:text-5xl font-headline font-bold text-white drop-shadow-lg">
             #{decodedTag}
