@@ -114,14 +114,14 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
     <div className="min-h-screen bg-background text-foreground">
 
       {/* Hero con video — igual que el resto del blog */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden flex items-center justify-center aspect-[9/16] md:aspect-auto md:block">
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden="true"
         >
           <source src="/video/hero_secundario_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
@@ -130,7 +130,7 @@ export default async function TagPage({ params, searchParams }: TagPageProps) {
         <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" aria-hidden="true" />
 
-        <div className="relative z-10 container mx-auto text-center max-w-3xl py-20 px-4 pb-28">
+        <div className="relative z-10 w-full container mx-auto text-center max-w-3xl px-4 py-12 md:py-20 md:pb-28">
           <p className="text-sm font-medium text-red-400 uppercase tracking-widest mb-2">Etiqueta</p>
           <h1 className="text-4xl md:text-5xl font-headline font-bold text-white drop-shadow-lg">
             #{decodedTag}

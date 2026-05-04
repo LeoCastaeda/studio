@@ -99,15 +99,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen bg-gray-950 text-white">
 
-      {/* Hero compacto con video — solo cubre el encabezado */}
-      <div className="relative h-[35svh] min-h-[220px] overflow-hidden bg-black">
+      <div className="relative aspect-[9/16] md:aspect-auto md:h-[35svh] md:min-h-[220px] overflow-hidden bg-black flex items-center justify-center">
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_30%] md:object-center"
+          className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden="true"
         >
           <source src="/video/hero_secundario_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
