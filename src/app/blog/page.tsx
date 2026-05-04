@@ -57,6 +57,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           className="absolute inset-0 h-full w-full object-cover object-center"
           aria-hidden="true"
         >
+          <source src="/video/hero_secundario_mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
           <source src="/video/video_blog.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
