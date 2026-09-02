@@ -121,6 +121,22 @@ export default async function ProductDetailPage({ params }: PageProps) {
         </div>
 
         {/* Especificaciones + Compatibilidad */}
+        {product.video && (
+          <div className="container mx-auto max-w-5xl px-4 py-6">
+            <h2 className="text-lg font-bold text-white mb-4">Vídeo descriptivo</h2>
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
+              <video
+                controls
+                preload="metadata"
+                className="w-full rounded-md"
+                poster={product.image.url}
+              >
+                <source src={product.video} type="video/mp4" />
+                Tu navegador no soporta la etiqueta <code>video</code>.
+              </video>
+            </div>
+          </div>
+        )}
         <div className="grid md:grid-cols-2 gap-6">
 
           {/* Especificaciones */}

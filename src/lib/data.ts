@@ -16,6 +16,7 @@ export const products: Product[] = [
     description: 'Reparamos pequeñas grietas y astillas en tu parabrisas, devolviéndole su resistencia original y evitando que el daño se extienda. Un servicio rápido y económico.',
     price: 59.99,
     image: getImage('product-repair'),
+    video: '/video/reparacion-de-parabrisas.MP4',
     specifications: {
       'Servicio': 'Reparación de astillas y grietas',
       'Tiempo estimado': '30-45 minutos',
@@ -30,6 +31,7 @@ export const products: Product[] = [
     description: 'Reemplazo e instalación profesional de parabrisas para todo tipo de vehículos. Utilizamos cristal de la más alta calidad que cumple con los estándares OEM.',
     price: 249.99,
     image: getImage('product-1'),
+    video: '/video/sustitucion_parabrisas.MOV',
     specifications: {
       'Material': 'Vidrio Laminado',
       'Servicio': 'Reemplazo e Instalación',
@@ -44,6 +46,7 @@ export const products: Product[] = [
     description: 'Calibración precisa de los sistemas avanzados de asistencia al conductor (ADAS) tras el reemplazo del parabrisas. Esencial para la seguridad y el correcto funcionamiento de tu vehículo.',
     price: 150.00,
     image: getImage('product-adas'),
+    video: '/video/hero_desktop.mp4',
     specifications: {
       'Servicio': 'Calibración estática y dinámica',
       'Tecnología': 'Equipos de última generación',
@@ -58,6 +61,7 @@ export const products: Product[] = [
     description: 'Instalación profesional de láminas de tintado para lunas. Mejora la estética, aumenta la privacidad y protege el interior de tu coche de los rayos UV.',
     price: 120.00,
     image: getImage('product-tint'),
+    video: '/video/blog2.mp4',
     specifications: {
       'Servicio': 'Instalación de láminas de control solar',
       'Material': 'Lámina de alta calidad',
@@ -72,6 +76,7 @@ export const products: Product[] = [
     description: 'Venta e instalación de escobillas limpiaparabrisas de alta calidad. Mejora la visibilidad y seguridad en condiciones de lluvia.',
     price: 25.00,
     image: getImage('product-6'),
+    video: '/video/blog3.mp4',
     specifications: {
       'Servicio': 'Venta e instalación',
       'Material': 'Goma de alta calidad',
@@ -86,6 +91,7 @@ export const products: Product[] = [
     description: 'Aplicamos un tratamiento hidrofóbico avanzado a tu parabrisas. Repele el agua, la suciedad y los insectos, mejorando drásticamente la visibilidad en condiciones adversas.',
     price: 39.99,
     image: getImage('product-rain'),
+    video: '/video/hero_video3.mp4',
     specifications: {
       'Servicio': 'Aplicación de tratamiento hidrofóbico',
       'Duración': 'Hasta 6 meses',

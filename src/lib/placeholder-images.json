@@ -9,7 +9,7 @@
     {
       "id": "product-1",
       "description": "Parabrisas delantero para un sedán.",
-      "imageUrl": "/images/product-1.png",
+      "imageUrl": "/images/product-1.jpeg",
       "imageHint": "parabrisas coche"
     },
     {
@@ -51,7 +51,7 @@
     {
       "id": "product-repair",
       "description": "Reparación de un parabrisas con herramienta especializada.",
-      "imageUrl": "/images/product-repair.png",
+      "imageUrl": "/images/product-repair.jpeg",
       "imageHint": "reparación parabrisas"
     },
     {

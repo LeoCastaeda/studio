@@ -8,6 +8,8 @@ export type Product = {
     url: string;
     hint: string;
   };
+  // Ruta opcional a un vídeo descriptivo (public/video/...)
+  video?: string;
   specifications: { [key: string]: string };
   compatibility: string[];
 };
