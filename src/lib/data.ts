@@ -100,20 +100,7 @@ export const products: Product[] = [
     },
     compatibility: ['Todos los vehículos']
   },
-  {
-    id: 'baliza-homologada',
-    name: 'Baliza de Emergencia Homologada',
-    description: 'Venta de baliza de emergencia homologada DGT 2026. Obligatoria en carretera. Incluye batería y soporte magnético.',
-    price: 54.45,
-    image: getImage('product-4'),
-    specifications: {
-      'Homologación': 'DGT 2026',
-      'Incluye': 'Batería y soporte magnético',
-      'Obligatoria': 'En carretera desde 2026',
-      'Marca': 'OSRAM'
-    },
-    compatibility: ['Todos los vehículos']
-  }
+  
 ];
 
 

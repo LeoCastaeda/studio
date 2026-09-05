@@ -66,13 +66,10 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-950 to-transparent" aria-hidden="true" />
 
-        <div className="relative z-10 w-full container mx-auto text-center max-w-3xl px-4 py-12 md:py-20 md:pb-28">
+          <div className="relative z-10 w-full container mx-auto text-center max-w-3xl px-4 py-12 md:py-20 md:pb-28">
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
             Contacta con nosotros
           </h1>
-          <p className="text-gray-200 text-lg drop-shadow">
-            ¿Tienes una luna rota o dañada? Llámanos o escríbenos y te ayudamos hoy mismo.
-          </p>
         </div>
       </section>
 

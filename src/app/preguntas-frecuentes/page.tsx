@@ -71,31 +71,7 @@ export default function FaqPage() {
             ))}
           </Accordion>
 
-          {/* CTA al final */}
-          <div className="mt-12 bg-gray-900 border border-gray-800 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              ¿No encuentras la respuesta?
-            </h2>
-            <p className="text-gray-400 mb-6">
-              Llámanos o escríbenos por WhatsApp y te respondemos en minutos.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href={`tel:${PHONE}`}
-                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
-              >
-                <Phone className="h-4 w-4" /> +34 686 770 074
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
-              >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
-            </div>
-          </div>
+          {/* CTA removed to avoid repetition on mobile */}
         </div>
       </section>
     </div>

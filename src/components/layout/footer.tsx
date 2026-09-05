@@ -38,33 +38,7 @@ export function Footer() {
 
       {/* Contenido */}
       <div className="relative z-10">
-        {/* CTA superior */}
-        <div className="border-b border-gray-800/60 py-10 px-4">
-          <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="text-lg font-bold text-white">¿Tienes una luna rota?</p>
-              <p className="text-gray-400 text-sm">Llámanos o escríbenos — te atendemos hoy mismo.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-              <a
-                href={`tel:${PHONE}`}
-                className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                +34 686 770 074
-              </a>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* CTA superior removed to avoid repetition on mobile */}
 
         {/* Links */}
         <div className="container mx-auto px-4 py-10">

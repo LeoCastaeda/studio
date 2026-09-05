@@ -25,6 +25,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 const PHONE = "+34686770074";
 const PHONE_DISPLAY = "+34 686 770 074";
+const VIDEO_ONLY_IDS = new Set([
+  "reparacion-de-parabrisas",
+  "sustitucion-de-parabrisas",
+  "calibracion-de-sistema-adas",
+  "tintado-de-lunas",
+]);
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const { id } = await params;
@@ -51,25 +57,20 @@ export default async function ProductDetailPage({ params }: PageProps) {
       <div className="container mx-auto max-w-5xl px-4 py-12">
 
         {/* Hero card */}
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden mb-8">
-          <div className="grid md:grid-cols-2">
-
-            {/* Imagen */}
-            <div className="relative aspect-video md:aspect-auto md:min-h-[320px] overflow-hidden bg-gray-800">
-              <Image
-                src={product.image.url}
-                alt={`${product.name} - Servicio profesional en Barcelona por GlassNou`}
-                fill
-                sizes="(min-width:1024px) 50vw, 100vw"
-                className="object-cover"
-                data-ai-hint={product.image.hint}
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/30" />
+        {product.video && VIDEO_ONLY_IDS.has(product.id) ? (
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden mb-8">
+            <div className="relative w-full overflow-hidden bg-black">
+              <video
+                controls
+                preload="metadata"
+                className="w-full h-auto max-h-[60vh] object-contain bg-black"
+              >
+                <source src={product.video} type="video/mp4" />
+                Tu navegador no soporta la etiqueta video.
+              </video>
             </div>
 
-            {/* Info */}
-            <div className="flex flex-col p-8">
+            <div className="p-8">
               <h1 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
                 {product.name}
               </h1>
@@ -77,22 +78,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 {product.description}
               </p>
 
-              {/* Disponibilidad */}
-              <div className="flex items-center gap-4 text-sm mb-8">
-                <span className="flex items-center gap-1.5 text-green-400 font-medium">
-                  <CheckCircle className="h-4 w-4" />
-                  Disponible hoy
-                </span>
-                {product.specifications["Tiempo estimado"] && (
-                  <span className="flex items-center gap-1.5 text-gray-400">
-                    <Clock className="h-4 w-4" />
-                    {product.specifications["Tiempo estimado"]}
-                  </span>
-                )}
-              </div>
-
-              {/* CTAs */}
-              <div className="flex flex-col gap-3 mt-auto">
+              <div className="flex flex-col gap-3">
                 <a
                   href={`tel:${PHONE}`}
                   className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-colors"
@@ -118,25 +104,78 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </div>
             </div>
           </div>
-        </div>
+        ) : (
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden mb-8">
+            <div className="grid md:grid-cols-2">
 
-        {/* Especificaciones + Compatibilidad */}
-        {product.video && (
-          <div className="container mx-auto max-w-5xl px-4 py-6">
-            <h2 className="text-lg font-bold text-white mb-4">Vídeo descriptivo</h2>
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-4">
-              <video
-                controls
-                preload="metadata"
-                className="w-full rounded-md"
-                poster={product.image.url}
-              >
-                <source src={product.video} type="video/mp4" />
-                Tu navegador no soporta la etiqueta <code>video</code>.
-              </video>
+              {/* Imagen */}
+              <div className="relative aspect-video md:aspect-auto md:min-h-[320px] overflow-hidden bg-gray-800">
+                <Image
+                  src={product.image.url}
+                  alt={`${product.name} - Servicio profesional en Barcelona por GlassNou`}
+                  fill
+                  sizes="(min-width:1024px) 50vw, 100vw"
+                  className="object-cover"
+                  data-ai-hint={product.image.hint}
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-900/30" />
+              </div>
+
+              {/* Info */}
+              <div className="flex flex-col p-8">
+                <h1 className="text-2xl md:text-3xl font-extrabold text-white mb-3">
+                  {product.name}
+                </h1>
+                <p className="text-gray-400 leading-relaxed mb-6">
+                  {product.description}
+                </p>
+
+                {/* Disponibilidad */}
+                <div className="flex items-center gap-4 text-sm mb-8">
+                  <span className="flex items-center gap-1.5 text-green-400 font-medium">
+                    <CheckCircle className="h-4 w-4" />
+                    Disponible hoy
+                  </span>
+                  {product.specifications["Tiempo estimado"] && (
+                    <span className="flex items-center gap-1.5 text-gray-400">
+                      <Clock className="h-4 w-4" />
+                      {product.specifications["Tiempo estimado"]}
+                    </span>
+                  )}
+                </div>
+
+                {/* CTAs */}
+                <div className="flex flex-col gap-3 mt-auto">
+                  <a
+                    href={`tel:${PHONE}`}
+                    className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl transition-colors"
+                  >
+                    <Phone className="h-4 w-4" />
+                    Llamar: {PHONE_DISPLAY}
+                  </a>
+                  <a
+                    href={`https://wa.me/${PHONE}?text=${encodeURIComponent(`Hola, me interesa el servicio: ${product.name}. ¿Podéis darme un presupuesto?`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl transition-colors"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Pedir presupuesto por WhatsApp
+                  </a>
+                  <Link
+                    href={`/cotiza?glassType=${encodeURIComponent(product.name)}`}
+                    className="flex items-center justify-center gap-2 border border-gray-700 hover:border-gray-500 text-gray-300 hover:text-white font-semibold py-3 rounded-xl transition-colors text-sm"
+                  >
+                    Solicitar cotización online
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         )}
+
+        {/* Especificaciones + Compatibilidad */}
         <div className="grid md:grid-cols-2 gap-6">
 
           {/* Especificaciones */}
