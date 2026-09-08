@@ -88,28 +88,28 @@ export const SEED_TOPICS: TopicSeed[] = [
   // Tipos de Cristales (Glass Types)
   {
     title: 'Tipos de cristales para automóviles: Guía completa',
-    category: BLOG_CATEGORIES.TIPOS_CRISTALES,
+    category: BLOG_CATEGORIES.REPARACIONES,
     tags: ['tipos', 'cristales', 'guía', 'comparación'],
     priority: 'high',
     keywords: ['tipos cristales coche', 'cristal laminado', 'cristal templado'],
   },
   {
     title: 'Cristal laminado vs templado: Diferencias y usos',
-    category: BLOG_CATEGORIES.TIPOS_CRISTALES,
+    category: BLOG_CATEGORIES.REPARACIONES,
     tags: ['tipos', 'laminado', 'templado', 'comparación'],
     priority: 'high',
     keywords: ['laminado vs templado', 'diferencias cristales', 'tipos vidrio'],
   },
   {
     title: 'Parabrisas acústicos: Reducción de ruido en tu vehículo',
-    category: BLOG_CATEGORIES.TIPOS_CRISTALES,
+    category: BLOG_CATEGORIES.REPARACIONES,
     tags: ['tipos', 'acústico', 'ruido', 'confort'],
     priority: 'medium',
     keywords: ['parabrisas acústico', 'reducir ruido', 'cristal insonorizado'],
   },
   {
     title: 'Cristales con protección UV: Beneficios y características',
-    category: BLOG_CATEGORIES.TIPOS_CRISTALES,
+    category: BLOG_CATEGORIES.REPARACIONES,
     tags: ['tipos', 'UV', 'protección', 'salud'],
     priority: 'medium',
     seasonal: { months: [5, 6, 7, 8] }, // Summer months
@@ -117,7 +117,7 @@ export const SEED_TOPICS: TopicSeed[] = [
   },
   {
     title: 'Parabrisas con sensor de lluvia: Funcionamiento y ventajas',
-    category: BLOG_CATEGORIES.TIPOS_CRISTALES,
+    category: BLOG_CATEGORIES.REPARACIONES,
     tags: ['tipos', 'sensor lluvia', 'tecnología'],
     priority: 'medium',
     seasonal: { months: [10, 11, 12, 1, 2, 3] }, // Rainy season
