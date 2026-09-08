@@ -46,7 +46,7 @@ export const products: Product[] = [
     description: 'Calibración precisa de los sistemas avanzados de asistencia al conductor (ADAS) tras el reemplazo del parabrisas. Esencial para la seguridad y el correcto funcionamiento de tu vehículo.',
     price: 150.00,
     image: getImage('product-adas'),
-    video: '/video/hero_desktop.mp4',
+    video: '/video/calibracion_adas.mp4',
     specifications: {
       'Servicio': 'Calibración estática y dinámica',
       'Tecnología': 'Equipos de última generación',
@@ -61,7 +61,7 @@ export const products: Product[] = [
     description: 'Instalación profesional de láminas de tintado para lunas. Mejora la estética, aumenta la privacidad y protege el interior de tu coche de los rayos UV.',
     price: 120.00,
     image: getImage('product-tint'),
-    video: '/video/blog2.mp4',
+    video: '/video/tintado.mp4',
     specifications: {
       'Servicio': 'Instalación de láminas de control solar',
       'Material': 'Lámina de alta calidad',

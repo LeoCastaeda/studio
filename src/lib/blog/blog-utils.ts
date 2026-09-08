@@ -53,6 +53,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       category: frontmatter.category,
       tags: frontmatter.tags,
       featuredImage: frontmatter.featuredImage,
+      featuredVideo: frontmatter.featuredVideo,
       seo: frontmatter.seo || {},
       published: frontmatter.published,
     };

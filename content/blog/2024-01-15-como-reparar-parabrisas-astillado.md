@@ -12,6 +12,7 @@ tags:
   - mantenimiento
   - DIY
 featuredImage: /images/blog/reparacion-parabrisas.jpg
+featuredVideo: /video/reparacion-blog.mp4
 seo:
   metaTitle: Reparar Parabrisas Astillado Barcelona | GlassNou 2025
   metaDescription: >-

@@ -61,7 +61,6 @@ La reparación temprana de astillas puede ahorrarte dinero y mantener tu vehícu
     internalLinks: [
       { text: 'servicios de reparación', url: '/servicios/reparacion' },
       { text: 'cotización gratuita', url: '/cotiza' },
-      { text: 'tipos de cristales', url: '/blog/tipos-cristales' },
     ],
     callToAction: 'Solicita una cotización gratuita para reparar tu parabrisas hoy mismo',
     wordCount: 250,

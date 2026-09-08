@@ -13,6 +13,7 @@ interface ArticleCardProps {
 
 export function ArticleCard({ post, className = '' }: ArticleCardProps) {
   const formattedDate = format(post.publishedAt, 'dd MMMM yyyy', { locale: es });
+  const hasVideo = Boolean(post.featuredVideo);
   
   // Calcular tiempo de lectura estimado (asumiendo 200 palabras por minuto)
   const wordCount = post.excerpt.split(' ').length * 5; // Estimación basada en el extracto
@@ -20,9 +21,23 @@ export function ArticleCard({ post, className = '' }: ArticleCardProps) {
 
   return (
     <article className={`group relative bg-white text-slate-900 dark:bg-slate-950 dark:text-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 ${className}`}>
-      {/* Featured Image with Overlay */}
-      <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-          {post.featuredImage ? (
+      {/* Featured media with Overlay */}
+      <div className="relative aspect-video md:aspect-auto md:min-h-[320px] overflow-hidden bg-gray-800">
+          {hasVideo ? (
+            <Link href={`/blog/${post.slug}`} className="absolute inset-0 block">
+              <video
+                src={post.featuredVideo}
+                preload="auto"
+                muted
+                loop
+                autoPlay
+                playsInline
+                className="w-full h-auto object-contain transition-all duration-700 group-hover:scale-110 group-hover:rotate-1 bg-black"
+              />
+              <span className="sr-only">Leer artículo {post.title}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </Link>
+          ) : post.featuredImage ? (
             <Link href={`/blog/${post.slug}`} className="absolute inset-0">
               <Image
                 src={post.featuredImage}

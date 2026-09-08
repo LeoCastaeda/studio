@@ -51,7 +51,17 @@ export function ArticleNavigation({
                         {previousPost.title}
                       </h4>
                     </div>
-                    {previousPost.featuredImage && (
+                    {previousPost.featuredVideo ? (
+                      <div className="relative w-12 h-12 rounded overflow-hidden flex-shrink-0 bg-black">
+                        <video
+                          src={previousPost.featuredVideo}
+                          poster={previousPost.featuredImage}
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ) : previousPost.featuredImage ? (
                       <div className="relative w-12 h-12 rounded overflow-hidden flex-shrink-0">
                         <Image
                           src={previousPost.featuredImage}
@@ -61,7 +71,7 @@ export function ArticleNavigation({
                           sizes="48px"
                         />
                       </div>
-                    )}
+                    ) : null}
                   </Link>
                 ) : (
                   <div className="flex items-center gap-3 p-4 rounded-lg border opacity-50 w-full">
@@ -80,7 +90,17 @@ export function ArticleNavigation({
                     href={`/blog/${nextPost.slug}`}
                     className="group flex items-center gap-3 p-4 rounded-lg border hover:bg-accent transition-colors w-full text-right"
                   >
-                    {nextPost.featuredImage && (
+                    {nextPost.featuredVideo ? (
+                      <div className="relative w-12 h-12 rounded overflow-hidden flex-shrink-0 order-first md:order-last bg-black">
+                        <video
+                          src={nextPost.featuredVideo}
+                          poster={nextPost.featuredImage}
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ) : nextPost.featuredImage ? (
                       <div className="relative w-12 h-12 rounded overflow-hidden flex-shrink-0 order-first md:order-last">
                         <Image
                           src={nextPost.featuredImage}
@@ -90,7 +110,7 @@ export function ArticleNavigation({
                           sizes="48px"
                         />
                       </div>
-                    )}
+                    ) : null}
                     <div className="min-w-0 flex-1">
                       <p className="text-xs text-muted-foreground mb-1">Siguiente artículo</p>
                       <h4 className="font-medium text-sm line-clamp-2 group-hover:text-primary transition-colors">

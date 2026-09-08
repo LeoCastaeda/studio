@@ -208,8 +208,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
 
-          {/* Featured Image */}
-          {post.featuredImage && (
+          {/* Featured media */}
+          {post.featuredVideo ? (
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden mb-8">
+              <div className="relative w-full overflow-hidden bg-black">
+                <video
+                  controls
+                  preload="metadata"
+                  className="w-full h-auto max-h-[60vh] object-contain bg-black"
+                >
+                  <source src={post.featuredVideo} type="video/mp4" />
+                  Tu navegador no soporta la etiqueta video.
+                </video>
+              </div>
+            </div>
+          ) : post.featuredImage ? (
             <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-800">
               <Image
                 src={post.featuredImage}
@@ -220,7 +233,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               />
             </div>
-          )}
+          ) : null}
         </header>
 
         {/* Layout: TOC lateral + contenido */}

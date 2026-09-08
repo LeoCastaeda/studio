@@ -14,6 +14,7 @@ tags:
   - ADAS
   - proceso técnico
 featuredImage: /images/blog/instalacion-parabrisas.jpg
+featuredVideo: /video/cambio-blog.mp4
 published: true
 seo:
   metaTitle: 'Instalación de Parabrisas Profesional 2025: Proceso y ADAS | GlassNou'

@@ -69,6 +69,7 @@ author: "Test Author"
 category: "reparaciones"
 tags: ["test"]
 featuredImage: "/test.jpg"
+featuredVideo: "/test.mp4"
 seo:
   metaTitle: "SEO Title"
   metaDescription: "SEO Description"
@@ -78,6 +79,7 @@ Content`;
 
       const result = parseMarkdown(markdownContent);
       expect(result.frontmatter.featuredImage).toBe('/test.jpg');
+      expect(result.frontmatter.featuredVideo).toBe('/test.mp4');
       expect(result.frontmatter.seo?.metaTitle).toBe('SEO Title');
       expect(result.frontmatter.seo?.metaDescription).toBe('SEO Description');
     });

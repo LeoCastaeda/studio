@@ -37,7 +37,6 @@ src/
 └── content/
     └── blog/
         ├── 2024-01-15-como-reparar-parabrisas.md
-        ├── 2024-01-20-tipos-cristales-coche.md
         └── ...
 ```
 
@@ -137,7 +136,7 @@ published: true
 ### Categorías Predefinidas
 - **reparaciones**: Guías de reparación y mantenimiento
 - **instalacion**: Procesos de instalación de cristales
-- **tipos-cristales**: Información sobre diferentes tipos de cristales
+<!-- **tipos-cristales**: Información sobre diferentes tipos de cristales (eliminado) -->
 - **seguridad**: Aspectos de seguridad y normativas
 - **noticias**: Noticias del sector y empresa
 - **consejos**: Tips y recomendaciones para propietarios

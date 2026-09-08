@@ -30,6 +30,7 @@ export function parseMarkdown(markdownContent: string): {
     category: data.category,
     tags: data.tags || [],
     featuredImage: data.featuredImage,
+    featuredVideo: data.featuredVideo,
     seo: data.seo || {},
     published: data.published !== false, // Default to true if not specified
   };

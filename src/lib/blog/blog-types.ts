@@ -13,6 +13,7 @@ export interface BlogPost {
   category: string;
   tags: string[];
   featuredImage?: string;
+  featuredVideo?: string;
   seo: {
     metaTitle?: string;
     metaDescription?: string;
@@ -44,6 +45,7 @@ export interface BlogPostFrontmatter {
   category: string;
   tags: string[];
   featuredImage?: string;
+  featuredVideo?: string;
   seo?: {
     metaTitle?: string;
     metaDescription?: string;
@@ -79,7 +81,6 @@ export interface BlogListResponse {
 export const BLOG_CATEGORIES = {
   REPARACIONES: 'reparaciones',
   INSTALACION: 'instalacion',
-  TIPOS_CRISTALES: 'tipos-cristales',
   SEGURIDAD: 'seguridad',
   NOTICIAS: 'noticias',
   CONSEJOS: 'consejos',
@@ -91,7 +92,6 @@ export type BlogCategorySlug = typeof BLOG_CATEGORIES[keyof typeof BLOG_CATEGORI
 export const CATEGORY_NAMES: Record<BlogCategorySlug, string> = {
   [BLOG_CATEGORIES.REPARACIONES]: 'Reparaciones',
   [BLOG_CATEGORIES.INSTALACION]: 'Instalación',
-  [BLOG_CATEGORIES.TIPOS_CRISTALES]: 'Tipos de Cristales',
   [BLOG_CATEGORIES.SEGURIDAD]: 'Seguridad',
   [BLOG_CATEGORIES.NOTICIAS]: 'Noticias',
   [BLOG_CATEGORIES.CONSEJOS]: 'Consejos',
