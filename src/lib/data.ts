@@ -19,7 +19,7 @@ export const products: Product[] = [
     video: '/video/reparacion-de-parabrisas.MP4',
     specifications: {
       'Servicio': 'Reparación de astillas y grietas',
-      'Tiempo estimado': '30-45 minutos',
+      'Tiempo estimado': '20-30 minutos',
       'Resultado': 'Recupera hasta el 95% de la integridad estructural',
       'Ventaja': 'Evita el reemplazo completo del parabrisas'
     },
