@@ -181,8 +181,8 @@ const SERVICES = [
   {
     icon: <Wrench className="h-8 w-8 text-red-500" />,
     title: "Reparación de impactos",
-    desc: "Astillas y grietas pequeñas reparadas en 30 min. Evitas el cambio completo.",
-    time: "~30 min",
+    desc: "Astillas y grietas pequeñas reparadas en 20 min. Evitas el cambio completo.",
+    time: "~20 min",
   },
   {
     icon: <CheckCircle className="h-8 w-8 text-red-500" />,
