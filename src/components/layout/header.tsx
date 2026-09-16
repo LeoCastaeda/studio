@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X, BookOpen } from "lucide-react";
+import { Menu, Car, Wrench, ShieldCheck, HelpCircle, Send, X, BookOpen, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const navItems = [
+  { href: "/nosotros", label: "Nosotros", icon: Users },
   { href: "/servicios", label: "Servicios", icon: Car },
   { href: "/blog", label: "Blog", icon: BookOpen },
   { href: "/cotiza", label: "Cotiza Aquí", icon: Send },
@@ -50,10 +52,14 @@ export function Header() {
         {/* Desktop */}
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-bold sm:inline-flex">
-              <span className="text-red-500">glass</span>
-              <span className="text-white">nou online</span>
-            </span>
+            <Image 
+              src="/images/logo_glasnou_clean.png" 
+              alt="Glassnou - Cristales de coche" 
+              width={180} 
+              height={50} 
+              priority
+              className="h-10 w-auto"
+            />
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navItems.map((item) => (
@@ -77,20 +83,27 @@ export function Header() {
 
             {/* Marca en móvil (fuera del drawer) */}
             <Link href="/" className="flex items-center space-x-2 md:hidden">
-              <span className="font-bold">
-                <span className="text-red-500">glass</span>
-                <span className="text-white">nou Online</span>
-              </span>
+              <Image 
+                src="/images/logo_glasnou_clean.png" 
+                alt="Glassnou - Cristales de coche" 
+                width={150} 
+                height={40} 
+                priority
+                className="h-8 w-auto"
+              />
             </Link>
 
             <SheetContent side="left" className="pr-0">
               <div className="flex h-full flex-col">
                 <div className="flex items-center justify-between pb-6 pr-6">
                   <Link href="/" className="flex items-center space-x-2">
-                    <span className="font-bold">
-                      <span className="text-red-500">glass</span>
-                      <span className="text-white">nou online</span>
-                    </span>
+                    <Image 
+                      src="/images/logo_glasnou_clean.png" 
+                      alt="Glassnou - Cristales de coche" 
+                      width={150} 
+                      height={40} 
+                      className="h-8 w-auto"
+                    />
                   </Link>
                   <SheetTrigger asChild>
                     <Button

@@ -6,7 +6,7 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: getAbsoluteUrl('/images/logo.png'),
+    logo: getAbsoluteUrl('/images/logo_glasnou_clean.png'),
     description: siteConfig.description,
     contactPoint: {
       '@type': 'ContactPoint',

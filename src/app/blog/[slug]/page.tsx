@@ -312,7 +312,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             publisher: {
               '@type': 'Organization',
               name: siteConfig.name,
-              logo: { '@type': 'ImageObject', url: getAbsoluteUrl('/images/logo.png') },
+              logo: { '@type': 'ImageObject', url: getAbsoluteUrl('/images/logo_glasnou_clean.png') },
             },
             mainEntityOfPage: {
               '@type': 'WebPage',

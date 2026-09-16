@@ -19,10 +19,10 @@ export function InsuranceLogos() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">
-            Trabajamos con todas las aseguradoras
+            Concertados con el 99% de las aseguradoras
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Gestionamos tu siniestro directamente con tu compañía de seguros sin coste adicional
+            Gestionamos tu siniestro directamente con la mayoría de compañías de seguros sin coste adicional
           </p>
         </div>
 

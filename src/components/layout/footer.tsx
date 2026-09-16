@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@/components/logo";
+import Image from "next/image";
 import { Facebook, Instagram, Phone, MessageCircle } from "lucide-react";
 import { TikTokIcon } from "@/components/icons/tiktok-icon";
 
@@ -45,10 +45,13 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {/* Marca */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <div className="flex items-center space-x-2">
-                <Logo className="h-8 w-8 text-red-500" />
-                <p className="text-xl font-bold text-white">glassnou online</p>
-              </div>
+              <Image 
+                src="/images/logo_glasnou_clean.png" 
+                alt="Glassnou - Cristales de coche" 
+                width={200} 
+                height={60} 
+                className="h-12 w-auto"
+              />
               <p className="mt-4 max-w-xs text-sm text-gray-400">
                 Tu socio de confianza para cristales de automoción de alta calidad en Barcelona.
               </p>
@@ -80,6 +83,7 @@ export function Footer() {
               <div className="text-center sm:text-left">
                 <p className="text-sm font-semibold text-white uppercase tracking-wider">Empresa</p>
                 <nav className="mt-4 flex flex-col space-y-2 text-sm">
+                  <Link href="/nosotros" className="text-gray-400 hover:text-white transition-colors">Nosotros</Link>
                   <Link href="/contacto" className="text-gray-400 hover:text-white transition-colors">Contacto</Link>
                   <Link href="/preguntas-frecuentes" className="text-gray-400 hover:text-white transition-colors">FAQ</Link>
                   <Link href="/garantia" className="text-gray-400 hover:text-white transition-colors">Garantía</Link>
